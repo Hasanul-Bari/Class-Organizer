@@ -1,0 +1,437 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+
+
+    tools:context=".SScheduleFragment"
+    >
+
+
+    <TextView
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/myColor"
+        android:textColor="#FFFFFF"
+        android:text="\n\n "
+        android:gravity="center"
+
+
+
+        android:id="@+id/Day"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+
+        />
+
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#E2E0E0"
+
+
+
+        >
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:padding="10dp"
+            android:background="#E2E0E0"
+
+            >
+
+            <!-- TODO: Update blank fragment layout -->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/round_bg2"
+                android:layout_margin="5dp"
+                android:orientation="vertical"
+
+                >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+
+                    <TextView
+
+                        android:layout_margin="10dp"
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="100dp"
+
+                        android:text="10:00 AM\n11:00 AM"
+                        android:textSize="20sp"
+
+                        />
+
+                    <TextView
+
+                        android:id="@+id/_10"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+
+                        android:layout_margin="10dp"
+                        android:paddingLeft="10dp"
+
+
+
+
+
+
+                        android:textSize="20sp" />
+
+                </LinearLayout>
+
+
+                <TextView
+                    android:id="@+id/_10Stu_StatusTV"
+                    android:layout_width="match_parent"
+
+                    android:layout_height="match_parent"
+                    android:gravity="right"
+                    android:paddingRight="25dp"
+
+
+
+                    android:textSize="20sp" />
+
+
+
+            </LinearLayout>
+
+
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/round_bg2"
+                android:layout_margin="5dp"
+                android:orientation="vertical"
+
+                >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+
+                    <TextView
+
+                        android:layout_margin="10dp"
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="100dp"
+
+                        android:text="11:00 AM\n12:00 PM"
+                        android:textSize="20sp"
+
+                        />
+
+                    <TextView
+
+                        android:id="@+id/_11"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:layout_margin="10dp"
+                        android:paddingLeft="10dp"
+
+
+                        android:textSize="20sp" />
+
+                </LinearLayout>
+
+
+                <TextView
+                    android:id="@+id/_11Stu_StatusTV"
+                    android:layout_width="match_parent"
+
+                    android:layout_height="match_parent"
+                    android:gravity="right"
+                    android:paddingRight="25dp"
+
+
+
+                    android:textSize="20sp" />
+
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/round_bg2"
+                android:layout_margin="5dp"
+                android:orientation="vertical"
+
+                >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+
+                    <TextView
+
+                        android:layout_margin="10dp"
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="100dp"
+
+                        android:text="12:00 PM\n01:00 PM"
+                        android:textSize="20sp"
+
+                        />
+
+                    <TextView
+
+                        android:id="@+id/_12"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:layout_margin="10dp"
+                        android:paddingLeft="10dp"
+
+
+                        android:textSize="20sp" />
+
+                </LinearLayout>
+
+
+                <TextView
+                    android:id="@+id/_12Stu_StatusTV"
+                    android:layout_width="match_parent"
+
+                    android:layout_height="match_parent"
+                    android:gravity="right"
+                    android:paddingRight="25dp"
+
+
+
+                    android:textSize="20sp" />
+
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/round_bg2"
+                android:layout_margin="5dp"
+                android:orientation="vertical"
+
+                >
+
+                <LinearLayout
+
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+
+                    <TextView
+
+                        android:layout_width="wrap_content"
+
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:layout_marginRight="100dp"
+
+                        android:text="02:00 PM\n03:00 PM"
+                        android:textSize="20sp"
+
+                        />
+
+                    <TextView
+
+                        android:id="@+id/_14"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:layout_margin="10dp"
+                        android:paddingLeft="10dp"
+
+
+                        android:textSize="20sp" />
+
+                </LinearLayout>
+
+
+                <TextView
+                    android:id="@+id/_14Stu_StatusTV"
+                    android:layout_width="match_parent"
+
+                    android:layout_height="match_parent"
+                    android:gravity="right"
+                    android:paddingRight="25dp"
+
+
+
+                    android:textSize="20sp" />
+
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/round_bg2"
+                android:layout_margin="5dp"
+                android:orientation="vertical"
+
+                >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+
+                    <TextView
+
+                        android:layout_width="wrap_content"
+
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:layout_marginRight="100dp"
+
+                        android:text="03:00 PM\n04:00 PM"
+                        android:textSize="20sp"
+
+                        />
+                    <TextView
+
+                        android:id="@+id/_15"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:layout_margin="10dp"
+                        android:paddingLeft="10dp"
+
+
+                        android:textSize="20sp" />
+                </LinearLayout>
+
+
+                <TextView
+                    android:id="@+id/_15Stu_StatusTV"
+                    android:layout_width="match_parent"
+
+                    android:layout_height="match_parent"
+                    android:gravity="right"
+                    android:paddingRight="25dp"
+
+
+                    android:textSize="20sp" />
+
+
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/round_bg2"
+                android:layout_margin="5dp"
+                android:orientation="vertical"
+
+                >
+
+                <LinearLayout
+
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+
+                    <TextView
+
+                        android:layout_width="wrap_content"
+
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:layout_marginRight="100dp"
+
+                        android:text="04:00 PM\n05:00 PM"
+                        android:textSize="20sp"
+
+                        />
+
+                    <TextView
+
+                        android:id="@+id/_16"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:layout_margin="10dp"
+                        android:paddingLeft="10dp"
+
+
+                        android:textSize="20sp" />
+
+                </LinearLayout>
+
+
+                <TextView
+                    android:id="@+id/_16Stu_StatusTV"
+                    android:layout_width="match_parent"
+
+                    android:layout_height="match_parent"
+                    android:gravity="right"
+                    android:paddingRight="25dp"
+
+
+                    android:textSize="20sp" />
+
+
+
+            </LinearLayout>
+
+
+
+
+
+
+
+
+
+
+
+
+
+        </LinearLayout>
+
+
+
+
+
+
+
+    </ScrollView>
+
+
+
+
+
+
+
+
+</LinearLayout>

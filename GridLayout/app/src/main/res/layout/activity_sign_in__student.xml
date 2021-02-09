@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+
+    android:weightSum="3"
+
+    tools:context=".SignIn_Student">
+
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="74dp"
+        android:layout_weight="1"
+        android:background="@drawable/wave" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="2"
+        android:orientation="vertical"
+        android:padding="25dp"
+        >
+
+
+        <EditText
+            android:layout_marginTop="35dp"
+            android:id="@+id/signInemail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:hint="Email"
+            />
+
+
+
+        <EditText
+            android:layout_marginTop="15dp"
+            android:id="@+id/signInpassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Password"
+            android:inputType="textPassword" />
+
+        <Button
+
+            android:layout_marginTop="20dp"
+            android:id="@+id/SsignInButton"
+            android:background="@drawable/round_bg"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            android:text="Sign In"
+            android:textStyle="bold"
+            android:textColor="#FFFFFF"
+
+            />
+
+        <TextView
+            android:layout_marginTop="10dp"
+            android:id="@+id/SGotosignUP"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Not registered? Sign Up" />
+
+
+
+
+    </LinearLayout>
+
+</LinearLayout>

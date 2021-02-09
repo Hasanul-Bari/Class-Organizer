@@ -1,0 +1,38 @@
+<resources>
+    <string name="app_name">Class Schedule</string>
+
+
+    <string name="Confirm">Confirm</string>
+    <string name="Request">Request</string>
+    <string name="Decline">Decline</string>
+
+
+    <string name="title_text">Warning</string>
+    <string name="Decline_message_text">Do you  want to decline this time slot?\nYou have to request again to get this time slot</string>
+    <string name="Confirm_message_text">Do you  want to confirm this time slot?</string>
+    <string name="Request_message_text1">Do you  want to request for this time slot?</string>
+    <string name="Request_message_text2">Do you  want to cancel request for this time slot?</string>
+    <string name="Signout_message_text">Do you  want to signout?</string>
+
+    <string-array name="Courses">
+        <item>SELECT_COURSE</item>
+        <item>CSE 303</item>
+        <item>CSE 305</item>
+        <item>CSE 307</item>
+        <item>ECE 311</item>
+        <item>ECN 305</item>
+    </string-array>
+
+    <string-array name="Department">
+        <item>SELECT_DEPARTMENT</item>
+        <item>CSE</item>
+    </string-array>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+
+</resources>

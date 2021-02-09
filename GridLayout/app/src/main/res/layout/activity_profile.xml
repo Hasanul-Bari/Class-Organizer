@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    android:orientation="vertical"
+    android:padding="25dp"
+    android:gravity="center"
+    tools:context=".Profile">
+
+
+    <ImageView
+        android:id="@+id/imageViewSir"
+        android:layout_width="223dp"
+        android:layout_height="283dp"
+        android:layout_marginBottom="15dp"
+        app:srcCompat="@drawable/teacher" />
+
+    <TextView
+        android:id="@+id/sir_name"
+        android:textSize="30dp"
+        android:textStyle="bold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="" />
+
+    <TextView
+        android:id="@+id/course_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="25dp"
+        android:textStyle="bold"
+        android:text="" />
+
+
+</LinearLayout>

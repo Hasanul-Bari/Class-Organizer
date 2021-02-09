@@ -1,0 +1,19 @@
+{
+    "logs": [
+        {
+            "outputFile": "/home/hasanul-bari/Documents/project 302/Software-Project/GridLayout/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-v18/values-v18.xml",
+            "map": [
+                {
+                    "source": "/home/hasanul-bari/.gradle/caches/transforms-2/files-2.1/c44a923105a0e2cc4118f7b713193ae2/appcompat-1.1.0/res/values-v18/values-v18.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "48",
+                        "endOffsets": "99"
+                    }
+                }
+            ]
+        }
+    ]
+}

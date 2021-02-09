@@ -1,0 +1,795 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+
+tools:context=".TScheduleFragment">
+
+    <TextView
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/myColor"
+        android:textColor="#FFFFFF"
+        android:text="\n\n "
+        android:gravity="center"
+
+
+
+        android:id="@+id/Day"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+
+        />
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#E2E0E0"
+
+
+        >
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+
+            android:orientation="vertical"
+            android:gravity="center|top"
+            android:padding="5dp"
+            >
+
+            <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/round_bg2"
+            android:layout_margin="5dp"
+            android:orientation="vertical"
+                >
+
+
+                <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+
+                <TextView
+
+                    android:layout_margin="10dp"
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="100dp"
+
+                    android:text="10:00 AM\n11:00 AM"
+                    android:textSize="20sp"
+
+                    />
+
+                <TextView
+
+                    android:id="@+id/_10t"
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+
+                    android:layout_margin="10dp"
+                    android:paddingLeft="10dp"
+
+
+
+
+
+
+
+
+                    android:textSize="20sp" />
+
+            </LinearLayout>
+
+                <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:weightSum="4"
+                android:gravity="center"
+                >
+
+                <Button
+
+                    android:id="@+id/_10_confirmButton"
+                    android:background="@drawable/confirm_bg"
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Confirm"
+                    android:padding="5dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_weight="1"
+
+                    />
+                <Button
+
+                    android:id="@+id/_10_RequestButton"
+
+                    android:background="@drawable/request_bg"
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="REQUEST"
+                    android:padding="5dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_weight="1"
+                    />
+                <Button
+
+                    android:id="@+id/_10_DeclineButton"
+                    android:background="@drawable/decline_bg"
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Decline"
+                    android:padding="5dp"
+                    android:layout_weight="1"
+                    />
+
+
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/_10_StatusTV"
+                android:layout_marginTop="5dp"
+
+                android:layout_width="match_parent"
+
+                android:layout_height="match_parent"
+                android:gravity="right"
+                android:paddingRight="25dp"
+                android:paddingBottom="5dp"
+
+                android:text="Status"
+
+
+
+                android:textSize="20sp" />
+
+
+
+        </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/round_bg2"
+                android:layout_margin="5dp"
+                android:orientation="vertical">
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+
+                    <TextView
+
+                        android:layout_margin="10dp"
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="100dp"
+
+                        android:text="11:00 AM\n12:00 PM"
+                        android:textSize="20sp"
+
+                        />
+
+                    <TextView
+
+                        android:id="@+id/_11t"
+
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+
+                        android:layout_margin="10dp"
+                        android:paddingLeft="10dp"
+
+
+
+
+
+
+
+
+                        android:textSize="20sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:weightSum="4"
+                    android:gravity="center"
+                    >
+
+                    <Button
+                        android:id="@+id/_11_confirmButton"
+
+                        android:background="@drawable/confirm_bg"
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Confirm"
+                        android:padding="5dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_weight="1"
+
+                        />
+                    <Button
+
+                        android:id="@+id/_11_RequestButton"
+
+                        android:background="@drawable/request_bg"
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="REQUEST"
+                        android:padding="5dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_weight="1"
+                        />
+                    <Button
+
+                        android:id="@+id/_11_DeclineButton"
+
+                        android:background="@drawable/decline_bg"
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Decline"
+                        android:padding="5dp"
+                        android:layout_weight="1"
+                        />
+
+
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/_11_StatusTV"
+                    android:layout_marginTop="5dp"
+
+                    android:layout_width="match_parent"
+
+                    android:layout_height="match_parent"
+                    android:gravity="right"
+                    android:paddingRight="25dp"
+                    android:paddingBottom="5dp"
+
+                    android:text="Status"
+
+
+
+                    android:textSize="20sp" />
+
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/round_bg2"
+                android:layout_margin="5dp"
+                android:orientation="vertical">
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+
+                    <TextView
+
+                        android:layout_margin="10dp"
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="100dp"
+
+                        android:text="12:00 PM\n01:00 PM"
+                        android:textSize="20sp"
+
+                        />
+
+                    <TextView
+
+                        android:id="@+id/_12t"
+
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+
+                        android:layout_margin="10dp"
+                        android:paddingLeft="10dp"
+
+
+
+
+
+
+
+
+                        android:textSize="20sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:weightSum="4"
+                    android:gravity="center"
+                    >
+
+                    <Button
+
+                        android:id="@+id/_12_confirmButton"
+                        android:background="@drawable/confirm_bg"
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Confirm"
+                        android:padding="5dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_weight="1"
+
+                        />
+                    <Button
+
+                        android:id="@+id/_12_RequestButton"
+
+                        android:background="@drawable/request_bg"
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="REQUEST"
+                        android:padding="5dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_weight="1"
+                        />
+                    <Button
+
+                        android:id="@+id/_12_DeclineButton"
+
+                        android:background="@drawable/decline_bg"
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Decline"
+                        android:padding="5dp"
+                        android:layout_weight="1"
+                        />
+
+
+
+                </LinearLayout>
+
+                <TextView
+
+                    android:id="@+id/_12_StatusTV"
+                    android:layout_marginTop="5dp"
+
+                    android:layout_width="match_parent"
+
+                    android:layout_height="match_parent"
+                    android:gravity="right"
+                    android:paddingRight="25dp"
+                    android:paddingBottom="5dp"
+
+                    android:text="Status"
+
+
+
+                    android:textSize="20sp" />
+
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/round_bg2"
+                android:layout_margin="5dp"
+                android:orientation="vertical">
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+
+                    <TextView
+
+                        android:layout_margin="10dp"
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="100dp"
+
+                        android:text="02:00 PM\n03:00 PM"
+                        android:textSize="20sp"
+
+                        />
+
+                    <TextView
+
+                        android:id="@+id/_14t"
+
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+
+                        android:layout_margin="10dp"
+                        android:paddingLeft="10dp"
+
+
+
+
+
+
+
+                        android:textSize="20sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:weightSum="4"
+                    android:gravity="center"
+                    >
+
+                    <Button
+                        android:id="@+id/_14_confirmButton"
+
+                        android:background="@drawable/confirm_bg"
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Confirm"
+                        android:padding="5dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_weight="1"
+
+                        />
+                    <Button
+
+                        android:id="@+id/_14_RequestButton"
+
+                        android:background="@drawable/request_bg"
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="REQUEST"
+                        android:padding="5dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_weight="1"
+                        />
+                    <Button
+
+                        android:id="@+id/_14_DeclineButton"
+
+                        android:background="@drawable/decline_bg"
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Decline"
+                        android:padding="5dp"
+                        android:layout_weight="1"
+                        />
+
+
+
+                </LinearLayout>
+
+                <TextView
+
+                    android:id="@+id/_14_StatusTV"
+
+                    android:layout_marginTop="5dp"
+
+                    android:layout_width="match_parent"
+
+                    android:layout_height="match_parent"
+                    android:gravity="right"
+                    android:paddingRight="25dp"
+                    android:paddingBottom="5dp"
+
+                    android:text="Status"
+
+
+
+                    android:textSize="20sp" />
+
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/round_bg2"
+                android:layout_margin="5dp"
+                android:orientation="vertical">
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+
+                    <TextView
+
+                        android:layout_margin="10dp"
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="100dp"
+
+                        android:text="03:00 PM\n04:00 PM"
+                        android:textSize="20sp"
+
+                        />
+
+                    <TextView
+
+                        android:id="@+id/_15t"
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+
+                        android:layout_margin="10dp"
+                        android:paddingLeft="10dp"
+
+
+
+
+
+
+
+
+                        android:textSize="20sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:weightSum="4"
+                    android:gravity="center"
+                    >
+
+                    <Button
+
+                        android:id="@+id/_15_confirmButton"
+
+                        android:background="@drawable/confirm_bg"
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Confirm"
+                        android:padding="5dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_weight="1"
+
+                        />
+                    <Button
+
+                        android:id="@+id/_15_RequestButton"
+
+                        android:background="@drawable/request_bg"
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="REQUEST"
+                        android:padding="5dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_weight="1"
+                        />
+                    <Button
+
+                        android:id="@+id/_15_DeclineButton"
+
+                        android:background="@drawable/decline_bg"
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Decline"
+                        android:padding="5dp"
+                        android:layout_weight="1"
+                        />
+
+
+
+                </LinearLayout>
+
+                <TextView
+
+                    android:id="@+id/_15_StatusTV"
+                    android:layout_marginTop="5dp"
+
+                    android:layout_width="match_parent"
+
+                    android:layout_height="match_parent"
+                    android:gravity="right"
+                    android:paddingRight="25dp"
+                    android:paddingBottom="5dp"
+
+                    android:text="Status"
+
+
+
+                    android:textSize="20sp" />
+
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/round_bg2"
+                android:layout_margin="5dp"
+                android:orientation="vertical">
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+
+                    <TextView
+
+                        android:layout_margin="10dp"
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="100dp"
+
+                        android:text="04:00 AM\n05:00 AM"
+                        android:textSize="20sp"
+
+                        />
+
+                    <TextView
+
+                        android:id="@+id/_16t"
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+
+                        android:layout_margin="10dp"
+                        android:paddingLeft="10dp"
+
+
+
+
+
+
+
+
+                        android:textSize="20sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:weightSum="4"
+                    android:gravity="center"
+                    >
+
+                    <Button
+
+                        android:id="@+id/_16_confirmButton"
+
+                        android:background="@drawable/confirm_bg"
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Confirm"
+                        android:padding="5dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_weight="1"
+
+                        />
+                    <Button
+
+                        android:id="@+id/_16_RequestButton"
+
+                        android:background="@drawable/request_bg"
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="REQUEST"
+                        android:padding="5dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_weight="1"
+                        />
+                    <Button
+
+                        android:id="@+id/_16_DeclineButton"
+
+                        android:background="@drawable/decline_bg"
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Decline"
+                        android:padding="5dp"
+                        android:layout_weight="1"
+                        />
+
+
+
+                </LinearLayout>
+
+                <TextView
+
+                    android:id="@+id/_16_StatusTV"
+
+                    android:layout_marginTop="5dp"
+
+                    android:layout_width="match_parent"
+
+                    android:layout_height="match_parent"
+                    android:gravity="right"
+                    android:paddingRight="25dp"
+                    android:paddingBottom="5dp"
+
+                    android:text="Status"
+
+
+
+                    android:textSize="20sp" />
+
+
+
+            </LinearLayout>
+
+
+
+
+
+            <!-- TODO: Update blank fragment layout -->
+
+
+
+
+
+
+
+
+
+
+
+        </LinearLayout>
+
+
+
+
+
+    </ScrollView>
+
+
+
+</LinearLayout>
