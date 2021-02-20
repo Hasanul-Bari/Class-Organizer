@@ -1041,7 +1041,24 @@ public class TScheduleFragment extends Fragment implements View.OnClickListener 
                     //stat.setBackgroundColor(Color.GREEN);
                     stat.setTextColor(Color.GREEN);
 
-                    sch.setText("  " + timee + ": " + codeT);
+
+                    if(codeT.equals("NO CLASS")==false)
+                    {
+                        mFirestore.collection("COURSES").document(codeT).get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+                            @Override
+                            public void onSuccess(DocumentSnapshot documentSnapshot) {
+                                String tt=documentSnapshot.getString("Title");
+                                String str=codeT+"\n"+tt;
+                                sch.setText(str);
+
+                            }
+                        });
+                    }
+                    else{
+                        sch.setText(codeT);
+                    }
+
+
                     decl.setVisibility(View.VISIBLE);
                     return;
                 }
@@ -1122,7 +1139,24 @@ public class TScheduleFragment extends Fragment implements View.OnClickListener 
                                     Log.d(TAG, "DocumentSnapshot successfully updated!");
 
 
-                                    sch.setText("  " + time +" : "+ tmp);
+                                    if(codeT.equals("NO CLASS")==false)
+                                    {
+                                        mFirestore.collection("COURSES").document(tmp).get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+                                            @Override
+                                            public void onSuccess(DocumentSnapshot documentSnapshot) {
+                                                String tt=documentSnapshot.getString("Title");
+                                                String str=tmp+"\n"+tt;
+                                                sch.setText(str);
+
+                                            }
+                                        });
+                                    }
+                                    else{
+                                        sch.setText(tmp);
+                                    }
+
+
+
                                     stat.setText("Confirmed");
 
                                     //stat.setBackgroundColor(Color.GREEN);
@@ -1150,7 +1184,7 @@ public class TScheduleFragment extends Fragment implements View.OnClickListener 
                                 @Override
                                 public void onSuccess(Void aVoid) {
                                     Log.d(TAG, "DocumentSnapshot successfully updated!");
-                                    sch.setText("  " + time+" : "+"NO CLASS");
+                                    sch.setText("NO CLASS");
 
 
                                 }

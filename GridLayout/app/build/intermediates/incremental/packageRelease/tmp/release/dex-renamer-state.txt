@@ -1,7 +1,7 @@
-#Wed Jun 03 21:41:34 BDT 2020
-base.0=E\:\\AndroidProjects\\29_05_2020\\GridLayout-20200120T161344Z-001\\GridLayout\\app\\build\\intermediates\\dex\\release\\mergeDexRelease\\out\\classes.dex
+#Sat Feb 20 15:51:55 BDT 2021
+base.0=/home/hasanul-bari/Documents/project 302/Software-Project/GridLayout/app/build/intermediates/dex/release/mergeDexRelease/classes.dex
 path.1=classes2.dex
 renamed.1=classes2.dex
 path.0=classes.dex
 renamed.0=classes.dex
-base.1=E\:\\AndroidProjects\\29_05_2020\\GridLayout-20200120T161344Z-001\\GridLayout\\app\\build\\intermediates\\dex\\release\\mergeDexRelease\\out\\classes2.dex
+base.1=/home/hasanul-bari/Documents/project 302/Software-Project/GridLayout/app/build/intermediates/dex/release/mergeDexRelease/classes2.dex
