@@ -982,7 +982,7 @@ public class TScheduleFragment extends Fragment implements View.OnClickListener 
 
     }
 
-    public void clear1(String dd, String tt, String course, String stat) {
+    /*public void clear1(String dd, String tt, String course, String stat) {
 
 
         DocumentReference washingtonRef = db.collection(dd).document(tt);
@@ -1001,7 +1001,33 @@ public class TScheduleFragment extends Fragment implements View.OnClickListener 
                     }
                 });
 
+    }*/
+
+    //done by tanver
+
+    public void clear1(String dd, String tt, String course, String stat) {
+
+
+        DocumentReference washingtonRef = db.collection(dd).document(tt);
+        washingtonRef
+                //updated by tanver likhon
+                .update("CURRENT", course, "REQ", "", "STATUS", stat,"CODE",course)
+                .addOnSuccessListener(new OnSuccessListener<Void>() {
+                    @Override
+                    public void onSuccess(Void aVoid) {
+                        Log.d(TAG, "DocumentSnapshot successfully updated!");
+                    }
+                })
+                .addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        Log.w(TAG, "Error updating document", e);
+                    }
+                });
+
     }
+
+
 
     public void request(final String timee, final TextView sch, String status, final Button bt, final Button decl, final TextView stat) {
 
@@ -1066,7 +1092,7 @@ public class TScheduleFragment extends Fragment implements View.OnClickListener 
                 int tmp=-1;
 
                 if (req.length()>0) {
-                     tmp = req.indexOf(codeT);
+                    tmp = req.indexOf(codeT);
                 }
 
                 if (tmp >= 0) {
