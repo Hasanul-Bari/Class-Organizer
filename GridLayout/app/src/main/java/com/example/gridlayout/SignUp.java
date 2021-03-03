@@ -124,7 +124,7 @@ public class SignUp extends AppCompatActivity implements View.OnClickListener {
 
     private void userRegister() {
 
-        final String username="teacher."+ email.getText().toString().trim();
+        final String username= email.getText().toString().trim();
         String password=password1.getText().toString().trim();
         final String name1=name.getText().toString().trim();
         final String contact1=contact.getText().toString().trim();
@@ -217,6 +217,28 @@ public class SignUp extends AppCompatActivity implements View.OnClickListener {
                     profile.put("EMAIL",username);
 
                     db.collection("TEACHER").document(usrId).set(profile)
+                            .addOnSuccessListener(new OnSuccessListener<Void>() {
+                                @Override
+                                public void onSuccess(Void aVoid) {
+                                    Toast.makeText(getApplicationContext(),"Data Stored Successfully",Toast.LENGTH_SHORT).show();
+                                }
+                            })
+                            .addOnFailureListener(new OnFailureListener() {
+                                @Override
+                                public void onFailure(@NonNull Exception e) {
+
+                                    Toast.makeText(getApplicationContext(),"Failed to Store data",Toast.LENGTH_SHORT).show();
+
+
+                                }
+                            });
+
+                    //updated by Hasan (add user type);
+
+                    Map<String, Object> type = new HashMap<>();
+                    type.put("Type","Teacher");
+
+                    db.collection("UserType").document(usrId).set(type)
                             .addOnSuccessListener(new OnSuccessListener<Void>() {
                                 @Override
                                 public void onSuccess(Void aVoid) {

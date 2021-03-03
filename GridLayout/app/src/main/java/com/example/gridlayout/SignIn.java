@@ -13,9 +13,12 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.FirebaseFirestore;
 
 public class SignIn extends AppCompatActivity implements View.OnClickListener {
 
@@ -24,12 +27,17 @@ public class SignIn extends AppCompatActivity implements View.OnClickListener {
     private Button signInButton;
 
     private FirebaseAuth mAuth;
+    private FirebaseFirestore db = FirebaseFirestore.getInstance();
+    private FirebaseFirestore mFirestore;
+
+    private String usrId;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_in);
-       mAuth = FirebaseAuth.getInstance();
+        mAuth = FirebaseAuth.getInstance();
+        mFirestore=FirebaseFirestore.getInstance();
 
         this.setTitle("Sign In");
 
@@ -84,7 +92,7 @@ public class SignIn extends AppCompatActivity implements View.OnClickListener {
 
 
 
-        String username= "teacher."+username1.getText().toString().trim();
+        String username= username1.getText().toString().trim();
         String password=password1.getText().toString().trim();
 
 
@@ -126,15 +134,45 @@ public class SignIn extends AppCompatActivity implements View.OnClickListener {
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if(task.isSuccessful()){
 
-                  //  Toast.makeText(getApplicationContext(),"------Hello !!! ",Toast.LENGTH_SHORT).show();
+                   //Toast.makeText(getApplicationContext(),"------Hello !!! ",Toast.LENGTH_SHORT).show();
 
-                    String usrId=mAuth.getCurrentUser().getUid();
-                    finish();
-                    Intent intent =new Intent(SignIn.this,Teacher.class);
-                    intent.putExtra("user",usrId);
-                    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
 
-                    startActivity(intent);
+                    //Hasan : check if user is teacher?
+
+                    usrId=mAuth.getCurrentUser().getUid();
+
+                    //Toast.makeText(getApplicationContext(),usrId,Toast.LENGTH_SHORT).show();
+
+
+                  
+
+                    mFirestore.collection("UserType").document(usrId).get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+                        @Override
+                        public void onSuccess(DocumentSnapshot documentSnapshot) {
+
+                            String type=documentSnapshot.getString("Type");
+
+                            if(type.equals("Teacher")){
+
+                                finish();
+                                Intent intent =new Intent(SignIn.this,Teacher.class);
+                                intent.putExtra("user",usrId);
+                                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+
+                                startActivity(intent);
+
+                            }
+                            else{
+                                FirebaseAuth.getInstance().signOut();
+                                Toast.makeText(getApplicationContext(),"This email is not registered with teachers ",Toast.LENGTH_SHORT).show();
+
+                            }
+                        }
+                    });
+
+
+
+
 
                 }
                 else{
@@ -143,6 +181,7 @@ public class SignIn extends AppCompatActivity implements View.OnClickListener {
 
             }
         });
+
 
 
     }

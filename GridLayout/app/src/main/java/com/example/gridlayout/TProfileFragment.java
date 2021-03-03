@@ -75,7 +75,6 @@ public class TProfileFragment extends Fragment {
                 String Email=documentSnapshot.getString("EMAIL");
                 String Contact=documentSnapshot.getString("CONTACT");
 
-                Email=Email.replaceFirst("teacher.","");
 
 
 

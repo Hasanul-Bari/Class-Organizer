@@ -77,7 +77,6 @@ public class SProfileFragment extends Fragment {
                 String dept=documentSnapshot.getString("DEPT");
                 String Email=documentSnapshot.getString("EMAIL");
 
-                Email=Email.replaceFirst("student.","");
 
 
 

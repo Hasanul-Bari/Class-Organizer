@@ -135,7 +135,7 @@ public class SignUP_Student extends AppCompatActivity implements View.OnClickLis
     private void userRegister() {
 
         final String SID=ID.getText().toString().trim();
-        final String username="student."+email.getText().toString().trim();
+        final String username=email.getText().toString().trim();
 
 
         String password=password1.getText().toString().trim();
@@ -233,6 +233,30 @@ public class SignUP_Student extends AppCompatActivity implements View.OnClickLis
                     profile.put("ID",SID);
 
                     db.collection("STUDENT").document(usrId).set(profile)
+                            .addOnSuccessListener(new OnSuccessListener<Void>() {
+                                @Override
+                                public void onSuccess(Void aVoid) {
+                                    Toast.makeText(getApplicationContext(),"Data Stored Successfully",Toast.LENGTH_SHORT).show();
+                                }
+                            })
+                            .addOnFailureListener(new OnFailureListener() {
+                                @Override
+                                public void onFailure(@NonNull Exception e) {
+
+                                    Toast.makeText(getApplicationContext(),"Failed to Store data",Toast.LENGTH_SHORT).show();
+
+
+                                }
+                            });
+
+
+
+                    //updated by Hasan (add user type);
+
+                    Map<String, Object> type = new HashMap<>();
+                    type.put("Type","Student");
+
+                    db.collection("UserType").document(usrId).set(type)
                             .addOnSuccessListener(new OnSuccessListener<Void>() {
                                 @Override
                                 public void onSuccess(Void aVoid) {
