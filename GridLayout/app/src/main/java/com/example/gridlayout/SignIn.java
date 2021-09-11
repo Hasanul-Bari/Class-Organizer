@@ -19,6 +19,7 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.messaging.FirebaseMessaging;
 
 public class SignIn extends AppCompatActivity implements View.OnClickListener {
 
@@ -154,6 +155,8 @@ public class SignIn extends AppCompatActivity implements View.OnClickListener {
 
                             if(type.equals("Teacher")){
 
+
+
                                 finish();
                                 Intent intent =new Intent(SignIn.this,Teacher.class);
                                 intent.putExtra("user",usrId);
@@ -184,5 +187,21 @@ public class SignIn extends AppCompatActivity implements View.OnClickListener {
 
 
 
+    }
+
+    private void subscribeToTeacher(){
+
+        FirebaseMessaging.getInstance().subscribeToTopic("teacher")
+                .addOnCompleteListener(new OnCompleteListener<Void>() {
+                    @Override
+                    public void onComplete(@NonNull Task<Void> task) {
+                        //String msg = getString(R.string.msg_subscribed);
+                        if (!task.isSuccessful()) {
+                            //msg = getString(R.string.msg_subscribe_failed);
+                        }
+                        //Log.d(TAG, msg);
+                        //Toast.makeText(MainActivity.this, msg, Toast.LENGTH_SHORT).show();
+                    }
+                });
     }
 }

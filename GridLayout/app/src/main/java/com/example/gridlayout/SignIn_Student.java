@@ -3,8 +3,10 @@ package com.example.gridlayout;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Notification;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Message;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -18,6 +20,7 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.messaging.FirebaseMessaging;
 
 public class SignIn_Student extends AppCompatActivity implements View.OnClickListener {
 
@@ -155,6 +158,8 @@ public class SignIn_Student extends AppCompatActivity implements View.OnClickLis
 
                             if(type.equals("Student")){
 
+                                subscribeToStudent();
+
                                 finish();
                                 Intent intent =new Intent(SignIn_Student.this,Student.class);
                                 intent.putExtra("user",usrId);
@@ -183,5 +188,37 @@ public class SignIn_Student extends AppCompatActivity implements View.OnClickLis
 
 
     }
+
+    private void subscribeToStudent(){
+
+        FirebaseMessaging.getInstance().subscribeToTopic("student")
+                .addOnCompleteListener(new OnCompleteListener<Void>() {
+                    @Override
+                    public void onComplete(@NonNull Task<Void> task) {
+                        //String msg = getString(R.string.msg_subscribed);
+                        if (!task.isSuccessful()) {
+                            //msg = getString(R.string.msg_subscribe_failed);
+                        }
+                        //Log.d(TAG, msg);
+                        //Toast.makeText(MainActivity.this, msg, Toast.LENGTH_SHORT).show();
+                    }
+                });
+
+
+       
+
+
+    }
+
+    /*private void unsubscribeFromStudent(){
+
+        FirebaseMessaging.getInstance().unsubscribeFromTopic("student").addOnCompleteListener(new OnCompleteListener<Void>() {
+            @Override
+            public void onComplete(@NonNull Task<Void> task) {
+
+            }
+        });
+    }*/
+
 }
 

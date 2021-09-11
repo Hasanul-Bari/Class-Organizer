@@ -653,6 +653,7 @@
     <string name="default_web_client_id" translatable="false">248635517861-ck7527kg42amlidnj6kh90ej4lj6p3g4.apps.googleusercontent.com</string>
     <string name="fab_transformation_scrim_behavior" translatable="false">com.google.android.material.transformation.FabTransformationScrimBehavior</string>
     <string name="fab_transformation_sheet_behavior" translatable="false">com.google.android.material.transformation.FabTransformationSheetBehavior</string>
+    <string name="fcm_fallback_notification_channel_label">Miscellaneous</string>
     <string name="firebase_database_url" translatable="false">https://gridlayout-ba56d.firebaseio.com</string>
     <string name="gcm_defaultSenderId" translatable="false">248635517861</string>
     <string name="google_api_key" translatable="false">AIzaSyCcfuZl_vn7owNcORQEsG7sHqmP8iTyVFE</string>

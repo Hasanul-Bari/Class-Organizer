@@ -17,11 +17,14 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 
+import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.messaging.FirebaseMessaging;
 
 public class Student extends AppCompatActivity {
 
@@ -123,6 +126,7 @@ public class Student extends AppCompatActivity {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
 
+                                unsubscribeFromStudent();
                                 FirebaseAuth.getInstance().signOut();
                                 finish();
                                 Intent intent=new Intent(getApplicationContext(),MainActivity.class);
@@ -168,6 +172,19 @@ public class Student extends AppCompatActivity {
             super.onBackPressed();
 
 
+    }
+
+
+    // Hasan : unsunsubscribe FROM Student while signing out
+
+    private void unsubscribeFromStudent(){
+
+        FirebaseMessaging.getInstance().unsubscribeFromTopic("student").addOnCompleteListener(new OnCompleteListener<Void>() {
+            @Override
+            public void onComplete(@NonNull Task<Void> task) {
+
+            }
+        });
     }
 }
 
