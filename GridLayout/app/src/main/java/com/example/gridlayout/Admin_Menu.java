@@ -57,24 +57,24 @@ public class Admin_Menu extends AppCompatActivity implements View.OnClickListene
                 break;
             case R.id.ClassRooms:
                 intent=new Intent(Admin_Menu.this,ClassRoom_F.class);
-                Toast.makeText(getApplicationContext(), "Faculty clicked", Toast.LENGTH_SHORT).show();
+                //Toast.makeText(getApplicationContext(), "Faculty clicked", Toast.LENGTH_SHORT).show();
                 startActivity(intent);
                 break;
             case R.id.Add_teacher:
-                Toast.makeText(getApplicationContext(), "Faculty clicked", Toast.LENGTH_SHORT).show();
+                //Toast.makeText(getApplicationContext(), "Faculty clicked", Toast.LENGTH_SHORT).show();
                 break;
 
             case R.id.Del_teacher:
-                Toast.makeText(getApplicationContext(), "Faculty clicked", Toast.LENGTH_SHORT).show();
+                //Toast.makeText(getApplicationContext(), "Faculty clicked", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.Add_CR:
                 intent=new Intent(Admin_Menu.this,CR_SignUP.class);
                 startActivity(intent);
 
-                Toast.makeText(getApplicationContext(), "Faculty clicked", Toast.LENGTH_SHORT).show();
+                //Toast.makeText(getApplicationContext(), "Faculty clicked", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.Del_CR:
-                Toast.makeText(getApplicationContext(), "Faculty clicked", Toast.LENGTH_SHORT).show();
+                //Toast.makeText(getApplicationContext(), "Faculty clicked", Toast.LENGTH_SHORT).show();
                 break;
 
             default:

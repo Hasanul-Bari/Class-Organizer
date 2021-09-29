@@ -109,7 +109,7 @@ public class Admin_Schedule extends AppCompatActivity implements View.OnClickLis
 
 
         /////13092021 end
-       mFirestore.collection("Sunday").document("10-11").get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+       mFirestore.collection(DAY).document("10-11").get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
             @Override
             public void onSuccess(DocumentSnapshot documentSnapshot) {
 
@@ -324,12 +324,41 @@ public class Admin_Schedule extends AppCompatActivity implements View.OnClickLis
       //  Toast.makeText(getApplicationContext(), "SETCOURSE " + dd + tt + " cc " + COURSE, Toast.LENGTH_SHORT).show();
 
 
+
         //fetching course title
         mFirestore.collection(dept+track+"_COURSES").document(COURSE).get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
             @Override
             public void onSuccess(DocumentSnapshot documentSnapshot) {
                 temp_title =documentSnapshot.getString("Title");
+
                 Toast.makeText(getApplicationContext(),dept+track+"_COURSES->"+temp_title,Toast.LENGTH_LONG).show();
+
+                Map<String, Object> profile = new HashMap<>();
+                profile.put("CODE", COURSE);
+                profile.put("CURRENT", COURSE);
+                profile.put("REQ", "");
+                profile.put("STATUS", "-1");
+                profile.put("Title",temp_title);
+
+                //tv.setText(COURSE+"\n"+temp_title);
+
+                db.collection(dd).document(tt).set(profile)
+                        .addOnSuccessListener(new OnSuccessListener<Void>() {
+                            @Override
+                            public void onSuccess(Void aVoid) {
+                                Toast.makeText(getApplicationContext(), "Data Stored Successfully", Toast.LENGTH_SHORT).show();
+                                tv.setText(COURSE+"\n"+temp_title);
+
+                            }
+                        })
+                        .addOnFailureListener(new OnFailureListener() {
+                            @Override
+                            public void onFailure(@NonNull Exception e) {
+
+                                Toast.makeText(getApplicationContext(), "Failed to Store data Try again!", Toast.LENGTH_SHORT).show();
+
+                            }
+                        });
 
             }
         });
@@ -337,30 +366,7 @@ public class Admin_Schedule extends AppCompatActivity implements View.OnClickLis
 
 
 
-        Map<String, Object> profile = new HashMap<>();
-        profile.put("CODE", COURSE);
-        profile.put("CURRENT", COURSE);
-        profile.put("REQ", "");
-        profile.put("STATUS", "-1");
-        profile.put("Title",temp_title);
 
-        tv.setText(COURSE+"\n"+temp_title);
-        db.collection(dd).document(tt).set(profile)
-                .addOnSuccessListener(new OnSuccessListener<Void>() {
-                    @Override
-                    public void onSuccess(Void aVoid) {
-                        Toast.makeText(getApplicationContext(), "Data Stored Successfully", Toast.LENGTH_SHORT).show();
-
-                    }
-                })
-                .addOnFailureListener(new OnFailureListener() {
-                    @Override
-                    public void onFailure(@NonNull Exception e) {
-
-                        Toast.makeText(getApplicationContext(), "Failed to Store data Try again!", Toast.LENGTH_SHORT).show();
-
-                    }
-                });
 
     }
 

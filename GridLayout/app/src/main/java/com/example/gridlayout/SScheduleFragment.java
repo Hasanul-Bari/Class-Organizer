@@ -45,7 +45,9 @@ public class SScheduleFragment extends Fragment {
     private FirebaseFirestore mFirestore;
     private FirebaseFirestore db = FirebaseFirestore.getInstance();
 
-    private String currentdate,dayOfTheWeek;
+    private String currentdate,dayOfTheWeek,courses;
+
+    String  dept, level, semester;
 
     private String t1,t2,t3,t4,t5,t6,code1,code2,code3,code4,code5,code6;
 
@@ -60,7 +62,24 @@ public class SScheduleFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
 
-         View view =inflater.inflate(R.layout.fragment_sschedule, container, false);
+        View view =inflater.inflate(R.layout.fragment_sschedule, container, false);
+
+        Bundle sch = getArguments();
+        if (sch != null) {
+
+            dept = sch.getString("DEPT");
+            level = sch.getString("LEVEL");
+            semester = sch.getString("SEM");
+        }
+
+        if(semester.length()==2){
+            semester="2";
+        }
+        else if(semester.length()==1){
+            semester="1";
+        }
+
+        dept = dept+level+semester;
 
         SimpleDateFormat sdf = new SimpleDateFormat("EEEE");
         Date d = new Date();
@@ -107,6 +126,8 @@ public class SScheduleFragment extends Fragment {
         day.setText("Class schedule for\n"+currentdate+"\n"+dayOfTheWeek);
 
 
+        dayOfTheWeek=dept+"_"+dayOfTheWeek;
+        courses=dept+"_COURSES";
 
 
         mFirestore.collection(dayOfTheWeek).document("LastRead").get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
@@ -169,7 +190,7 @@ public class SScheduleFragment extends Fragment {
 
                 if(code1.equals("NO CLASS")==false)
                 {
-                    mFirestore.collection("COURSES").document(code1).get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+                    mFirestore.collection(courses).document(code1).get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
                         @Override
                         public void onSuccess(DocumentSnapshot documentSnapshot) {
                              t1=documentSnapshot.getString("Title");
@@ -201,7 +222,7 @@ public class SScheduleFragment extends Fragment {
 
                 if(code2.equals("NO CLASS")==false)
                 {
-                    mFirestore.collection("COURSES").document(code2).get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+                    mFirestore.collection(courses).document(code2).get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
                         @Override
                         public void onSuccess(DocumentSnapshot documentSnapshot) {
                              t2=documentSnapshot.getString("Title");
@@ -234,7 +255,7 @@ public class SScheduleFragment extends Fragment {
 
                 if(code3.equals("NO CLASS")==false)
                 {
-                    mFirestore.collection("COURSES").document(code3).get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+                    mFirestore.collection(courses).document(code3).get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
                         @Override
                         public void onSuccess(DocumentSnapshot documentSnapshot) {
                             t3=documentSnapshot.getString("Title");
@@ -269,7 +290,7 @@ public class SScheduleFragment extends Fragment {
 
                 if(code4.equals("NO CLASS")==false)
                 {
-                    mFirestore.collection("COURSES").document(code4).get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+                    mFirestore.collection(courses).document(code4).get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
                         @Override
                         public void onSuccess(DocumentSnapshot documentSnapshot) {
                             t4=documentSnapshot.getString("Title");
@@ -308,7 +329,7 @@ public class SScheduleFragment extends Fragment {
 
                 if(code5.equals("NO CLASS")==false)
                 {
-                    mFirestore.collection("COURSES").document(code5).get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+                    mFirestore.collection(courses).document(code5).get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
                         @Override
                         public void onSuccess(DocumentSnapshot documentSnapshot) {
                             t5=documentSnapshot.getString("Title");
@@ -346,7 +367,7 @@ public class SScheduleFragment extends Fragment {
 
                 if(code6.equals("NO CLASS")==false)
                 {
-                    mFirestore.collection("COURSES").document(code6).get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+                    mFirestore.collection(courses).document(code6).get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
                         @Override
                         public void onSuccess(DocumentSnapshot documentSnapshot) {
                             t6=documentSnapshot.getString("Title");

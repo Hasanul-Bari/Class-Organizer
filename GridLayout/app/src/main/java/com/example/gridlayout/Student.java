@@ -124,7 +124,20 @@ public class Student extends AppCompatActivity {
 
                     case R.id.nav_schedule:
 
-                        getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,new SScheduleFragment()).commit();
+
+                        Fragment schedule=new SScheduleFragment();
+                        FragmentTransaction ft0=getSupportFragmentManager().beginTransaction();
+
+                        Bundle bundle0= new Bundle();
+                        bundle0.putString("DEPT",dept);
+                        bundle0.putString("LEVEL",level);
+                        bundle0.putString("SEM",semester);
+                        schedule.setArguments(bundle0);
+
+
+                        ft0.replace(R.id.fragment_container,schedule).commit();
+
+                        //getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,new SScheduleFragment()).commit();
 
                         break;
                     case R.id.nav_room:

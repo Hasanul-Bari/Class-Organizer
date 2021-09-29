@@ -216,13 +216,13 @@ public class cse_32 extends AppCompatActivity implements View.OnClickListener {
 
         Map<String, Object> profile = new HashMap<>();
         Map<String, Object> profile1 = new HashMap<>();
-        profile.put("CODE", "");
-        profile.put("CURRENT", "");
+        profile.put("CODE", "NO CLASS");
+        profile.put("CURRENT", "NO CLASS");
         profile.put("REQ", "");
-        profile.put("STATUS", "-1");
+        profile.put("STATUS", "0");
         profile.put("Title", "");
 
-        profile1.put("LastRead", "");
+        profile1.put("LastRead", "01/01/1900");
 
         String str = dept + track + "_" + dd;
         for (int i = 0; i < 6; i++)
@@ -230,7 +230,7 @@ public class cse_32 extends AppCompatActivity implements View.OnClickListener {
                     .addOnSuccessListener(new OnSuccessListener<Void>() {
                         @Override
                         public void onSuccess(Void aVoid) {
-                            Toast.makeText(getApplicationContext(), "Data Stored Successfully", Toast.LENGTH_SHORT).show();
+                            //Toast.makeText(getApplicationContext(), "Data Stored Successfully", Toast.LENGTH_SHORT).show();
 
                         }
                     })
@@ -238,7 +238,7 @@ public class cse_32 extends AppCompatActivity implements View.OnClickListener {
                         @Override
                         public void onFailure(@NonNull Exception e) {
 
-                            Toast.makeText(getApplicationContext(), "Failed to Store data Try again!", Toast.LENGTH_SHORT).show();
+                            //Toast.makeText(getApplicationContext(), "Failed to Store data Try again!", Toast.LENGTH_SHORT).show();
 
                         }
                     });
@@ -247,7 +247,7 @@ public class cse_32 extends AppCompatActivity implements View.OnClickListener {
                 .addOnSuccessListener(new OnSuccessListener<Void>() {
                     @Override
                     public void onSuccess(Void aVoid) {
-                        Toast.makeText(getApplicationContext(), "Data Stored Successfully", Toast.LENGTH_SHORT).show();
+                        //Toast.makeText(getApplicationContext(), "Data Stored Successfully", Toast.LENGTH_SHORT).show();
 
                     }
                 })
@@ -255,7 +255,7 @@ public class cse_32 extends AppCompatActivity implements View.OnClickListener {
                     @Override
                     public void onFailure(@NonNull Exception e) {
 
-                        Toast.makeText(getApplicationContext(), "Failed to Store data Try again!", Toast.LENGTH_SHORT).show();
+                        //Toast.makeText(getApplicationContext(), "Failed to Store data Try again!", Toast.LENGTH_SHORT).show();
 
                     }
                 });

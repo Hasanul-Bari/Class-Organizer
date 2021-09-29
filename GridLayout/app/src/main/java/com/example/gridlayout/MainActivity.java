@@ -80,7 +80,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
 
                     }
-                    else if(type.equals("CR")){
+                    /*else if(type.equals("CR")){
 
                         finish();
                         Intent intent =new Intent(MainActivity.this,Student.class);
@@ -91,7 +91,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                         startActivity(intent);
 
 
-                    }
+                    }*/
                 }
             });
 
