@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+
+    android:weightSum="2"
+
+    tools:context=".CR_SignUP">
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="74dp"
+        android:layout_weight="1"
+        android:background="@drawable/wave" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:padding="25dp"
+        >
+
+        <EditText
+            android:layout_marginTop="15dp"
+            android:id="@+id/CRID"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="numberDecimal"
+            android:textColor="#000000"
+            android:hint="Student ID" />
+
+        <EditText
+            android:id="@+id/CREID"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="textEmailAddress"
+            android:textColor="#000000"
+            android:hint="Email address" />
+
+
+
+        <EditText
+            android:id="@+id/CRP"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Password"
+            android:textColor="#000000"
+            android:inputType="textPassword" />
+
+        <EditText
+            android:id="@+id/CRFN"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:hint="Enter Full name"
+            />
+
+
+        <EditText
+            android:id="@+id/CRC"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="number"
+            android:hint="Phone"
+            />
+
+
+
+        <Spinner
+            android:layout_marginTop="5dp"
+            android:id="@+id/CRSPD"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            />
+        <Spinner
+            android:layout_marginTop="5dp"
+            android:id="@+id/CRSPL"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            />
+
+        <Spinner
+            android:layout_marginTop="5dp"
+            android:id="@+id/CRSPS"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            />
+
+
+        <Button
+            android:id="@+id/CRSU"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:layout_marginTop="20dp"
+
+            android:background="@drawable/round_bg"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            android:textStyle="bold"
+            android:textColor="#FFFFFF"
+            android:text="Sign Up" />
+
+
+
+
+
+        <ProgressBar
+            android:id="@+id/CRPB"
+            android:visibility="gone"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:outlineAmbientShadowColor="#ff22"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+
+
+
+
+
+    </LinearLayout>
+
+
+
+
+</LinearLayout>

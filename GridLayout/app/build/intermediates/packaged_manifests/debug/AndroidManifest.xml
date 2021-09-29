@@ -25,6 +25,33 @@
         android:testOnly="true"
         android:theme="@style/AppTheme" >
         <activity
+            android:name="com.example.gridlayout.CR_PROFILE"
+            android:exported="true" />
+        <activity
+            android:name="com.example.gridlayout.CR_SignUP"
+            android:exported="true" />
+        <activity
+            android:name="com.example.gridlayout.Floor0"
+            android:exported="true" />
+        <activity
+            android:name="com.example.gridlayout.ClassRoom_F"
+            android:exported="true" />
+        <activity
+            android:name="com.example.gridlayout.Admin_Menu"
+            android:exported="true" />
+        <activity
+            android:name="com.example.gridlayout.Admin_Schedule"
+            android:exported="true" />
+        <activity
+            android:name="com.example.gridlayout.cse_32"
+            android:exported="true" />
+        <activity
+            android:name="com.example.gridlayout.dept_cse"
+            android:exported="true" />
+        <activity
+            android:name="com.example.gridlayout.Faculty"
+            android:exported="true" />
+        <activity
             android:name="com.example.gridlayout.SignUP_Student"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
@@ -114,6 +141,9 @@
                 android:name="com.google.firebase.components:com.google.firebase.functions.FunctionsRegistrar"
                 android:value="com.google.firebase.components.ComponentRegistrar" />
             <meta-data
+                android:name="com.google.firebase.components:com.google.firebase.inappmessaging.FirebaseInAppMessagingRegistrar"
+                android:value="com.google.firebase.components.ComponentRegistrar" />
+            <meta-data
                 android:name="com.google.firebase.components:com.google.firebase.firestore.FirestoreRegistrar"
                 android:value="com.google.firebase.components.ComponentRegistrar" />
             <meta-data
@@ -126,17 +156,13 @@
                 android:name="com.google.firebase.components:com.google.firebase.iid.Registrar"
                 android:value="com.google.firebase.components.ComponentRegistrar" />
             <meta-data
+                android:name="com.google.firebase.components:com.google.firebase.abt.component.AbtRegistrar"
+                android:value="com.google.firebase.components.ComponentRegistrar" />
+            <meta-data
                 android:name="com.google.firebase.components:com.google.firebase.analytics.connector.internal.AnalyticsConnectorRegistrar"
                 android:value="com.google.firebase.components.ComponentRegistrar" />
             <meta-data
                 android:name="com.google.firebase.components:com.google.firebase.installations.FirebaseInstallationsRegistrar"
-                android:value="com.google.firebase.components.ComponentRegistrar" />
-            <!--
-                This registrar is not defined in the dynamic-module-support sdk itself to allow non-firebase
-                clients to use it as well, by defining this registrar in their own core/common library.
-            -->
-            <meta-data
-                android:name="com.google.firebase.components:com.google.firebase.dynamicloading.DynamicLoadingRegistrar"
                 android:value="com.google.firebase.components.ComponentRegistrar" />
         </service>
         <!--

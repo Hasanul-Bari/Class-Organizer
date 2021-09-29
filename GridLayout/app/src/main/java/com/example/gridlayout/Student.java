@@ -7,6 +7,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.viewpager.widget.ViewPager;
 
 import android.content.DialogInterface;
@@ -26,6 +28,7 @@ import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.messaging.FirebaseMessaging;
 
+
 public class Student extends AppCompatActivity {
 
 
@@ -38,6 +41,7 @@ public class Student extends AppCompatActivity {
     private FirebaseFirestore mFirestore;
     private String userId;
     private AlertDialog.Builder alertdialogbuilder;
+     String CR,dept,level,semester;
 
 
     @Override
@@ -73,6 +77,10 @@ public class Student extends AppCompatActivity {
 
                 String name=documentSnapshot.getString("NAME");
                 String email=documentSnapshot.getString("EMAIL");
+                     CR=documentSnapshot.getString("CR");
+                     dept=documentSnapshot.getString("DEPT");
+                     level=documentSnapshot.getString("LEVEL");
+                     semester=documentSnapshot.getString("SEM");
 
                 email=email.replaceFirst("student.","");
 
@@ -81,6 +89,7 @@ public class Student extends AppCompatActivity {
 
             }
         });
+
 
 
 
@@ -95,6 +104,11 @@ public class Student extends AppCompatActivity {
         getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,new SProfileFragment()).commit();
         navigationView.setCheckedItem(R.id.nav_profile);
 
+
+
+/*        MenuItem item=navigationView.findViewById(R.id.nav_room);
+       item.setVisi
+        this.invalidateOptionsMenu();*/
 
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
@@ -111,6 +125,25 @@ public class Student extends AppCompatActivity {
                     case R.id.nav_schedule:
 
                         getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,new SScheduleFragment()).commit();
+
+                        break;
+                    case R.id.nav_room:
+
+                        //passing data to fragment
+                        //done by tanver 19 09 2021
+
+                        Fragment FloorF=new Floor_Fragment();
+                        FragmentTransaction ft=getSupportFragmentManager().beginTransaction();
+
+                        Bundle bundle= new Bundle();
+                        bundle.putString("CR",CR);
+                        bundle.putString("DEPT",dept);
+                        bundle.putString("LEVEL",level);
+                        bundle.putString("SEM",semester);
+                        FloorF.setArguments(bundle);
+
+
+                       ft.replace(R.id.fragment_container,FloorF).commit();
 
                         break;
 

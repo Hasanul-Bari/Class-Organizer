@@ -11,6 +11,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
@@ -23,7 +24,7 @@ import com.google.firebase.firestore.FirebaseFirestore;
 public class SProfileFragment extends Fragment {
 
 
-    private TextView  Sname,Sid,Semail,Scontact,Sdept;
+    private TextView  Sname,Sid,Semail,Scontact,Sdept,_CR_status,_room;
 
     private FirebaseAuth mAuth;
     private FirebaseFirestore mFirestore;
@@ -55,6 +56,8 @@ public class SProfileFragment extends Fragment {
         Sdept=view.findViewById(R.id.SdeptID);
         Scontact=view.findViewById(R.id.SContactId);
         Semail=view.findViewById(R.id.SEmailid);
+        _CR_status=view.findViewById(R.id.CR_status);
+        _room=view.findViewById(R.id.RoomNo);
 
 
 
@@ -76,11 +79,11 @@ public class SProfileFragment extends Fragment {
                 String ContactNo=documentSnapshot.getString("CONTACT");
                 String dept=documentSnapshot.getString("DEPT");
                 String Email=documentSnapshot.getString("EMAIL");
+                String CR=documentSnapshot.getString("CR");
+                String level=documentSnapshot.getString("LEVEL");
+                String semester=documentSnapshot.getString("SEM");
 
-
-
-
-
+                dept=dept+" L: "+level+" S: "+semester;
 
 
                 Sname.setText(name);
@@ -88,6 +91,21 @@ public class SProfileFragment extends Fragment {
                 Sdept.setText(dept);
                 Semail.setText(Email);
                 Scontact.setText(ContactNo);
+                _CR_status.setText(CR);
+
+
+                String DEPT=dept+" L: "+level+" S: "+semester;
+                Toast.makeText(getActivity(), "Room  0"+dept, Toast.LENGTH_SHORT).show();
+                mFirestore.collection("AR").document(dept).get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+                    @Override
+                    public void onSuccess(DocumentSnapshot documentSnapshot) {
+                        String ROOMNO=documentSnapshot.getString("room");
+                        Toast.makeText(getActivity(), "Room "+ROOMNO, Toast.LENGTH_SHORT).show();
+                        _room.setText(ROOMNO);
+
+                    }
+                });
+
 
             }
         });

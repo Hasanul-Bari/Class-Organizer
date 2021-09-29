@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+
+    tools:context=".dept_cse">
+
+    <TextView
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/myColor"
+        android:textColor="#FFFFFF"
+        android:text="\nAdmin Panel\n "
+        android:gravity="center"
+
+        android:id="@+id/AdminPanel"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+
+        />
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#E2E0E0"
+
+
+        >
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+
+            android:orientation="vertical"
+            android:gravity="center|top"
+            android:padding="5dp"
+            >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/round_bg2"
+                android:layout_margin="5dp"
+                android:orientation="vertical"
+                >
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+
+                    <TextView
+
+                        android:layout_margin="12dp"
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="10dp"
+                        android:text="Level: 3 Semester: II "
+                        android:id="@+id/cse32Level"
+                        android:textSize="20sp"
+
+                        />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="10dp"
+                        android:paddingLeft="10dp"
+                        android:text="Session:"
+                        android:textSize="20sp" />
+                    <TextView
+
+                        android:id="@+id/cse32Session"
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:layout_margin="10dp"
+                        android:paddingLeft="10dp"
+                        android:text="2017"
+                        android:textSize="20sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:weightSum="4"
+                    android:layout_margin="15dp"
+                    android:gravity="center"
+                    >
+
+                    <Button
+
+                        android:id="@+id/cse32_scheduleButton"
+                        android:background="@drawable/confirm_bg"
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="DETAILS"
+                        android:padding="5dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_weight="4"
+
+                        />
+
+                    <!--
+                                        <Button
+
+                                            android:id="@+id/cse32_rescheduleButton"
+                                            android:background="@drawable/decline_bg"
+
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text="Reschedule"
+                                            android:padding="5dp"
+                                            android:layout_weight="1"
+                                            />
+                    -->
+
+
+
+                </LinearLayout>
+            </LinearLayout>
+
+
+
+
+
+
+            <!-- TODO: Update blank fragment layout -->
+
+
+
+
+
+
+
+
+
+
+
+        </LinearLayout>
+
+
+
+
+
+    </ScrollView>
+
+
+
+</LinearLayout>

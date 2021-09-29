@@ -36,8 +36,8 @@ public class SignUP_Student extends AppCompatActivity implements View.OnClickLis
     private TextView tv;
     private FirebaseAuth mAuth;
     private ProgressBar pb;
-    private Spinner spinner;
-    private String dept="SELECT_DEPARTMENT";
+    private Spinner spinner1,spinner2,spinner3;
+    private String dept = "SELECT_DEPARTMENT", level = "SELECT_LEVEL", sem = "SELECT_SEMESTER";
     private DatabaseReference databaseReference;
 
     private FirebaseFirestore db = FirebaseFirestore.getInstance();
@@ -72,18 +72,57 @@ public class SignUP_Student extends AppCompatActivity implements View.OnClickLis
         tv.setOnClickListener(this);
 
 
-        spinner = (Spinner) findViewById(R.id.spinner);
-        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
-                R.array.Department, android.R.layout.simple_spinner_item);
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spinner.setAdapter(adapter);
+        spinner1 = (Spinner) findViewById(R.id.spinner1);
+        ArrayAdapter<CharSequence> adapter1 = ArrayAdapter.createFromResource(this,R.array.Department, android.R.layout.simple_spinner_item);
+        adapter1.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinner1.setAdapter(adapter1);
+
+        spinner2 = (Spinner) findViewById(R.id.spinner2);
+        ArrayAdapter<CharSequence> adapter2 = ArrayAdapter.createFromResource(this,R.array.LEVEL, android.R.layout.simple_spinner_item);
+        adapter2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinner2.setAdapter(adapter2);
+
+        spinner3 = (Spinner) findViewById(R.id.spinner3);
+        ArrayAdapter<CharSequence> adapter3 = ArrayAdapter.createFromResource(this,R.array.SEMESTER, android.R.layout.simple_spinner_item);
+        adapter3.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinner3.setAdapter(adapter3);
 
 
-        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+        spinner1.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                dept=spinner.getSelectedItem().toString();
+                dept=spinner1.getSelectedItem().toString();
                 Toast.makeText(getApplicationContext(),dept,Toast.LENGTH_SHORT).show();
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+
+
+            }
+        });
+
+        spinner2.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                level=spinner2.getSelectedItem().toString();
+                Toast.makeText(getApplicationContext(),level,Toast.LENGTH_SHORT).show();
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+
+
+            }
+        });
+
+        spinner3.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                sem=spinner3.getSelectedItem().toString();
+                Toast.makeText(getApplicationContext(),sem,Toast.LENGTH_SHORT).show();
             }
 
             @Override
@@ -197,9 +236,23 @@ public class SignUP_Student extends AppCompatActivity implements View.OnClickLis
             contact.requestFocus();
             return;
         }
-        if(dept.equals("SELECT_DEPT")){
+        if(dept.equals("SELECT_DEPARTMENT")){
             Toast.makeText(getApplicationContext(),"Select a Department",Toast.LENGTH_SHORT).show();
-            spinner.requestFocus();
+            spinner1.requestFocus();
+            return;
+
+
+        }
+        if(level.equals("SELECT_LEVEL")){
+            Toast.makeText(getApplicationContext(),"Select level",Toast.LENGTH_SHORT).show();
+            spinner2.requestFocus();
+            return;
+
+
+        }
+        if(sem.equals("SELECT_SEMESTER")){
+            Toast.makeText(getApplicationContext(),"Select semester",Toast.LENGTH_SHORT).show();
+            spinner2.requestFocus();
             return;
 
 
@@ -231,6 +284,9 @@ public class SignUP_Student extends AppCompatActivity implements View.OnClickLis
                     profile.put("CONTACT",contact1);
                     profile.put("EMAIL",username);
                     profile.put("ID",SID);
+                    profile.put("LEVEL",level);
+                    profile.put("SEM",sem);
+                    profile.put("CR","No");
 
                     db.collection("STUDENT").document(usrId).set(profile)
                             .addOnSuccessListener(new OnSuccessListener<Void>() {

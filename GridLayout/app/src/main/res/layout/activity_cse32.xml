@@ -1,0 +1,485 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+
+    tools:context=".cse_32">
+
+    <TextView
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/myColor"
+        android:textColor="#FFFFFF"
+        android:text="\nLevel:  Semester: \n"
+        android:gravity="center"
+
+        android:id="@+id/LevelHeading"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+
+        />
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#E2E0E0"
+
+
+        >
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+
+            android:orientation="vertical"
+            android:gravity="center|top"
+            android:padding="5dp"
+            >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/round_bg2"
+                android:layout_margin="5dp"
+                android:orientation="vertical"
+                >
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+
+                    <TextView
+
+                        android:layout_margin="6dp"
+                        android:id="@+id/DAY1"
+                        android:layout_width="match_parent"
+                        android:gravity="center"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="100dp"
+
+                        android:text="Sunday"
+                        android:textSize="20sp"
+
+                        />
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:weightSum="4"
+                    android:layout_margin="15dp"
+                    android:gravity="center"
+                    >
+
+                    <Button
+
+                        android:id="@+id/View_Schedule1"
+                        android:background="@drawable/confirm_bg"
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="View Schedule"
+                        android:padding="5dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_weight="1"
+
+                        />
+
+                    <Button
+
+                        android:id="@+id/Reset_Schedule1"
+                        android:background="@drawable/decline_bg"
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Reschedule"
+                        android:padding="5dp"
+                        android:layout_weight="1"
+                        />
+
+
+
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/round_bg2"
+                android:layout_margin="5dp"
+                android:orientation="vertical"
+                >
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+
+                    <TextView
+
+                        android:layout_margin="6dp"
+                        android:id="@+id/DAY2"
+                        android:layout_width="match_parent"
+                        android:gravity="center"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="100dp"
+
+                        android:text="Monday"
+                        android:textSize="20sp"
+
+                        />
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:weightSum="4"
+                    android:layout_margin="15dp"
+                    android:gravity="center"
+                    >
+
+                    <Button
+
+                        android:id="@+id/View_Schedule2"
+                        android:background="@drawable/confirm_bg"
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="View Schedule"
+                        android:padding="5dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_weight="1"
+
+                        />
+
+                    <Button
+
+                        android:id="@+id/Reset_Schedule2"
+                        android:background="@drawable/decline_bg"
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Reschedule"
+                        android:padding="5dp"
+                        android:layout_weight="1"
+                        />
+
+
+
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/round_bg2"
+                android:layout_margin="5dp"
+                android:orientation="vertical"
+                >
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+
+                    <TextView
+
+                        android:layout_margin="6dp"
+                        android:id="@+id/DAY3"
+                        android:layout_width="match_parent"
+                        android:gravity="center"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="100dp"
+
+                        android:text="Tuesday"
+                        android:textSize="20sp"
+
+                        />
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:weightSum="4"
+                    android:layout_margin="15dp"
+                    android:gravity="center"
+                    >
+
+                    <Button
+
+                        android:id="@+id/View_Schedule3"
+                        android:background="@drawable/confirm_bg"
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="View Schedule"
+                        android:padding="5dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_weight="1"
+
+                        />
+
+                    <Button
+
+                        android:id="@+id/Reset_Schedule3"
+                        android:background="@drawable/decline_bg"
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Reschedule"
+                        android:padding="5dp"
+                        android:layout_weight="1"
+                        />
+
+
+
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/round_bg2"
+                android:layout_margin="5dp"
+                android:orientation="vertical"
+                >
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+
+                    <TextView
+
+                        android:layout_margin="6dp"
+                        android:id="@+id/DAY4"
+                        android:layout_width="match_parent"
+                        android:gravity="center"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="100dp"
+
+                        android:text="Wednesday"
+                        android:textSize="20sp"
+
+                        />
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:weightSum="4"
+                    android:layout_margin="15dp"
+                    android:gravity="center"
+                    >
+
+                    <Button
+
+                        android:id="@+id/View_Schedule4"
+                        android:background="@drawable/confirm_bg"
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="View Schedule"
+                        android:padding="5dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_weight="1"
+
+                        />
+
+                    <Button
+
+                        android:id="@+id/Reset_Schedule4"
+                        android:background="@drawable/decline_bg"
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Reschedule"
+                        android:padding="5dp"
+                        android:layout_weight="1"
+                        />
+
+
+
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/round_bg2"
+                android:layout_margin="5dp"
+                android:orientation="vertical"
+                >
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+
+                    <TextView
+
+                        android:layout_margin="6dp"
+                        android:id="@+id/DAY5"
+                        android:layout_width="match_parent"
+                        android:gravity="center"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="100dp"
+
+                        android:text="Thursday"
+                        android:textSize="20sp"
+
+                        />
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:weightSum="4"
+                    android:layout_margin="15dp"
+                    android:gravity="center"
+                    >
+
+                    <Button
+
+                        android:id="@+id/View_Schedule5"
+                        android:background="@drawable/confirm_bg"
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="View Schedule"
+                        android:padding="5dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_weight="1"
+
+                        />
+
+                    <Button
+
+                        android:id="@+id/Reset_Schedule5"
+                        android:background="@drawable/decline_bg"
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Reschedule"
+                        android:padding="5dp"
+                        android:layout_weight="1"
+                        />
+
+
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/round_bg2"
+                android:layout_margin="5dp"
+                android:orientation="vertical">
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+
+                    <TextView
+
+                        android:layout_margin="10dp"
+
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="10dp"
+                        android:gravity="center"
+                        android:text="ADD COURSE"
+                        android:textSize="20sp"
+
+                        />
+
+
+
+                </LinearLayout>
+
+
+                <EditText
+                    android:id="@+id/CourseCode"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:layout_weight="1"
+                    android:ems="10"
+                    android:inputType="textPersonName"
+                    android:text="COURSE_CODE" />
+
+                <EditText
+                    android:id="@+id/CourseTitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="10dp"
+                    android:layout_weight="1"
+                    android:ems="10"
+                    android:inputType="textPersonName"
+                    android:text="COURSE_TITLE" />
+                <Button
+
+                    android:id="@+id/OKCourse"
+                    android:background="@drawable/confirm_bg"
+
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="Confirm"
+                    android:padding="5dp"
+                    android:layout_margin="10dp"
+
+
+                    />
+            </LinearLayout>
+
+
+
+            <!-- TODO: Update blank fragment layout -->
+
+
+
+
+
+
+
+
+
+
+
+        </LinearLayout>
+
+
+
+
+
+
+
+    </ScrollView>
+
+</LinearLayout>

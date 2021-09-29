@@ -15,7 +15,7 @@ import com.google.firebase.firestore.FirebaseFirestore;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
-    private Button stu,teacher;
+    private Button stu,teacher,admin,cr;
     private FirebaseAuth mAuth;
     private FirebaseFirestore mFirestore;
     private String usrId;
@@ -33,9 +33,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         stu=findViewById(R.id.button2);
         teacher=findViewById(R.id.button);
+        admin=findViewById(R.id.button3);
+        cr=findViewById(R.id.button4);
 
         stu.setOnClickListener(this);
         teacher.setOnClickListener(this);
+        admin.setOnClickListener(this);
+        cr.setOnClickListener(this);
 
     }
 
@@ -69,6 +73,19 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                         finish();
                         Intent intent =new Intent(MainActivity.this,Student.class);
                         intent.putExtra("user",usrId);
+                        intent.putExtra("CR_status","None");
+                        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+
+                        startActivity(intent);
+
+
+                    }
+                    else if(type.equals("CR")){
+
+                        finish();
+                        Intent intent =new Intent(MainActivity.this,Student.class);
+                        intent.putExtra("user",usrId);
+                        intent.putExtra("CR_Status","YES");
                         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
 
                         startActivity(intent);
@@ -104,6 +121,28 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 //
             Intent intent=new Intent(MainActivity.this,SignIn_Student.class);
            startActivity(intent);
+
+        }
+        else if(v.getId()==R.id.button3){
+//
+            // Toast.makeText(getApplicationContext(),"hp = 1",Toast.LENGTH_LONG).show();
+            // getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,new AdminHome()).commit();
+
+       Intent intent=new Intent(MainActivity.this,Admin_Menu.class);
+            //   Toast.makeText(getApplicationContext(),"hp = 2",Toast.LENGTH_LONG).show();
+            startActivity(intent);
+         Toast.makeText(getApplicationContext(),"Admin Panel clicked",Toast.LENGTH_LONG).show();
+
+        }
+        else if(v.getId()==R.id.button4){
+//
+            // Toast.makeText(getApplicationContext(),"hp = 1",Toast.LENGTH_LONG).show();
+            // getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,new AdminHome()).commit();
+
+          Intent intent=new Intent(MainActivity.this,CR_PROFILE.class);
+
+            startActivity(intent);
+         Toast.makeText(getApplicationContext(),"CR",Toast.LENGTH_LONG).show();
 
         }
 
