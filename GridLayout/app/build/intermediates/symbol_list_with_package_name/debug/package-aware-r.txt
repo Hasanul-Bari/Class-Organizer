@@ -1104,12 +1104,14 @@ drawable design_snackbar_background
 drawable faculty
 drawable googleg_disabled_color_18
 drawable googleg_standard_color_18
+drawable ic_files
 drawable ic_launcher_background
 drawable ic_launcher_foreground
 drawable ic_mtrl_chip_checked_black
 drawable ic_mtrl_chip_checked_circle
 drawable ic_mtrl_chip_close_circle
 drawable ic_profile
+drawable ic_room
 drawable ic_schedule
 drawable ic_signout
 drawable mtrl_snackbar_background
@@ -1404,6 +1406,7 @@ id customPanel
 id dark
 id decor_content_parent
 id default_activity_button
+id dept_lev_sem
 id design_bottom_sheet
 id design_menu_item_action_area
 id design_menu_item_action_area_stub
@@ -1422,6 +1425,7 @@ id enterAlwaysCollapsed
 id exitUntilCollapsed
 id expand_activities_button
 id expanded_menu
+id fileNameId
 id fill
 id fill_horizontal
 id fill_vertical
@@ -1465,6 +1469,10 @@ id nav_headertvEmailID
 id nav_headertvNameID
 id nav_profile
 id nav_room
+id nav_s_files
+id nav_s_profile
+id nav_s_room
+id nav_s_schedule
 id nav_schedule
 id nav_signout
 id nav_view
@@ -1489,6 +1497,7 @@ id progressBar
 id progress_circular
 id progress_horizontal
 id radio
+id recylerViewId
 id right
 id right_icon
 id right_side
@@ -1511,6 +1520,7 @@ id search_mag_icon
 id search_plate
 id search_src_text
 id search_voice_btn
+id selectFileId
 id select_dialog_listview
 id selected
 id shortcut
@@ -1587,6 +1597,7 @@ id unchecked
 id uniform
 id unlabeled
 id up
+id uploadFileId
 id useLogo
 id view_offset_helper
 id visible
@@ -1681,6 +1692,8 @@ layout design_navigation_item_subheader
 layout design_navigation_menu
 layout design_navigation_menu_item
 layout design_text_input_password_icon
+layout fileitem_layout
+layout fragment_files
 layout fragment_floor_
 layout fragment_room
 layout fragment_sprofile
@@ -1711,6 +1724,7 @@ layout select_dialog_multichoice_material
 layout select_dialog_singlechoice_material
 layout support_simple_spinner_dropdown_item
 menu drawer_menu
+menu drawer_s_menu
 menu menu_layout
 mipmap ic_launcher
 mipmap ic_launcher_round

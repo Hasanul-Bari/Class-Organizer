@@ -1103,12 +1103,14 @@ int drawable design_snackbar_background 0x7f08008d
 int drawable faculty 0x7f08008e
 int drawable googleg_disabled_color_18 0x7f08008f
 int drawable googleg_standard_color_18 0x7f080090
+int drawable ic_files 0x7f0800b4
 int drawable ic_launcher_background 0x7f080091
 int drawable ic_launcher_foreground 0x7f080092
 int drawable ic_mtrl_chip_checked_black 0x7f080093
 int drawable ic_mtrl_chip_checked_circle 0x7f080094
 int drawable ic_mtrl_chip_close_circle 0x7f080095
 int drawable ic_profile 0x7f080096
+int drawable ic_room 0x7f0800b5
 int drawable ic_schedule 0x7f080097
 int drawable ic_signout 0x7f080098
 int drawable mtrl_snackbar_background 0x7f080099
@@ -1403,6 +1405,7 @@ int id customPanel 0x7f090105
 int id dark 0x7f090106
 int id decor_content_parent 0x7f090107
 int id default_activity_button 0x7f090108
+int id dept_lev_sem 0x7f0901c7
 int id design_bottom_sheet 0x7f090109
 int id design_menu_item_action_area 0x7f09010a
 int id design_menu_item_action_area_stub 0x7f09010b
@@ -1421,6 +1424,7 @@ int id enterAlwaysCollapsed 0x7f090117
 int id exitUntilCollapsed 0x7f090118
 int id expand_activities_button 0x7f090119
 int id expanded_menu 0x7f09011a
+int id fileNameId 0x7f0901cd
 int id fill 0x7f09011b
 int id fill_horizontal 0x7f09011c
 int id fill_vertical 0x7f09011d
@@ -1464,6 +1468,10 @@ int id nav_headertvEmailID 0x7f090142
 int id nav_headertvNameID 0x7f090143
 int id nav_profile 0x7f090144
 int id nav_room 0x7f090145
+int id nav_s_files 0x7f0901c8
+int id nav_s_profile 0x7f0901c9
+int id nav_s_room 0x7f0901ca
+int id nav_s_schedule 0x7f0901cb
 int id nav_schedule 0x7f090146
 int id nav_signout 0x7f090147
 int id nav_view 0x7f090148
@@ -1488,6 +1496,7 @@ int id progressBar 0x7f09015a
 int id progress_circular 0x7f09015b
 int id progress_horizontal 0x7f09015c
 int id radio 0x7f09015d
+int id recylerViewId 0x7f0901cc
 int id right 0x7f09015e
 int id right_icon 0x7f09015f
 int id right_side 0x7f090160
@@ -1510,6 +1519,7 @@ int id search_mag_icon 0x7f090170
 int id search_plate 0x7f090171
 int id search_src_text 0x7f090172
 int id search_voice_btn 0x7f090173
+int id selectFileId 0x7f0901ce
 int id select_dialog_listview 0x7f090174
 int id selected 0x7f090175
 int id shortcut 0x7f090176
@@ -1586,6 +1596,7 @@ int id unchecked 0x7f0901bc
 int id uniform 0x7f0901bd
 int id unlabeled 0x7f0901be
 int id up 0x7f0901bf
+int id uploadFileId 0x7f0901cf
 int id useLogo 0x7f0901c0
 int id view_offset_helper 0x7f0901c1
 int id visible 0x7f0901c2
@@ -1680,6 +1691,8 @@ int layout design_navigation_item_subheader 0x7f0c0038
 int layout design_navigation_menu 0x7f0c0039
 int layout design_navigation_menu_item 0x7f0c003a
 int layout design_text_input_password_icon 0x7f0c003b
+int layout fileitem_layout 0x7f0c005a
+int layout fragment_files 0x7f0c0059
 int layout fragment_floor_ 0x7f0c003c
 int layout fragment_room 0x7f0c003d
 int layout fragment_sprofile 0x7f0c003e
@@ -1710,6 +1723,7 @@ int layout select_dialog_multichoice_material 0x7f0c0056
 int layout select_dialog_singlechoice_material 0x7f0c0057
 int layout support_simple_spinner_dropdown_item 0x7f0c0058
 int menu drawer_menu 0x7f0d0000
+int menu drawer_s_menu 0x7f0d0002
 int menu menu_layout 0x7f0d0001
 int mipmap ic_launcher 0x7f0e0000
 int mipmap ic_launcher_round 0x7f0e0001

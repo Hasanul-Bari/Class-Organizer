@@ -41,7 +41,7 @@ public class Student extends AppCompatActivity {
     private FirebaseFirestore mFirestore;
     private String userId;
     private AlertDialog.Builder alertdialogbuilder;
-     String CR,dept,level,semester;
+     String CR,dept,level,semester,name,email;
 
 
     @Override
@@ -75,8 +75,8 @@ public class Student extends AppCompatActivity {
             public void onSuccess(DocumentSnapshot documentSnapshot) {
 
 
-                String name=documentSnapshot.getString("NAME");
-                String email=documentSnapshot.getString("EMAIL");
+                name=documentSnapshot.getString("NAME");
+                email=documentSnapshot.getString("EMAIL");
                      CR=documentSnapshot.getString("CR");
                      dept=documentSnapshot.getString("DEPT");
                      level=documentSnapshot.getString("LEVEL");
@@ -116,13 +116,13 @@ public class Student extends AppCompatActivity {
 
                 switch(menuItem.getItemId()){
 
-                    case R.id.nav_profile:
+                    case R.id.nav_s_profile:
 
                         getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,new SProfileFragment()).commit();
 
                         break;
 
-                    case R.id.nav_schedule:
+                    case R.id.nav_s_schedule:
 
 
                         Fragment schedule=new SScheduleFragment();
@@ -140,7 +140,7 @@ public class Student extends AppCompatActivity {
                         //getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,new SScheduleFragment()).commit();
 
                         break;
-                    case R.id.nav_room:
+                    case R.id.nav_s_room:
 
                         //passing data to fragment
                         //done by tanver 19 09 2021
@@ -159,6 +159,27 @@ public class Student extends AppCompatActivity {
                        ft.replace(R.id.fragment_container,FloorF).commit();
 
                         break;
+
+                    case R.id.nav_s_files:
+
+                        Fragment files=new FilesFragment();
+                        FragmentTransaction ft2=getSupportFragmentManager().beginTransaction();
+
+                        Bundle bundle2= new Bundle();
+                        bundle2.putString("DEPT",dept);
+                        bundle2.putString("LEVEL",level);
+                        bundle2.putString("SEM",semester);
+                        bundle2.putString("NAME",name);
+                        files.setArguments(bundle2);
+
+
+                        ft2.replace(R.id.fragment_container,files).commit();
+
+
+                        break;
+
+
+
 
                     case R.id.nav_signout:
 

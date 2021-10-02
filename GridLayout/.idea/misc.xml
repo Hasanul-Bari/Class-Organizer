@@ -3,10 +3,21 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="app/src/main/res/drawable/ic_room.xml" value="0.209375" />
         <entry key="app/src/main/res/layout/activity_admin_schedule.xml" value="0.19322916666666667" />
         <entry key="app/src/main/res/layout/activity_dept_cse.xml" value="0.19322916666666667" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/activity_sign_in.xml" value="0.19322916666666667" />
         <entry key="app/src/main/res/layout/activity_sign_up.xml" value="0.19322916666666667" />
+        <entry key="app/src/main/res/layout/activity_student.xml" value="0.19322916666666667" />
+        <entry key="app/src/main/res/layout/fileitem_layout.xml" value="0.33" />
+        <entry key="app/src/main/res/layout/fragment_files.xml" value="0.33" />
+        <entry key="app/src/main/res/layout/fragment_sschedule.xml" value="0.19322916666666667" />
+        <entry key="app/src/main/res/layout/nav_header.xml" value="0.19322916666666667" />
+        <entry key="app/src/main/res/menu/drawer_menu.xml" value="0.19322916666666667" />
+        <entry key="app/src/main/res/menu/drawer_menuS.xml" value="0.19322916666666667" />
+        <entry key="app/src/main/res/menu/drawer_s_menu.xml" value="0.19322916666666667" />
+        <entry key="app/src/main/res/menu/menu_layout.xml" value="0.19322916666666667" />
       </map>
     </option>
   </component>
