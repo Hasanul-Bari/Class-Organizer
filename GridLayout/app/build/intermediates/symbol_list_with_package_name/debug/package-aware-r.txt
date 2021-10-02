@@ -1416,6 +1416,7 @@ id dialog_button
 id dimensions
 id direct
 id disableHome
+id downloadFileButtonId
 id drawer_layout
 id edit_query
 id end
@@ -1425,6 +1426,7 @@ id enterAlwaysCollapsed
 id exitUntilCollapsed
 id expand_activities_button
 id expanded_menu
+id fileDetailsTVid
 id fileNameId
 id fill
 id fill_horizontal

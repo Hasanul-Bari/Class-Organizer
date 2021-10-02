@@ -10,6 +10,7 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.provider.OpenableColumns;
@@ -24,8 +25,11 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.OnProgressListener;
 import com.google.firebase.storage.StorageReference;
@@ -47,8 +51,9 @@ public class FilesFragment extends Fragment implements View.OnClickListener{
     private RecyclerView recyclerView;
 
     private List<FileItem> fileList;
+    private FileAdapter fileAdapter;
 
-    DatabaseReference databaseReference;
+    DatabaseReference databaseReference,databaseReference2;
     StorageReference storageReference;
 
     ProgressDialog progressDialog;
@@ -84,6 +89,7 @@ public class FilesFragment extends Fragment implements View.OnClickListener{
         }
 
         databaseReference= FirebaseDatabase.getInstance().getReference("Files/"+dept+"_"+level+"_"+semester);
+        databaseReference2= FirebaseDatabase.getInstance().getReference("Files/"+dept+"_"+level+"_"+semester);
         storageReference= FirebaseStorage.getInstance().getReference("Files/"+dept+"_"+level+"_"+semester);
 
         intro=view.findViewById(R.id.dept_lev_sem);
@@ -96,9 +102,36 @@ public class FilesFragment extends Fragment implements View.OnClickListener{
 
         recyclerView=view.findViewById(R.id.recylerViewId);
         recyclerView.setHasFixedSize(true);
-        //recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
 
         fileList=new ArrayList<>();
+
+
+        //reading file details from firebase and attach the adapter
+
+        databaseReference2.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+
+                for(DataSnapshot dataSnapshot1: snapshot.getChildren()){
+
+                    FileItem fileItem=dataSnapshot1.getValue(FileItem.class);
+                    fileList.add(fileItem);
+                }
+
+                Toast.makeText(getActivity(),"File read done" ,Toast.LENGTH_SHORT).show();
+
+                fileAdapter=new FileAdapter(getActivity(),fileList);
+                recyclerView.setAdapter(fileAdapter);
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
 
 
 
@@ -207,6 +240,7 @@ public class FilesFragment extends Fragment implements View.OnClickListener{
                             progressDialog.dismiss();
                         }
                         else{
+                            progressDialog.dismiss();
                             Toast.makeText(getActivity(),"File upload failed",Toast.LENGTH_SHORT).show();
 
                         }
