@@ -1105,6 +1105,7 @@ drawable faculty
 drawable googleg_disabled_color_18
 drawable googleg_standard_color_18
 drawable ic_files
+drawable ic_group
 drawable ic_launcher_background
 drawable ic_launcher_foreground
 drawable ic_mtrl_chip_checked_black
@@ -1113,6 +1114,7 @@ drawable ic_mtrl_chip_close_circle
 drawable ic_profile
 drawable ic_room
 drawable ic_schedule
+drawable ic_send
 drawable ic_signout
 drawable mtrl_snackbar_background
 drawable mtrl_tabs_default_indicator
@@ -1472,6 +1474,7 @@ id nav_headertvNameID
 id nav_profile
 id nav_room
 id nav_s_files
+id nav_s_group
 id nav_s_profile
 id nav_s_room
 id nav_s_schedule
@@ -1698,6 +1701,7 @@ layout fileitem_layout
 layout fragment_files
 layout fragment_floor_
 layout fragment_room
+layout fragment_sgroup
 layout fragment_sprofile
 layout fragment_sschedule
 layout fragment_test_fragment

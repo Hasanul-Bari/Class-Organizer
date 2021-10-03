@@ -1104,6 +1104,7 @@ int drawable faculty 0x7f08008e
 int drawable googleg_disabled_color_18 0x7f08008f
 int drawable googleg_standard_color_18 0x7f080090
 int drawable ic_files 0x7f080091
+int drawable ic_group 0x7f0800b6
 int drawable ic_launcher_background 0x7f080092
 int drawable ic_launcher_foreground 0x7f080093
 int drawable ic_mtrl_chip_checked_black 0x7f080094
@@ -1112,6 +1113,7 @@ int drawable ic_mtrl_chip_close_circle 0x7f080096
 int drawable ic_profile 0x7f080097
 int drawable ic_room 0x7f080098
 int drawable ic_schedule 0x7f080099
+int drawable ic_send 0x7f0800b7
 int drawable ic_signout 0x7f08009a
 int drawable mtrl_snackbar_background 0x7f08009b
 int drawable mtrl_tabs_default_indicator 0x7f08009c
@@ -1471,6 +1473,7 @@ int id nav_headertvNameID 0x7f090147
 int id nav_profile 0x7f090148
 int id nav_room 0x7f090149
 int id nav_s_files 0x7f09014a
+int id nav_s_group 0x7f0901d2
 int id nav_s_profile 0x7f09014b
 int id nav_s_room 0x7f09014c
 int id nav_s_schedule 0x7f09014d
@@ -1697,6 +1700,7 @@ int layout fileitem_layout 0x7f0c003c
 int layout fragment_files 0x7f0c003d
 int layout fragment_floor_ 0x7f0c003e
 int layout fragment_room 0x7f0c003f
+int layout fragment_sgroup 0x7f0c005b
 int layout fragment_sprofile 0x7f0c0040
 int layout fragment_sschedule 0x7f0c0041
 int layout fragment_test_fragment 0x7f0c0042

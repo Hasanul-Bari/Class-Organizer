@@ -179,6 +179,25 @@ public class Student extends AppCompatActivity {
                         break;
 
 
+                    case R.id.nav_s_group:
+
+                        Fragment group=new SGroupFragment();
+                        FragmentTransaction ft3=getSupportFragmentManager().beginTransaction();
+
+                        Bundle bundle3= new Bundle();
+                        bundle3.putString("DEPT",dept);
+                        bundle3.putString("LEVEL",level);
+                        bundle3.putString("SEM",semester);
+                        bundle3.putString("NAME",name);
+                        group.setArguments(bundle3);
+
+
+                        ft3.replace(R.id.fragment_container,group).commit();
+
+
+                        break;
+
+
 
 
                     case R.id.nav_signout:
