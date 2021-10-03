@@ -236,8 +236,8 @@ public class FilesFragment extends Fragment implements View.OnClickListener{
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {
                         if(task.isSuccessful()){
-                            Toast.makeText(getActivity(),"File uploaded successfully",Toast.LENGTH_SHORT).show();
                             progressDialog.dismiss();
+                            Toast.makeText(getActivity(),"File uploaded successfully",Toast.LENGTH_SHORT).show();
                         }
                         else{
                             progressDialog.dismiss();
@@ -250,7 +250,8 @@ public class FilesFragment extends Fragment implements View.OnClickListener{
         }).addOnFailureListener(new OnFailureListener() {
             @Override
             public void onFailure(@NonNull Exception e) {
-                Toast.makeText(getActivity(),"File upload failed",Toast.LENGTH_SHORT).show();
+                progressDialog.dismiss();
+                Toast.makeText(getActivity(),"File upload failed "+e.getMessage(),Toast.LENGTH_SHORT).show();
             }
         }).addOnProgressListener(new OnProgressListener<UploadTask.TaskSnapshot>() {
             @Override
