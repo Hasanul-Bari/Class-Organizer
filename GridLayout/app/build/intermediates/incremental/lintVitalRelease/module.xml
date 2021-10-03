@@ -1,0 +1,19 @@
+<lint-module
+    format="1"
+    dir="/home/hasanul-bari/Documents/project 302/Software-Project/GridLayout/app"
+    name=":app"
+    type="APP"
+    maven="GridLayout:app:"
+    gradle="7.0.2"
+    buildFolder="build"
+    bootClassPath="/home/hasanul-bari/Android/Sdk/platforms/android-29/android.jar:/home/hasanul-bari/Android/Sdk/build-tools/30.0.2/core-lambda-stubs.jar"
+    javaSourceLevel="1.8"
+    compileTarget="android-29"
+    neverShrinking="true">
+  <lintOptions
+      abortOnError="true"
+      absolutePaths="true"
+      checkReleaseBuilds="true"
+      explainIssues="true"/>
+  <variant name="release"/>
+</lint-module>

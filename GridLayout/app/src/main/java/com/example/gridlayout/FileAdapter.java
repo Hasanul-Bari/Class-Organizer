@@ -75,7 +75,6 @@ public class FileAdapter extends RecyclerView.Adapter<FileAdapter.FileViewHolder
             fileTextView=itemView.findViewById(R.id.fileDetailsTVid);
             downloadFileButton=itemView.findViewById(R.id.downloadFileButtonId);
 
-            // download the clicked file
             downloadFileButton.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -89,7 +88,7 @@ public class FileAdapter extends RecyclerView.Adapter<FileAdapter.FileViewHolder
 
                     FileItem fileItem=fileList.get(pos);
 
-                    File localFile = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS),fileItem.getFileName());
+                    File localFile = new File(context.getExternalFilesDir(Environment.DIRECTORY_DOWNLOADS),fileItem.getFileName());
 
                     StorageReference storageReference= FirebaseStorage.getInstance().getReferenceFromUrl(fileItem.getFileUrl());
 

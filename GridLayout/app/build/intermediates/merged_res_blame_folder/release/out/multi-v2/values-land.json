@@ -4,7 +4,17 @@
             "outputFile": "/home/hasanul-bari/Documents/project 302/Software-Project/GridLayout/app/build/intermediates/incremental/mergeReleaseResources/merged.dir/values-land/values-land.xml",
             "map": [
                 {
-                    "source": "/home/hasanul-bari/.gradle/caches/transforms-2/files-2.1/4894d513aef7f3f0f61f8d2337ff0d64/material-1.0.0/res/values-land/values-land.xml",
+                    "source": "/home/hasanul-bari/.gradle/caches/transforms-3/f62186e3246efd297dc8f850fc6e4432/transformed/appcompat-1.1.0/res/values-land/values-land.xml",
+                    "from": {
+                        "startLines": "2,3,4",
+                        "startColumns": "4,4,4",
+                        "startOffsets": "55,125,196",
+                        "endColumns": "69,70,67",
+                        "endOffsets": "120,191,259"
+                    }
+                },
+                {
+                    "source": "/home/hasanul-bari/.gradle/caches/transforms-3/c1d917f0d8b742a4fe13604996629ddf/transformed/material-1.0.0/res/values-land/values-land.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
@@ -20,16 +30,6 @@
                         "endLines": "8",
                         "endColumns": "10",
                         "endOffsets": "431"
-                    }
-                },
-                {
-                    "source": "/home/hasanul-bari/.gradle/caches/transforms-2/files-2.1/655dc37091b53a1d451eef0026f359d4/appcompat-1.1.0/res/values-land/values-land.xml",
-                    "from": {
-                        "startLines": "2,3,4",
-                        "startColumns": "4,4,4",
-                        "startOffsets": "55,125,196",
-                        "endColumns": "69,70,67",
-                        "endOffsets": "120,191,259"
                     }
                 }
             ]

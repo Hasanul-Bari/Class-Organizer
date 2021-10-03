@@ -11,6 +11,49 @@
     <string-array name="Department">
         <item>SELECT_DEPARTMENT</item>
         <item>CSE</item>
+        <item>EEE</item>
+        <item>ECE</item>
+    </string-array>
+    <string-array name="LEVEL">
+        <item>SELECT_LEVEL</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+    </string-array>
+    <string-array name="SEMESTER">
+        <item>SELECT_SEMESTER</item>
+        <item>I</item>
+        <item>II</item>
+
+    </string-array>
+    <string-array name="_CSE32Courses">
+        <item>CHANGE_COURSE</item>
+        <item>CSE 352</item>
+        <item>CSE 353</item>
+        <item>CSE 354</item>
+        <item>CSE 355</item>
+        <item>CSE 356</item>
+        <item>CSE 357</item>
+        <item>CSE 358</item>
+        <item>CSE 359</item>
+        <item>CSE 360</item>
+        <item>CSE 361</item>
+        <item>NO CLASS</item>
+    </string-array>
+    <string-array name="_EEE32Courses">
+        <item>CHANGE_COURSE</item>
+        <item>CSE 352</item>
+        <item>CSE 353</item>
+        <item>CSE 354</item>
+        <item>CSE 355</item>
+        <item>CSE 356</item>
+        <item>CSE 357</item>
+        <item>CSE 358</item>
+        <item>CSE 359</item>
+        <item>CSE 360</item>
+        <item>CSE 361</item>
+        <item>NO CLASS</item>
     </string-array>
     <attr format="boolean" name="barrierAllowsGoneWidgets"/>
     <attr format="enum" name="barrierDirection">

@@ -1,210 +1,298 @@
 [
     {
-        "merged": "/home/hasanul-bari/Documents/project 302/Software-Project/GridLayout/app/build/intermediates/res/merged/release/drawable_ic_signout.xml.flat",
-        "source": "/home/hasanul-bari/Documents/project 302/Software-Project/GridLayout/app/src/main/res/drawable/ic_signout.xml"
-    },
-    {
-        "merged": "/home/hasanul-bari/Documents/project 302/Software-Project/GridLayout/app/build/intermediates/res/merged/release/layout_fragment_sprofile.xml.flat",
-        "source": "/home/hasanul-bari/Documents/project 302/Software-Project/GridLayout/app/src/main/res/layout/fragment_sprofile.xml"
-    },
-    {
-        "merged": "/home/hasanul-bari/Documents/project 302/Software-Project/GridLayout/app/build/intermediates/res/merged/release/drawable_custom_shape_circular.xml.flat",
-        "source": "/home/hasanul-bari/Documents/project 302/Software-Project/GridLayout/app/src/main/res/drawable/custom_shape_circular.xml"
-    },
-    {
-        "merged": "/home/hasanul-bari/Documents/project 302/Software-Project/GridLayout/app/build/intermediates/res/merged/release/drawable_background.jpg.flat",
-        "source": "/home/hasanul-bari/Documents/project 302/Software-Project/GridLayout/app/src/main/res/drawable/background.jpg"
-    },
-    {
-        "merged": "/home/hasanul-bari/Documents/project 302/Software-Project/GridLayout/app/build/intermediates/res/merged/release/drawable_alerticon.png.flat",
-        "source": "/home/hasanul-bari/Documents/project 302/Software-Project/GridLayout/app/src/main/res/drawable/alerticon.png"
-    },
-    {
-        "merged": "/home/hasanul-bari/Documents/project 302/Software-Project/GridLayout/app/build/intermediates/res/merged/release/drawable_custom_shapt1.xml.flat",
-        "source": "/home/hasanul-bari/Documents/project 302/Software-Project/GridLayout/app/src/main/res/drawable/custom_shapt1.xml"
-    },
-    {
-        "merged": "/home/hasanul-bari/Documents/project 302/Software-Project/GridLayout/app/build/intermediates/res/merged/release/menu_menu_layout.xml.flat",
-        "source": "/home/hasanul-bari/Documents/project 302/Software-Project/GridLayout/app/src/main/res/menu/menu_layout.xml"
-    },
-    {
-        "merged": "/home/hasanul-bari/Documents/project 302/Software-Project/GridLayout/app/build/intermediates/res/merged/release/mipmap-mdpi_ic_launcher_round.png.flat",
-        "source": "/home/hasanul-bari/Documents/project 302/Software-Project/GridLayout/app/src/main/res/mipmap-mdpi/ic_launcher_round.png"
-    },
-    {
-        "merged": "/home/hasanul-bari/Documents/project 302/Software-Project/GridLayout/app/build/intermediates/res/merged/release/mipmap-xxhdpi_ic_launcher_round.png.flat",
-        "source": "/home/hasanul-bari/Documents/project 302/Software-Project/GridLayout/app/src/main/res/mipmap-xxhdpi/ic_launcher_round.png"
-    },
-    {
-        "merged": "/home/hasanul-bari/Documents/project 302/Software-Project/GridLayout/app/build/intermediates/res/merged/release/mipmap-hdpi_ic_launcher_round.png.flat",
-        "source": "/home/hasanul-bari/Documents/project 302/Software-Project/GridLayout/app/src/main/res/mipmap-hdpi/ic_launcher_round.png"
-    },
-    {
-        "merged": "/home/hasanul-bari/Documents/project 302/Software-Project/GridLayout/app/build/intermediates/res/merged/release/mipmap-xhdpi_ic_launcher.png.flat",
-        "source": "/home/hasanul-bari/Documents/project 302/Software-Project/GridLayout/app/src/main/res/mipmap-xhdpi/ic_launcher.png"
-    },
-    {
-        "merged": "/home/hasanul-bari/Documents/project 302/Software-Project/GridLayout/app/build/intermediates/res/merged/release/layout_activity_sign_in.xml.flat",
-        "source": "/home/hasanul-bari/Documents/project 302/Software-Project/GridLayout/app/src/main/res/layout/activity_sign_in.xml"
-    },
-    {
-        "merged": "/home/hasanul-bari/Documents/project 302/Software-Project/GridLayout/app/build/intermediates/res/merged/release/drawable_student.png.flat",
-        "source": "/home/hasanul-bari/Documents/project 302/Software-Project/GridLayout/app/src/main/res/drawable/student.png"
-    },
-    {
-        "merged": "/home/hasanul-bari/Documents/project 302/Software-Project/GridLayout/app/build/intermediates/res/merged/release/layout_activity_main.xml.flat",
-        "source": "/home/hasanul-bari/Documents/project 302/Software-Project/GridLayout/app/src/main/res/layout/activity_main.xml"
-    },
-    {
-        "merged": "/home/hasanul-bari/Documents/project 302/Software-Project/GridLayout/app/build/intermediates/res/merged/release/drawable_confirm_buttonshape.xml.flat",
-        "source": "/home/hasanul-bari/Documents/project 302/Software-Project/GridLayout/app/src/main/res/drawable/confirm_buttonshape.xml"
-    },
-    {
-        "merged": "/home/hasanul-bari/Documents/project 302/Software-Project/GridLayout/app/build/intermediates/res/merged/release/drawable_ic_profile.xml.flat",
-        "source": "/home/hasanul-bari/Documents/project 302/Software-Project/GridLayout/app/src/main/res/drawable/ic_profile.xml"
-    },
-    {
-        "merged": "/home/hasanul-bari/Documents/project 302/Software-Project/GridLayout/app/build/intermediates/res/merged/release/layout_activity_profile.xml.flat",
-        "source": "/home/hasanul-bari/Documents/project 302/Software-Project/GridLayout/app/src/main/res/layout/activity_profile.xml"
-    },
-    {
-        "merged": "/home/hasanul-bari/Documents/project 302/Software-Project/GridLayout/app/build/intermediates/res/merged/release/drawable_ic_schedule.xml.flat",
+        "merged": "/home/hasanul-bari/Documents/project 302/Software-Project/GridLayout/app/build/intermediates/merged_res/release/drawable_ic_schedule.xml.flat",
         "source": "/home/hasanul-bari/Documents/project 302/Software-Project/GridLayout/app/src/main/res/drawable/ic_schedule.xml"
     },
     {
-        "merged": "/home/hasanul-bari/Documents/project 302/Software-Project/GridLayout/app/build/intermediates/res/merged/release/layout_activity_student.xml.flat",
-        "source": "/home/hasanul-bari/Documents/project 302/Software-Project/GridLayout/app/src/main/res/layout/activity_student.xml"
+        "merged": "/home/hasanul-bari/Documents/project 302/Software-Project/GridLayout/app/build/intermediates/merged_res/release/layout_activity_cr_signup.xml.flat",
+        "source": "/home/hasanul-bari/Documents/project 302/Software-Project/GridLayout/app/src/main/res/layout/activity_cr_signup.xml"
     },
     {
-        "merged": "/home/hasanul-bari/Documents/project 302/Software-Project/GridLayout/app/build/intermediates/res/merged/release/drawable_wave3.xml.flat",
-        "source": "/home/hasanul-bari/Documents/project 302/Software-Project/GridLayout/app/src/main/res/drawable/wave3.xml"
-    },
-    {
-        "merged": "/home/hasanul-bari/Documents/project 302/Software-Project/GridLayout/app/build/intermediates/res/merged/release/layout_fragment_tprofile.xml.flat",
+        "merged": "/home/hasanul-bari/Documents/project 302/Software-Project/GridLayout/app/build/intermediates/merged_res/release/layout_fragment_tprofile.xml.flat",
         "source": "/home/hasanul-bari/Documents/project 302/Software-Project/GridLayout/app/src/main/res/layout/fragment_tprofile.xml"
     },
     {
-        "merged": "/home/hasanul-bari/Documents/project 302/Software-Project/GridLayout/app/build/intermediates/res/merged/release/drawable_buttonshape.xml.flat",
-        "source": "/home/hasanul-bari/Documents/project 302/Software-Project/GridLayout/app/src/main/res/drawable/buttonshape.xml"
-    },
-    {
-        "merged": "/home/hasanul-bari/Documents/project 302/Software-Project/GridLayout/app/build/intermediates/res/merged/release/mipmap-hdpi_ic_launcher.png.flat",
-        "source": "/home/hasanul-bari/Documents/project 302/Software-Project/GridLayout/app/src/main/res/mipmap-hdpi/ic_launcher.png"
-    },
-    {
-        "merged": "/home/hasanul-bari/Documents/project 302/Software-Project/GridLayout/app/build/intermediates/res/merged/release/layout_activity_teacher.xml.flat",
-        "source": "/home/hasanul-bari/Documents/project 302/Software-Project/GridLayout/app/src/main/res/layout/activity_teacher.xml"
-    },
-    {
-        "merged": "/home/hasanul-bari/Documents/project 302/Software-Project/GridLayout/app/build/intermediates/res/merged/release/drawable_round_bg2.xml.flat",
-        "source": "/home/hasanul-bari/Documents/project 302/Software-Project/GridLayout/app/src/main/res/drawable/round_bg2.xml"
-    },
-    {
-        "merged": "/home/hasanul-bari/Documents/project 302/Software-Project/GridLayout/app/build/intermediates/res/merged/release/drawable_confirm_bg.xml.flat",
-        "source": "/home/hasanul-bari/Documents/project 302/Software-Project/GridLayout/app/src/main/res/drawable/confirm_bg.xml"
-    },
-    {
-        "merged": "/home/hasanul-bari/Documents/project 302/Software-Project/GridLayout/app/build/intermediates/res/merged/release/mipmap-anydpi-v26_ic_launcher_round.xml.flat",
-        "source": "/home/hasanul-bari/Documents/project 302/Software-Project/GridLayout/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml"
-    },
-    {
-        "merged": "/home/hasanul-bari/Documents/project 302/Software-Project/GridLayout/app/build/intermediates/res/merged/release/drawable_round_border.xml.flat",
-        "source": "/home/hasanul-bari/Documents/project 302/Software-Project/GridLayout/app/src/main/res/drawable/round_border.xml"
-    },
-    {
-        "merged": "/home/hasanul-bari/Documents/project 302/Software-Project/GridLayout/app/build/intermediates/res/merged/release/drawable-anydpi-v24_ic_launcher_foreground.xml.flat",
-        "source": "/home/hasanul-bari/Documents/project 302/Software-Project/GridLayout/app/build/generated/res/pngs/release/drawable-anydpi-v24/ic_launcher_foreground.xml"
-    },
-    {
-        "merged": "/home/hasanul-bari/Documents/project 302/Software-Project/GridLayout/app/build/intermediates/res/merged/release/mipmap-anydpi-v26_ic_launcher.xml.flat",
-        "source": "/home/hasanul-bari/Documents/project 302/Software-Project/GridLayout/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml"
-    },
-    {
-        "merged": "/home/hasanul-bari/Documents/project 302/Software-Project/GridLayout/app/build/intermediates/res/merged/release/layout_nav_header.xml.flat",
-        "source": "/home/hasanul-bari/Documents/project 302/Software-Project/GridLayout/app/src/main/res/layout/nav_header.xml"
-    },
-    {
-        "merged": "/home/hasanul-bari/Documents/project 302/Software-Project/GridLayout/app/build/intermediates/res/merged/release/layout_activity_sign_up__student.xml.flat",
-        "source": "/home/hasanul-bari/Documents/project 302/Software-Project/GridLayout/app/src/main/res/layout/activity_sign_up__student.xml"
-    },
-    {
-        "merged": "/home/hasanul-bari/Documents/project 302/Software-Project/GridLayout/app/build/intermediates/res/merged/release/mipmap-xxhdpi_ic_launcher.png.flat",
-        "source": "/home/hasanul-bari/Documents/project 302/Software-Project/GridLayout/app/src/main/res/mipmap-xxhdpi/ic_launcher.png"
-    },
-    {
-        "merged": "/home/hasanul-bari/Documents/project 302/Software-Project/GridLayout/app/build/intermediates/res/merged/release/mipmap-xhdpi_ic_launcher_round.png.flat",
+        "merged": "/home/hasanul-bari/Documents/project 302/Software-Project/GridLayout/app/build/intermediates/merged_res/release/mipmap-xhdpi_ic_launcher_round.png.flat",
         "source": "/home/hasanul-bari/Documents/project 302/Software-Project/GridLayout/app/src/main/res/mipmap-xhdpi/ic_launcher_round.png"
     },
     {
-        "merged": "/home/hasanul-bari/Documents/project 302/Software-Project/GridLayout/app/build/intermediates/res/merged/release/drawable_teacher.png.flat",
-        "source": "/home/hasanul-bari/Documents/project 302/Software-Project/GridLayout/app/src/main/res/drawable/teacher.png"
+        "merged": "/home/hasanul-bari/Documents/project 302/Software-Project/GridLayout/app/build/intermediates/merged_res/release/drawable_ic_signout.xml.flat",
+        "source": "/home/hasanul-bari/Documents/project 302/Software-Project/GridLayout/app/src/main/res/drawable/ic_signout.xml"
     },
     {
-        "merged": "/home/hasanul-bari/Documents/project 302/Software-Project/GridLayout/app/build/intermediates/res/merged/release/drawable_bg.png.flat",
-        "source": "/home/hasanul-bari/Documents/project 302/Software-Project/GridLayout/app/src/main/res/drawable/bg.png"
+        "merged": "/home/hasanul-bari/Documents/project 302/Software-Project/GridLayout/app/build/intermediates/merged_res/release/mipmap-mdpi_ic_launcher_round.png.flat",
+        "source": "/home/hasanul-bari/Documents/project 302/Software-Project/GridLayout/app/src/main/res/mipmap-mdpi/ic_launcher_round.png"
     },
     {
-        "merged": "/home/hasanul-bari/Documents/project 302/Software-Project/GridLayout/app/build/intermediates/res/merged/release/drawable_wave2.xml.flat",
-        "source": "/home/hasanul-bari/Documents/project 302/Software-Project/GridLayout/app/src/main/res/drawable/wave2.xml"
-    },
-    {
-        "merged": "/home/hasanul-bari/Documents/project 302/Software-Project/GridLayout/app/build/intermediates/res/merged/release/drawable_decline_bg.xml.flat",
-        "source": "/home/hasanul-bari/Documents/project 302/Software-Project/GridLayout/app/src/main/res/drawable/decline_bg.xml"
-    },
-    {
-        "merged": "/home/hasanul-bari/Documents/project 302/Software-Project/GridLayout/app/build/intermediates/res/merged/release/drawable_bg1.jpg.flat",
-        "source": "/home/hasanul-bari/Documents/project 302/Software-Project/GridLayout/app/src/main/res/drawable/bg1.jpg"
-    },
-    {
-        "merged": "/home/hasanul-bari/Documents/project 302/Software-Project/GridLayout/app/build/intermediates/res/merged/release/mipmap-xxxhdpi_ic_launcher.png.flat",
-        "source": "/home/hasanul-bari/Documents/project 302/Software-Project/GridLayout/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png"
-    },
-    {
-        "merged": "/home/hasanul-bari/Documents/project 302/Software-Project/GridLayout/app/build/intermediates/res/merged/release/mipmap-mdpi_ic_launcher.png.flat",
-        "source": "/home/hasanul-bari/Documents/project 302/Software-Project/GridLayout/app/src/main/res/mipmap-mdpi/ic_launcher.png"
-    },
-    {
-        "merged": "/home/hasanul-bari/Documents/project 302/Software-Project/GridLayout/app/build/intermediates/res/merged/release/drawable_ic_launcher_background.xml.flat",
-        "source": "/home/hasanul-bari/Documents/project 302/Software-Project/GridLayout/app/src/main/res/drawable/ic_launcher_background.xml"
-    },
-    {
-        "merged": "/home/hasanul-bari/Documents/project 302/Software-Project/GridLayout/app/build/intermediates/res/merged/release/drawable_computer.png.flat",
-        "source": "/home/hasanul-bari/Documents/project 302/Software-Project/GridLayout/app/src/main/res/drawable/computer.png"
-    },
-    {
-        "merged": "/home/hasanul-bari/Documents/project 302/Software-Project/GridLayout/app/build/intermediates/res/merged/release/mipmap-xxxhdpi_ic_launcher_round.png.flat",
-        "source": "/home/hasanul-bari/Documents/project 302/Software-Project/GridLayout/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.png"
-    },
-    {
-        "merged": "/home/hasanul-bari/Documents/project 302/Software-Project/GridLayout/app/build/intermediates/res/merged/release/layout_fragment_sschedule.xml.flat",
-        "source": "/home/hasanul-bari/Documents/project 302/Software-Project/GridLayout/app/src/main/res/layout/fragment_sschedule.xml"
-    },
-    {
-        "merged": "/home/hasanul-bari/Documents/project 302/Software-Project/GridLayout/app/build/intermediates/res/merged/release/layout_activity_sign_up.xml.flat",
-        "source": "/home/hasanul-bari/Documents/project 302/Software-Project/GridLayout/app/src/main/res/layout/activity_sign_up.xml"
-    },
-    {
-        "merged": "/home/hasanul-bari/Documents/project 302/Software-Project/GridLayout/app/build/intermediates/res/merged/release/drawable_request_bg.xml.flat",
-        "source": "/home/hasanul-bari/Documents/project 302/Software-Project/GridLayout/app/src/main/res/drawable/request_bg.xml"
-    },
-    {
-        "merged": "/home/hasanul-bari/Documents/project 302/Software-Project/GridLayout/app/build/intermediates/res/merged/release/layout_activity_sign_in__student.xml.flat",
-        "source": "/home/hasanul-bari/Documents/project 302/Software-Project/GridLayout/app/src/main/res/layout/activity_sign_in__student.xml"
-    },
-    {
-        "merged": "/home/hasanul-bari/Documents/project 302/Software-Project/GridLayout/app/build/intermediates/res/merged/release/layout_fragment_tschedule.xml.flat",
-        "source": "/home/hasanul-bari/Documents/project 302/Software-Project/GridLayout/app/src/main/res/layout/fragment_tschedule.xml"
-    },
-    {
-        "merged": "/home/hasanul-bari/Documents/project 302/Software-Project/GridLayout/app/build/intermediates/res/merged/release/menu_drawer_menu.xml.flat",
-        "source": "/home/hasanul-bari/Documents/project 302/Software-Project/GridLayout/app/src/main/res/menu/drawer_menu.xml"
-    },
-    {
-        "merged": "/home/hasanul-bari/Documents/project 302/Software-Project/GridLayout/app/build/intermediates/res/merged/release/drawable_wave.xml.flat",
+        "merged": "/home/hasanul-bari/Documents/project 302/Software-Project/GridLayout/app/build/intermediates/merged_res/release/drawable_wave.xml.flat",
         "source": "/home/hasanul-bari/Documents/project 302/Software-Project/GridLayout/app/src/main/res/drawable/wave.xml"
     },
     {
-        "merged": "/home/hasanul-bari/Documents/project 302/Software-Project/GridLayout/app/build/intermediates/res/merged/release/drawable_round_bg.xml.flat",
+        "merged": "/home/hasanul-bari/Documents/project 302/Software-Project/GridLayout/app/build/intermediates/merged_res/release/drawable_computer.png.flat",
+        "source": "/home/hasanul-bari/Documents/project 302/Software-Project/GridLayout/app/src/main/res/drawable/computer.png"
+    },
+    {
+        "merged": "/home/hasanul-bari/Documents/project 302/Software-Project/GridLayout/app/build/intermediates/merged_res/release/mipmap-xxxhdpi_ic_launcher.png.flat",
+        "source": "/home/hasanul-bari/Documents/project 302/Software-Project/GridLayout/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "/home/hasanul-bari/Documents/project 302/Software-Project/GridLayout/app/build/intermediates/merged_res/release/mipmap-xhdpi_ic_launcher.png.flat",
+        "source": "/home/hasanul-bari/Documents/project 302/Software-Project/GridLayout/app/src/main/res/mipmap-xhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "/home/hasanul-bari/Documents/project 302/Software-Project/GridLayout/app/build/intermediates/merged_res/release/layout_activity_teacher.xml.flat",
+        "source": "/home/hasanul-bari/Documents/project 302/Software-Project/GridLayout/app/src/main/res/layout/activity_teacher.xml"
+    },
+    {
+        "merged": "/home/hasanul-bari/Documents/project 302/Software-Project/GridLayout/app/build/intermediates/merged_res/release/drawable_background.jpg.flat",
+        "source": "/home/hasanul-bari/Documents/project 302/Software-Project/GridLayout/app/src/main/res/drawable/background.jpg"
+    },
+    {
+        "merged": "/home/hasanul-bari/Documents/project 302/Software-Project/GridLayout/app/build/intermediates/merged_res/release/layout_fileitem_layout.xml.flat",
+        "source": "/home/hasanul-bari/Documents/project 302/Software-Project/GridLayout/app/src/main/res/layout/fileitem_layout.xml"
+    },
+    {
+        "merged": "/home/hasanul-bari/Documents/project 302/Software-Project/GridLayout/app/build/intermediates/merged_res/release/drawable_ic_profile.xml.flat",
+        "source": "/home/hasanul-bari/Documents/project 302/Software-Project/GridLayout/app/src/main/res/drawable/ic_profile.xml"
+    },
+    {
+        "merged": "/home/hasanul-bari/Documents/project 302/Software-Project/GridLayout/app/build/intermediates/merged_res/release/layout_fragment_tschedule.xml.flat",
+        "source": "/home/hasanul-bari/Documents/project 302/Software-Project/GridLayout/app/src/main/res/layout/fragment_tschedule.xml"
+    },
+    {
+        "merged": "/home/hasanul-bari/Documents/project 302/Software-Project/GridLayout/app/build/intermediates/merged_res/release/menu_drawer_s_menu.xml.flat",
+        "source": "/home/hasanul-bari/Documents/project 302/Software-Project/GridLayout/app/src/main/res/menu/drawer_s_menu.xml"
+    },
+    {
+        "merged": "/home/hasanul-bari/Documents/project 302/Software-Project/GridLayout/app/build/intermediates/merged_res/release/drawable_teacher.png.flat",
+        "source": "/home/hasanul-bari/Documents/project 302/Software-Project/GridLayout/app/src/main/res/drawable/teacher.png"
+    },
+    {
+        "merged": "/home/hasanul-bari/Documents/project 302/Software-Project/GridLayout/app/build/intermediates/merged_res/release/layout_activity_admin_schedule.xml.flat",
+        "source": "/home/hasanul-bari/Documents/project 302/Software-Project/GridLayout/app/src/main/res/layout/activity_admin_schedule.xml"
+    },
+    {
+        "merged": "/home/hasanul-bari/Documents/project 302/Software-Project/GridLayout/app/build/intermediates/merged_res/release/drawable_wazed.jpg.flat",
+        "source": "/home/hasanul-bari/Documents/project 302/Software-Project/GridLayout/app/src/main/res/drawable/wazed.jpg"
+    },
+    {
+        "merged": "/home/hasanul-bari/Documents/project 302/Software-Project/GridLayout/app/build/intermediates/merged_res/release/layout_activity_sign_in.xml.flat",
+        "source": "/home/hasanul-bari/Documents/project 302/Software-Project/GridLayout/app/src/main/res/layout/activity_sign_in.xml"
+    },
+    {
+        "merged": "/home/hasanul-bari/Documents/project 302/Software-Project/GridLayout/app/build/intermediates/merged_res/release/drawable_bg1.jpg.flat",
+        "source": "/home/hasanul-bari/Documents/project 302/Software-Project/GridLayout/app/src/main/res/drawable/bg1.jpg"
+    },
+    {
+        "merged": "/home/hasanul-bari/Documents/project 302/Software-Project/GridLayout/app/build/intermediates/merged_res/release/layout_activity_sign_in__student.xml.flat",
+        "source": "/home/hasanul-bari/Documents/project 302/Software-Project/GridLayout/app/src/main/res/layout/activity_sign_in__student.xml"
+    },
+    {
+        "merged": "/home/hasanul-bari/Documents/project 302/Software-Project/GridLayout/app/build/intermediates/merged_res/release/drawable_ic_files.xml.flat",
+        "source": "/home/hasanul-bari/Documents/project 302/Software-Project/GridLayout/app/src/main/res/drawable/ic_files.xml"
+    },
+    {
+        "merged": "/home/hasanul-bari/Documents/project 302/Software-Project/GridLayout/app/build/intermediates/merged_res/release/mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "/home/hasanul-bari/Documents/project 302/Software-Project/GridLayout/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml"
+    },
+    {
+        "merged": "/home/hasanul-bari/Documents/project 302/Software-Project/GridLayout/app/build/intermediates/merged_res/release/layout_fragment_room.xml.flat",
+        "source": "/home/hasanul-bari/Documents/project 302/Software-Project/GridLayout/app/src/main/res/layout/fragment_room.xml"
+    },
+    {
+        "merged": "/home/hasanul-bari/Documents/project 302/Software-Project/GridLayout/app/build/intermediates/merged_res/release/drawable_round_border.xml.flat",
+        "source": "/home/hasanul-bari/Documents/project 302/Software-Project/GridLayout/app/src/main/res/drawable/round_border.xml"
+    },
+    {
+        "merged": "/home/hasanul-bari/Documents/project 302/Software-Project/GridLayout/app/build/intermediates/merged_res/release/layout_activity_profile.xml.flat",
+        "source": "/home/hasanul-bari/Documents/project 302/Software-Project/GridLayout/app/src/main/res/layout/activity_profile.xml"
+    },
+    {
+        "merged": "/home/hasanul-bari/Documents/project 302/Software-Project/GridLayout/app/build/intermediates/merged_res/release/drawable_confirm_buttonshape.xml.flat",
+        "source": "/home/hasanul-bari/Documents/project 302/Software-Project/GridLayout/app/src/main/res/drawable/confirm_buttonshape.xml"
+    },
+    {
+        "merged": "/home/hasanul-bari/Documents/project 302/Software-Project/GridLayout/app/build/intermediates/merged_res/release/drawable_faculty.jpg.flat",
+        "source": "/home/hasanul-bari/Documents/project 302/Software-Project/GridLayout/app/src/main/res/drawable/faculty.jpg"
+    },
+    {
+        "merged": "/home/hasanul-bari/Documents/project 302/Software-Project/GridLayout/app/build/intermediates/merged_res/release/drawable_buttonshape.xml.flat",
+        "source": "/home/hasanul-bari/Documents/project 302/Software-Project/GridLayout/app/src/main/res/drawable/buttonshape.xml"
+    },
+    {
+        "merged": "/home/hasanul-bari/Documents/project 302/Software-Project/GridLayout/app/build/intermediates/merged_res/release/mipmap-xxxhdpi_ic_launcher_round.png.flat",
+        "source": "/home/hasanul-bari/Documents/project 302/Software-Project/GridLayout/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "/home/hasanul-bari/Documents/project 302/Software-Project/GridLayout/app/build/intermediates/merged_res/release/drawable_decline_bg.xml.flat",
+        "source": "/home/hasanul-bari/Documents/project 302/Software-Project/GridLayout/app/src/main/res/drawable/decline_bg.xml"
+    },
+    {
+        "merged": "/home/hasanul-bari/Documents/project 302/Software-Project/GridLayout/app/build/intermediates/merged_res/release/mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "/home/hasanul-bari/Documents/project 302/Software-Project/GridLayout/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml"
+    },
+    {
+        "merged": "/home/hasanul-bari/Documents/project 302/Software-Project/GridLayout/app/build/intermediates/merged_res/release/drawable_wave2.xml.flat",
+        "source": "/home/hasanul-bari/Documents/project 302/Software-Project/GridLayout/app/src/main/res/drawable/wave2.xml"
+    },
+    {
+        "merged": "/home/hasanul-bari/Documents/project 302/Software-Project/GridLayout/app/build/intermediates/merged_res/release/drawable_admin2.png.flat",
+        "source": "/home/hasanul-bari/Documents/project 302/Software-Project/GridLayout/app/src/main/res/drawable/admin2.png"
+    },
+    {
+        "merged": "/home/hasanul-bari/Documents/project 302/Software-Project/GridLayout/app/build/intermediates/merged_res/release/drawable_bg.png.flat",
+        "source": "/home/hasanul-bari/Documents/project 302/Software-Project/GridLayout/app/src/main/res/drawable/bg.png"
+    },
+    {
+        "merged": "/home/hasanul-bari/Documents/project 302/Software-Project/GridLayout/app/build/intermediates/merged_res/release/layout_activity_sign_up.xml.flat",
+        "source": "/home/hasanul-bari/Documents/project 302/Software-Project/GridLayout/app/src/main/res/layout/activity_sign_up.xml"
+    },
+    {
+        "merged": "/home/hasanul-bari/Documents/project 302/Software-Project/GridLayout/app/build/intermediates/merged_res/release/drawable_custom_shape_circular.xml.flat",
+        "source": "/home/hasanul-bari/Documents/project 302/Software-Project/GridLayout/app/src/main/res/drawable/custom_shape_circular.xml"
+    },
+    {
+        "merged": "/home/hasanul-bari/Documents/project 302/Software-Project/GridLayout/app/build/intermediates/merged_res/release/drawable_ic_launcher_background.xml.flat",
+        "source": "/home/hasanul-bari/Documents/project 302/Software-Project/GridLayout/app/src/main/res/drawable/ic_launcher_background.xml"
+    },
+    {
+        "merged": "/home/hasanul-bari/Documents/project 302/Software-Project/GridLayout/app/build/intermediates/merged_res/release/drawable_admin.png.flat",
+        "source": "/home/hasanul-bari/Documents/project 302/Software-Project/GridLayout/app/src/main/res/drawable/admin.png"
+    },
+    {
+        "merged": "/home/hasanul-bari/Documents/project 302/Software-Project/GridLayout/app/build/intermediates/merged_res/release/drawable_custom_shapt1.xml.flat",
+        "source": "/home/hasanul-bari/Documents/project 302/Software-Project/GridLayout/app/src/main/res/drawable/custom_shapt1.xml"
+    },
+    {
+        "merged": "/home/hasanul-bari/Documents/project 302/Software-Project/GridLayout/app/build/intermediates/merged_res/release/layout_activity_student.xml.flat",
+        "source": "/home/hasanul-bari/Documents/project 302/Software-Project/GridLayout/app/src/main/res/layout/activity_student.xml"
+    },
+    {
+        "merged": "/home/hasanul-bari/Documents/project 302/Software-Project/GridLayout/app/build/intermediates/merged_res/release/layout_activity_main.xml.flat",
+        "source": "/home/hasanul-bari/Documents/project 302/Software-Project/GridLayout/app/src/main/res/layout/activity_main.xml"
+    },
+    {
+        "merged": "/home/hasanul-bari/Documents/project 302/Software-Project/GridLayout/app/build/intermediates/merged_res/release/menu_menu_layout.xml.flat",
+        "source": "/home/hasanul-bari/Documents/project 302/Software-Project/GridLayout/app/src/main/res/menu/menu_layout.xml"
+    },
+    {
+        "merged": "/home/hasanul-bari/Documents/project 302/Software-Project/GridLayout/app/build/intermediates/merged_res/release/drawable_confirm_bg.xml.flat",
+        "source": "/home/hasanul-bari/Documents/project 302/Software-Project/GridLayout/app/src/main/res/drawable/confirm_bg.xml"
+    },
+    {
+        "merged": "/home/hasanul-bari/Documents/project 302/Software-Project/GridLayout/app/build/intermediates/merged_res/release/mipmap-mdpi_ic_launcher.png.flat",
+        "source": "/home/hasanul-bari/Documents/project 302/Software-Project/GridLayout/app/src/main/res/mipmap-mdpi/ic_launcher.png"
+    },
+    {
+        "merged": "/home/hasanul-bari/Documents/project 302/Software-Project/GridLayout/app/build/intermediates/merged_res/release/drawable_wave3.xml.flat",
+        "source": "/home/hasanul-bari/Documents/project 302/Software-Project/GridLayout/app/src/main/res/drawable/wave3.xml"
+    },
+    {
+        "merged": "/home/hasanul-bari/Documents/project 302/Software-Project/GridLayout/app/build/intermediates/merged_res/release/layout_activity_floor0.xml.flat",
+        "source": "/home/hasanul-bari/Documents/project 302/Software-Project/GridLayout/app/src/main/res/layout/activity_floor0.xml"
+    },
+    {
+        "merged": "/home/hasanul-bari/Documents/project 302/Software-Project/GridLayout/app/build/intermediates/merged_res/release/drawable_student.png.flat",
+        "source": "/home/hasanul-bari/Documents/project 302/Software-Project/GridLayout/app/src/main/res/drawable/student.png"
+    },
+    {
+        "merged": "/home/hasanul-bari/Documents/project 302/Software-Project/GridLayout/app/build/intermediates/merged_res/release/drawable_alerticon.png.flat",
+        "source": "/home/hasanul-bari/Documents/project 302/Software-Project/GridLayout/app/src/main/res/drawable/alerticon.png"
+    },
+    {
+        "merged": "/home/hasanul-bari/Documents/project 302/Software-Project/GridLayout/app/build/intermediates/merged_res/release/layout_activity_dept_cse.xml.flat",
+        "source": "/home/hasanul-bari/Documents/project 302/Software-Project/GridLayout/app/src/main/res/layout/activity_dept_cse.xml"
+    },
+    {
+        "merged": "/home/hasanul-bari/Documents/project 302/Software-Project/GridLayout/app/build/intermediates/merged_res/release/layout_fragment_files.xml.flat",
+        "source": "/home/hasanul-bari/Documents/project 302/Software-Project/GridLayout/app/src/main/res/layout/fragment_files.xml"
+    },
+    {
+        "merged": "/home/hasanul-bari/Documents/project 302/Software-Project/GridLayout/app/build/intermediates/merged_res/release/drawable_request_bg.xml.flat",
+        "source": "/home/hasanul-bari/Documents/project 302/Software-Project/GridLayout/app/src/main/res/drawable/request_bg.xml"
+    },
+    {
+        "merged": "/home/hasanul-bari/Documents/project 302/Software-Project/GridLayout/app/build/intermediates/merged_res/release/mipmap-xxhdpi_ic_launcher_round.png.flat",
+        "source": "/home/hasanul-bari/Documents/project 302/Software-Project/GridLayout/app/src/main/res/mipmap-xxhdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "/home/hasanul-bari/Documents/project 302/Software-Project/GridLayout/app/build/intermediates/merged_res/release/drawable_classroom.PNG.flat",
+        "source": "/home/hasanul-bari/Documents/project 302/Software-Project/GridLayout/app/src/main/res/drawable/classroom.PNG"
+    },
+    {
+        "merged": "/home/hasanul-bari/Documents/project 302/Software-Project/GridLayout/app/build/intermediates/merged_res/release/drawable-anydpi-v24_ic_launcher_foreground.xml.flat",
+        "source": "/home/hasanul-bari/Documents/project 302/Software-Project/GridLayout/app/build/generated/res/pngs/release/drawable-anydpi-v24/ic_launcher_foreground.xml"
+    },
+    {
+        "merged": "/home/hasanul-bari/Documents/project 302/Software-Project/GridLayout/app/build/intermediates/merged_res/release/layout_activity_cr_profile.xml.flat",
+        "source": "/home/hasanul-bari/Documents/project 302/Software-Project/GridLayout/app/src/main/res/layout/activity_cr_profile.xml"
+    },
+    {
+        "merged": "/home/hasanul-bari/Documents/project 302/Software-Project/GridLayout/app/build/intermediates/merged_res/release/mipmap-hdpi_ic_launcher_round.png.flat",
+        "source": "/home/hasanul-bari/Documents/project 302/Software-Project/GridLayout/app/src/main/res/mipmap-hdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "/home/hasanul-bari/Documents/project 302/Software-Project/GridLayout/app/build/intermediates/merged_res/release/mipmap-hdpi_ic_launcher.png.flat",
+        "source": "/home/hasanul-bari/Documents/project 302/Software-Project/GridLayout/app/src/main/res/mipmap-hdpi/ic_launcher.png"
+    },
+    {
+        "merged": "/home/hasanul-bari/Documents/project 302/Software-Project/GridLayout/app/build/intermediates/merged_res/release/drawable_ic_room.xml.flat",
+        "source": "/home/hasanul-bari/Documents/project 302/Software-Project/GridLayout/app/src/main/res/drawable/ic_room.xml"
+    },
+    {
+        "merged": "/home/hasanul-bari/Documents/project 302/Software-Project/GridLayout/app/build/intermediates/merged_res/release/drawable_round_bg2.xml.flat",
+        "source": "/home/hasanul-bari/Documents/project 302/Software-Project/GridLayout/app/src/main/res/drawable/round_bg2.xml"
+    },
+    {
+        "merged": "/home/hasanul-bari/Documents/project 302/Software-Project/GridLayout/app/build/intermediates/merged_res/release/layout_fragment_sprofile.xml.flat",
+        "source": "/home/hasanul-bari/Documents/project 302/Software-Project/GridLayout/app/src/main/res/layout/fragment_sprofile.xml"
+    },
+    {
+        "merged": "/home/hasanul-bari/Documents/project 302/Software-Project/GridLayout/app/build/intermediates/merged_res/release/layout_activity_faculty.xml.flat",
+        "source": "/home/hasanul-bari/Documents/project 302/Software-Project/GridLayout/app/src/main/res/layout/activity_faculty.xml"
+    },
+    {
+        "merged": "/home/hasanul-bari/Documents/project 302/Software-Project/GridLayout/app/build/intermediates/merged_res/release/layout_activity_cse32.xml.flat",
+        "source": "/home/hasanul-bari/Documents/project 302/Software-Project/GridLayout/app/src/main/res/layout/activity_cse32.xml"
+    },
+    {
+        "merged": "/home/hasanul-bari/Documents/project 302/Software-Project/GridLayout/app/build/intermediates/merged_res/release/layout_nav_header.xml.flat",
+        "source": "/home/hasanul-bari/Documents/project 302/Software-Project/GridLayout/app/src/main/res/layout/nav_header.xml"
+    },
+    {
+        "merged": "/home/hasanul-bari/Documents/project 302/Software-Project/GridLayout/app/build/intermediates/merged_res/release/layout_fragment_sschedule.xml.flat",
+        "source": "/home/hasanul-bari/Documents/project 302/Software-Project/GridLayout/app/src/main/res/layout/fragment_sschedule.xml"
+    },
+    {
+        "merged": "/home/hasanul-bari/Documents/project 302/Software-Project/GridLayout/app/build/intermediates/merged_res/release/mipmap-xxhdpi_ic_launcher.png.flat",
+        "source": "/home/hasanul-bari/Documents/project 302/Software-Project/GridLayout/app/src/main/res/mipmap-xxhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "/home/hasanul-bari/Documents/project 302/Software-Project/GridLayout/app/build/intermediates/merged_res/release/menu_drawer_menu.xml.flat",
+        "source": "/home/hasanul-bari/Documents/project 302/Software-Project/GridLayout/app/src/main/res/menu/drawer_menu.xml"
+    },
+    {
+        "merged": "/home/hasanul-bari/Documents/project 302/Software-Project/GridLayout/app/build/intermediates/merged_res/release/layout_fragment_test_fragment.xml.flat",
+        "source": "/home/hasanul-bari/Documents/project 302/Software-Project/GridLayout/app/src/main/res/layout/fragment_test_fragment.xml"
+    },
+    {
+        "merged": "/home/hasanul-bari/Documents/project 302/Software-Project/GridLayout/app/build/intermediates/merged_res/release/layout_activity_class_room_f.xml.flat",
+        "source": "/home/hasanul-bari/Documents/project 302/Software-Project/GridLayout/app/src/main/res/layout/activity_class_room_f.xml"
+    },
+    {
+        "merged": "/home/hasanul-bari/Documents/project 302/Software-Project/GridLayout/app/build/intermediates/merged_res/release/layout_activity_admin_menu.xml.flat",
+        "source": "/home/hasanul-bari/Documents/project 302/Software-Project/GridLayout/app/src/main/res/layout/activity_admin_menu.xml"
+    },
+    {
+        "merged": "/home/hasanul-bari/Documents/project 302/Software-Project/GridLayout/app/build/intermediates/merged_res/release/drawable_round_bg.xml.flat",
         "source": "/home/hasanul-bari/Documents/project 302/Software-Project/GridLayout/app/src/main/res/drawable/round_bg.xml"
+    },
+    {
+        "merged": "/home/hasanul-bari/Documents/project 302/Software-Project/GridLayout/app/build/intermediates/merged_res/release/layout_fragment_floor_.xml.flat",
+        "source": "/home/hasanul-bari/Documents/project 302/Software-Project/GridLayout/app/src/main/res/layout/fragment_floor_.xml"
+    },
+    {
+        "merged": "/home/hasanul-bari/Documents/project 302/Software-Project/GridLayout/app/build/intermediates/merged_res/release/layout_activity_sign_up__student.xml.flat",
+        "source": "/home/hasanul-bari/Documents/project 302/Software-Project/GridLayout/app/src/main/res/layout/activity_sign_up__student.xml"
     }
 ]
