@@ -105,7 +105,7 @@ public class FileAdapter extends RecyclerView.Adapter<FileAdapter.FileViewHolder
                         @Override
                         public void onFailure(@NonNull Exception exception) {
                             progressDialog.dismiss();
-                            Toast.makeText(context.getApplicationContext(), "File download failed" ,Toast.LENGTH_SHORT).show();
+                            Toast.makeText(context.getApplicationContext(), "File download failed "+ exception.getMessage() ,Toast.LENGTH_SHORT).show();
                         }
                     }).addOnProgressListener(new OnProgressListener<FileDownloadTask.TaskSnapshot>() {
                         @Override

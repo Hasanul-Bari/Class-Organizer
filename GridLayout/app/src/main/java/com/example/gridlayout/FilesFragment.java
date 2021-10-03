@@ -151,7 +151,7 @@ public class FilesFragment extends Fragment implements View.OnClickListener{
         else if(v.getId()==R.id.uploadFileId){
             //Toast.makeText(getActivity(),"Upload",Toast.LENGTH_SHORT).show();
 
-            //check if file is selectet or not
+            //check if file is selected or not
             if(fileUri!=null){
                 uploadFile(fileUri,fileName);
             }
