@@ -15,6 +15,7 @@
         <entry key="app/src/main/res/layout/fragment_files.xml" value="0.33" />
         <entry key="app/src/main/res/layout/fragment_sgroup.xml" value="0.19322916666666667" />
         <entry key="app/src/main/res/layout/fragment_sschedule.xml" value="0.19322916666666667" />
+        <entry key="app/src/main/res/layout/message_layout.xml" value="0.33" />
         <entry key="app/src/main/res/layout/nav_header.xml" value="0.19322916666666667" />
         <entry key="app/src/main/res/menu/drawer_menu.xml" value="0.19322916666666667" />
         <entry key="app/src/main/res/menu/drawer_menuS.xml" value="0.19322916666666667" />

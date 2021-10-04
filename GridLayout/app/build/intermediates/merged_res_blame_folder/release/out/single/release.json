@@ -28,6 +28,10 @@
         "source": "/home/hasanul-bari/Documents/project 302/Software-Project/GridLayout/app/src/main/res/drawable/wave.xml"
     },
     {
+        "merged": "/home/hasanul-bari/Documents/project 302/Software-Project/GridLayout/app/build/intermediates/merged_res/release/drawable_ic_group.xml.flat",
+        "source": "/home/hasanul-bari/Documents/project 302/Software-Project/GridLayout/app/src/main/res/drawable/ic_group.xml"
+    },
+    {
         "merged": "/home/hasanul-bari/Documents/project 302/Software-Project/GridLayout/app/build/intermediates/merged_res/release/drawable_computer.png.flat",
         "source": "/home/hasanul-bari/Documents/project 302/Software-Project/GridLayout/app/src/main/res/drawable/computer.png"
     },
@@ -120,6 +124,10 @@
         "source": "/home/hasanul-bari/Documents/project 302/Software-Project/GridLayout/app/src/main/res/drawable/buttonshape.xml"
     },
     {
+        "merged": "/home/hasanul-bari/Documents/project 302/Software-Project/GridLayout/app/build/intermediates/merged_res/release/layout_message_layout.xml.flat",
+        "source": "/home/hasanul-bari/Documents/project 302/Software-Project/GridLayout/app/src/main/res/layout/message_layout.xml"
+    },
+    {
         "merged": "/home/hasanul-bari/Documents/project 302/Software-Project/GridLayout/app/build/intermediates/merged_res/release/mipmap-xxxhdpi_ic_launcher_round.png.flat",
         "source": "/home/hasanul-bari/Documents/project 302/Software-Project/GridLayout/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.png"
     },
@@ -142,6 +150,14 @@
     {
         "merged": "/home/hasanul-bari/Documents/project 302/Software-Project/GridLayout/app/build/intermediates/merged_res/release/drawable_bg.png.flat",
         "source": "/home/hasanul-bari/Documents/project 302/Software-Project/GridLayout/app/src/main/res/drawable/bg.png"
+    },
+    {
+        "merged": "/home/hasanul-bari/Documents/project 302/Software-Project/GridLayout/app/build/intermediates/merged_res/release/layout_fragment_sgroup.xml.flat",
+        "source": "/home/hasanul-bari/Documents/project 302/Software-Project/GridLayout/app/src/main/res/layout/fragment_sgroup.xml"
+    },
+    {
+        "merged": "/home/hasanul-bari/Documents/project 302/Software-Project/GridLayout/app/build/intermediates/merged_res/release/drawable_ic_send.xml.flat",
+        "source": "/home/hasanul-bari/Documents/project 302/Software-Project/GridLayout/app/src/main/res/drawable/ic_send.xml"
     },
     {
         "merged": "/home/hasanul-bari/Documents/project 302/Software-Project/GridLayout/app/build/intermediates/merged_res/release/layout_activity_sign_up.xml.flat",

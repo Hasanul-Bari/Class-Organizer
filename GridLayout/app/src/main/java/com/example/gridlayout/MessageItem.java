@@ -2,12 +2,21 @@ package com.example.gridlayout;
 
 public class MessageItem {
 
-    private String message,sender,time;
+    private String message,sender,time,uid;
 
-    public MessageItem(String message, String sender, String time) {
+    public String getUid() {
+        return uid;
+    }
+
+    public void setUid(String uid) {
+        this.uid = uid;
+    }
+
+    public MessageItem(String message, String sender, String time, String uid) {
         this.message = message;
         this.sender = sender;
         this.time = time;
+        this.uid= uid;
     }
 
     public MessageItem(){

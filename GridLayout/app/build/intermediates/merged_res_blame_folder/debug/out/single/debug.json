@@ -72,6 +72,10 @@
         "source": "/home/hasanul-bari/Documents/project 302/Software-Project/GridLayout/app/src/main/res/layout/activity_dept_cse.xml"
     },
     {
+        "merged": "/home/hasanul-bari/Documents/project 302/Software-Project/GridLayout/app/build/intermediates/merged_res/debug/layout_message_layout.xml.flat",
+        "source": "/home/hasanul-bari/Documents/project 302/Software-Project/GridLayout/app/src/main/res/layout/message_layout.xml"
+    },
+    {
         "merged": "/home/hasanul-bari/Documents/project 302/Software-Project/GridLayout/app/build/intermediates/merged_res/debug/mipmap-anydpi-v26_ic_launcher_round.xml.flat",
         "source": "/home/hasanul-bari/Documents/project 302/Software-Project/GridLayout/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml"
     },

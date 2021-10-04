@@ -1378,6 +1378,7 @@ id barrier
 id beginning
 id blocking
 id bottom
+id bottomId
 id button
 id button2
 id button3
@@ -1465,6 +1466,7 @@ id masked
 id media_actions
 id message
 id messageId
+id messagesId
 id middle
 id mini
 id mtrl_child_content_container
@@ -1709,6 +1711,7 @@ layout fragment_sschedule
 layout fragment_test_fragment
 layout fragment_tprofile
 layout fragment_tschedule
+layout message_layout
 layout mtrl_layout_snackbar
 layout mtrl_layout_snackbar_include
 layout nav_header
