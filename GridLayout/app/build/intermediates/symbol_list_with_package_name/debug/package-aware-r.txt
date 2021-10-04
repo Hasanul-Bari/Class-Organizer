@@ -1464,6 +1464,7 @@ id list_item
 id masked
 id media_actions
 id message
+id messageId
 id middle
 id mini
 id mtrl_child_content_container
@@ -1528,6 +1529,7 @@ id search_voice_btn
 id selectFileId
 id select_dialog_listview
 id selected
+id sendButtonId
 id shortcut
 id showCustom
 id showHome

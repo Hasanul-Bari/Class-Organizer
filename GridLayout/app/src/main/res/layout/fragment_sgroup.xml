@@ -54,6 +54,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="6"
             android:hint="Write your message here..."
+            android:id="@+id/messageId"
 
             />
 
@@ -62,6 +63,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:src="@drawable/ic_send"
+            android:id="@+id/sendButtonId"
             />
 
 
