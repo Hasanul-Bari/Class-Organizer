@@ -53,6 +53,7 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.MessageV
             holder.messageView.setBackgroundResource(R.drawable.round_bg);
 
         }else{
+            holder.messageView.setBackgroundResource(R.drawable.round_bg2);
             Log.d(TAG, "onBindViewHolder: "+uid+" "+msgUid);
         }
 

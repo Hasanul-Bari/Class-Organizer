@@ -170,5 +170,8 @@ public class SGroupFragment extends Fragment implements View.OnClickListener {
         });
 
 
+        messageWrite.setText("");
+
+
     }
 }
