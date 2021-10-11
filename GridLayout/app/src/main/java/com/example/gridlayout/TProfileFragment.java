@@ -11,6 +11,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
@@ -31,7 +32,7 @@ public class TProfileFragment extends Fragment {
     private FirebaseAuth mAuth;
     private FirebaseFirestore mFirestore;
 
-    private String userId;
+    private String userId,dept,courses;
 
 
     public TProfileFragment()
@@ -61,9 +62,17 @@ public class TProfileFragment extends Fragment {
 
         userId=mAuth.getCurrentUser().getUid();
 
+        Bundle teacher= getArguments();
+        if(teacher!=null){
+
+            dept=teacher.getString("DEPT");
+
+        }
 
 
-        mFirestore.collection("TEACHER").document(userId).get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+        Toast.makeText(getContext(), "TP- "+dept, Toast.LENGTH_SHORT).show();
+
+        mFirestore.collection(dept).document(userId).get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
             @Override
             public void onSuccess(DocumentSnapshot documentSnapshot) {
 
@@ -71,7 +80,7 @@ public class TProfileFragment extends Fragment {
                 String s;
 
                 String name=documentSnapshot.getString("NAME");
-                String course=documentSnapshot.getString("COURSE");
+                String course=documentSnapshot.getString("COURSES");
                 String Email=documentSnapshot.getString("EMAIL");
                 String Contact=documentSnapshot.getString("CONTACT");
 
@@ -100,3 +109,4 @@ public class TProfileFragment extends Fragment {
 
 
 }
+

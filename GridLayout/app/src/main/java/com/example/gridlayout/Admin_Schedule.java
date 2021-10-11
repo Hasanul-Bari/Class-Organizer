@@ -25,6 +25,7 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -38,7 +39,7 @@ public class Admin_Schedule extends AppCompatActivity implements View.OnClickLis
     private FirebaseAuth mAuth;
     private FirebaseFirestore mFirestore, mFirestore1;
     private Spinner spinner1, spinner2, spinner3, spinner4, spinner5, spinner6, temp_spinner;
-    private String DeptInfo, CourseCode1, CourseCode2, CourseCode3, CourseCode4, CourseCode5, CourseCode6,temp_title;
+    private String DeptInfo, CourseCode1, CourseCode2, CourseCode3, CourseCode4, CourseCode5, CourseCode6,temp_title,COURSES;
     private FirebaseFirestore db = FirebaseFirestore.getInstance();
 
     @Override
@@ -86,30 +87,30 @@ public class Admin_Schedule extends AppCompatActivity implements View.OnClickLis
         DeptInfo = dept + track;
 
 
-        //Toast.makeText(getApplicationContext(), "BEFORE Firestore " + DAY, Toast.LENGTH_LONG).show();
-
-       mAuth = FirebaseAuth.getInstance();
-       mFirestore = FirebaseFirestore.getInstance();
+        // Toast.makeText(getApplicationContext(), "COURSES  " + DeptInfo+"_COURSES", Toast.LENGTH_LONG).show();
+        COURSES=DeptInfo+"_COURSES";
+        mAuth = FirebaseAuth.getInstance();
+        mFirestore = FirebaseFirestore.getInstance();
 
         ///13092021 start
 
 
 /*        mFirestore.collection("Sunday").document("10-11").get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
-            @Override
-            public void onSuccess(DocumentSnapshot documentSnapshot) {
-                String CurrentCourse = documentSnapshot.getString("CURRENT");
-                Toast.makeText(getApplicationContext(), "Success  " + CurrentCourse, Toast.LENGTH_LONG).show();
-            }
-        }).addOnFailureListener(new OnFailureListener() {
-            @Override
-            public void onFailure(@NonNull Exception e) {
-                Toast.makeText(getApplicationContext(), "Failed " + e, Toast.LENGTH_LONG).show();
-            }
-        });*/
+           @Override
+           public void onSuccess(DocumentSnapshot documentSnapshot) {
+               String CurrentCourse = documentSnapshot.getString("CURRENT");
+               Toast.makeText(getApplicationContext(), "Success  " + CurrentCourse, Toast.LENGTH_LONG).show();
+           }
+       }).addOnFailureListener(new OnFailureListener() {
+           @Override
+           public void onFailure(@NonNull Exception e) {
+               Toast.makeText(getApplicationContext(), "Failed " + e, Toast.LENGTH_LONG).show();
+           }
+       });*/
 
 
         /////13092021 end
-       mFirestore.collection(DAY).document("10-11").get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+        mFirestore.collection(DAY).document("10-11").get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
             @Override
             public void onSuccess(DocumentSnapshot documentSnapshot) {
 
@@ -120,7 +121,7 @@ public class Admin_Schedule extends AppCompatActivity implements View.OnClickLis
                 String Title=documentSnapshot.getString("Title");
                 ViewCourse(CurrentCourse,Title, _A10t);
 
-              //  Toast.makeText(getApplicationContext(), CurrentCourse+"001 "+MainCourse, Toast.LENGTH_LONG).show();
+                //  Toast.makeText(getApplicationContext(), CurrentCourse+"001 "+MainCourse, Toast.LENGTH_LONG).show();
 
             }
         });
@@ -134,7 +135,7 @@ public class Admin_Schedule extends AppCompatActivity implements View.OnClickLis
                 String Req = documentSnapshot.getString("REQ");
                 String Title=documentSnapshot.getString("Title");
                 ViewCourse(CurrentCourse,Title, _A11t);
-             //   Toast.makeText(getApplicationContext(), CurrentCourse+"002 "+MainCourse, Toast.LENGTH_LONG).show();
+                //   Toast.makeText(getApplicationContext(), CurrentCourse+"002 "+MainCourse, Toast.LENGTH_LONG).show();
 
             }
         });
@@ -148,7 +149,7 @@ public class Admin_Schedule extends AppCompatActivity implements View.OnClickLis
                 String Req = documentSnapshot.getString("REQ");
                 String Title=documentSnapshot.getString("Title");
                 ViewCourse(CurrentCourse,Title, _A12t);
-              //  Toast.makeText(getApplicationContext(), CurrentCourse+"003 "+MainCourse, Toast.LENGTH_LONG).show();
+                //  Toast.makeText(getApplicationContext(), CurrentCourse+"003 "+MainCourse, Toast.LENGTH_LONG).show();
             }
         });
         mFirestore.collection(DAY).document("14-15").get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
@@ -190,7 +191,7 @@ public class Admin_Schedule extends AppCompatActivity implements View.OnClickLis
 
             }
         });
-     //  Toast.makeText(getApplicationContext(),"AFTER Firestore",Toast.LENGTH_LONG).show();
+        //  Toast.makeText(getApplicationContext(),"AFTER Firestore",Toast.LENGTH_LONG).show();
 
 
         //  Editing schedule
@@ -209,25 +210,55 @@ public class Admin_Schedule extends AppCompatActivity implements View.OnClickLis
         _OK16.setOnClickListener(this);
 
 
+        //fetching course list from firestore 05 10 2021
 
-        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array._CSE32Courses, android.R.layout.simple_spinner_item);
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spinner1.setAdapter(adapter);
+
+        ArrayList<String>CL=new ArrayList<String>();
+        CL.add("CHANGE_COURSE");
+
+
+        db.collection(COURSES)
+                .get()
+                .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                    int ck=1;
+                    String title;
+                    @Override
+                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                        if (task.isSuccessful()) {
+                            for (QueryDocumentSnapshot document : task.getResult()) {
+
+                                title=document.getString("Title");
+                                CL.add(document.getId());
+
+                            }
+                        } else {
+
+                        }
+                    }
+                });
+
+
+
+        ArrayAdapter<String> branchListAdapter = new ArrayAdapter<>(Admin_Schedule.this, android.R.layout.simple_spinner_item, CL);
+        branchListAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+
+
+        spinner1.setAdapter(branchListAdapter);
         spinner1.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
-            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                CourseCode1 = spinner1.getSelectedItem().toString();
-
-//                Toast.makeText(getApplicationContext(),"SETspinner after "+" cc "+CourseCode,Toast.LENGTH_SHORT).show();
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                CourseCode2 = spinner1.getSelectedItem().toString();
             }
 
             @Override
-            public void onNothingSelected(AdapterView<?> parent) {
+            public void onNothingSelected(AdapterView<?> adapterView) {
 
             }
         });
 
-        ArrayAdapter<CharSequence> adapter2 = ArrayAdapter.createFromResource(this, R.array._CSE32Courses, android.R.layout.simple_spinner_item);
+
+
+        ArrayAdapter<String> adapter2 = new ArrayAdapter<>(Admin_Schedule.this, android.R.layout.simple_spinner_item, CL);
         adapter2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner2.setAdapter(adapter2);
         spinner2.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
@@ -245,7 +276,7 @@ public class Admin_Schedule extends AppCompatActivity implements View.OnClickLis
         });
 
 
-        ArrayAdapter<CharSequence> adapter3 = ArrayAdapter.createFromResource(this, R.array._CSE32Courses, android.R.layout.simple_spinner_item);
+        ArrayAdapter<String> adapter3 = new ArrayAdapter<>(Admin_Schedule.this, android.R.layout.simple_spinner_item, CL);
         adapter3.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner3.setAdapter(adapter3);
         spinner3.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
@@ -263,7 +294,7 @@ public class Admin_Schedule extends AppCompatActivity implements View.OnClickLis
         });
 
 
-        ArrayAdapter<CharSequence> adapter4 = ArrayAdapter.createFromResource(this, R.array._CSE32Courses, android.R.layout.simple_spinner_item);
+        ArrayAdapter<String> adapter4 = new ArrayAdapter<>(Admin_Schedule.this, android.R.layout.simple_spinner_item, CL);
         adapter4.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner4.setAdapter(adapter4);
         spinner4.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
@@ -281,7 +312,7 @@ public class Admin_Schedule extends AppCompatActivity implements View.OnClickLis
         });
 
 
-        ArrayAdapter<CharSequence> adapter5 = ArrayAdapter.createFromResource(this, R.array._CSE32Courses, android.R.layout.simple_spinner_item);
+        ArrayAdapter<String> adapter5 = new ArrayAdapter<>(Admin_Schedule.this, android.R.layout.simple_spinner_item, CL);
         adapter5.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner5.setAdapter(adapter5);
         spinner5.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
@@ -299,7 +330,7 @@ public class Admin_Schedule extends AppCompatActivity implements View.OnClickLis
         });
 
 
-        ArrayAdapter<CharSequence> adapter6 = ArrayAdapter.createFromResource(this, R.array._CSE32Courses, android.R.layout.simple_spinner_item);
+        ArrayAdapter<String> adapter6 = new ArrayAdapter<>(Admin_Schedule.this, android.R.layout.simple_spinner_item, CL);
         adapter6.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner6.setAdapter(adapter6);
         spinner6.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
@@ -321,7 +352,7 @@ public class Admin_Schedule extends AppCompatActivity implements View.OnClickLis
 
     public void SET_COURSE(String dd, String tt, final String COURSE, TextView tv) {
 
-      //  Toast.makeText(getApplicationContext(), "SETCOURSE " + dd + tt + " cc " + COURSE, Toast.LENGTH_SHORT).show();
+        //  Toast.makeText(getApplicationContext(), "SETCOURSE " + dd + tt + " cc " + COURSE, Toast.LENGTH_SHORT).show();
 
 
 
@@ -372,7 +403,7 @@ public class Admin_Schedule extends AppCompatActivity implements View.OnClickLis
 
     public void ViewCourse(String MainCourse,String Title, TextView tv) {
 
-        Toast.makeText(getApplicationContext(), " View course enter Main Course " + MainCourse, Toast.LENGTH_SHORT).show();
+        //  Toast.makeText(getApplicationContext(), " View course enter Main Course " + MainCourse, Toast.LENGTH_SHORT).show();
         if (MainCourse == null) tv.setText("NO CLASS");
         else if (MainCourse.length() == 0 | MainCourse == "SELECT_COURSE") tv.setText("NO CLASS");
         else {
@@ -383,24 +414,24 @@ public class Admin_Schedule extends AppCompatActivity implements View.OnClickLis
     }
 
 /*    public  ArrayAdapter<CharSequence> CourseList(String deptInfo){
-        ArrayAdapter<CharSequence> adapter =ArrayAdapter.createFromResource(this,
-                R.array._CSE32Courses, android.R.layout.simple_spinner_item);;
+       ArrayAdapter<CharSequence> adapter =ArrayAdapter.createFromResource(this,
+               R.array._CSE32Courses, android.R.layout.simple_spinner_item);;
 
-        switch (deptInfo){
-            case "CSE32":
-                adapter= ArrayAdapter.createFromResource(this,
-                        R.array._CSE32Courses, android.R.layout.simple_spinner_item);
-                break;
-            default:
+       switch (deptInfo){
+           case "CSE32":
+               adapter= ArrayAdapter.createFromResource(this,
+                       R.array._CSE32Courses, android.R.layout.simple_spinner_item);
+               break;
+           default:
 
-                break;
-
-
-        }
+               break;
 
 
-        return adapter;
-    }*/
+       }
+
+
+       return adapter;
+   }*/
 
     /*    public void SET_SPINNER(){
             Toast.makeText(getApplicationContext(),"SETspinner called "+" cc "+CourseCode,Toast.LENGTH_SHORT).show();
@@ -467,3 +498,4 @@ public class Admin_Schedule extends AppCompatActivity implements View.OnClickLis
 
     }
 }
+

@@ -1382,7 +1382,6 @@ id bottomId
 id button
 id button2
 id button3
-id button4
 id buttonPanel
 id cancel_action
 id center
@@ -1581,6 +1580,7 @@ id tag_screen_reader_focusable
 id tag_transition_group
 id tag_unhandled_key_event_manager
 id tag_unhandled_key_listeners
+id teacherDrop
 id text
 id text2
 id textSpacerNoButtons
@@ -1710,7 +1710,6 @@ layout fragment_room
 layout fragment_sgroup
 layout fragment_sprofile
 layout fragment_sschedule
-layout fragment_test_fragment
 layout fragment_tprofile
 layout fragment_tschedule
 layout message_layout

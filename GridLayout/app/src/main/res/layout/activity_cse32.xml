@@ -429,20 +429,36 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="10dp"
-                    android:layout_weight="1"
+
                     android:ems="10"
                     android:inputType="textPersonName"
-                    android:text="COURSE_CODE" />
+                    android:hint="COURSE_CODE"
+                    />
 
                 <EditText
                     android:id="@+id/CourseTitle"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_margin="10dp"
-                    android:layout_weight="1"
+
                     android:ems="10"
                     android:inputType="textPersonName"
-                    android:text="COURSE_TITLE" />
+                    android:hint="COURSE_TITLE" />
+
+                <Spinner
+                    android:layout_marginTop="5dp"
+                    android:id="@+id/teacherDrop"
+                    android:layout_width="match_parent"
+
+
+
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/confirm_bg"
+                    android:backgroundTint="#D7E7F3"
+
+                    />
+
+
                 <Button
 
                     android:id="@+id/OKCourse"
@@ -454,8 +470,9 @@
                     android:padding="5dp"
                     android:layout_margin="10dp"
 
-
                     />
+
+
             </LinearLayout>
 
 
@@ -483,3 +500,4 @@
     </ScrollView>
 
 </LinearLayout>
+

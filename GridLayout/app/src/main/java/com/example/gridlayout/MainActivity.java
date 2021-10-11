@@ -34,12 +34,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         stu=findViewById(R.id.button2);
         teacher=findViewById(R.id.button);
         admin=findViewById(R.id.button3);
-        cr=findViewById(R.id.button4);
+        //cr=findViewById(R.id.button4);
 
         stu.setOnClickListener(this);
         teacher.setOnClickListener(this);
         admin.setOnClickListener(this);
-        cr.setOnClickListener(this);
+        // cr.setOnClickListener(this);
 
     }
 
@@ -57,12 +57,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 public void onSuccess(DocumentSnapshot documentSnapshot) {
 
                     String type=documentSnapshot.getString("Type");
+                    String dept=documentSnapshot.getString("DEPARTMENT");
 
                     if(type.equals("Teacher")){
 
                         finish();
                         Intent intent =new Intent(MainActivity.this,Teacher.class);
                         intent.putExtra("user",usrId);
+                        intent.putExtra("dept",dept);
                         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
 
                         startActivity(intent);
@@ -80,18 +82,18 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
 
                     }
-                    /*else if(type.equals("CR")){
+                   /*else if(type.equals("CR")){
 
-                        finish();
-                        Intent intent =new Intent(MainActivity.this,Student.class);
-                        intent.putExtra("user",usrId);
-                        intent.putExtra("CR_Status","YES");
-                        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                       finish();
+                       Intent intent =new Intent(MainActivity.this,Student.class);
+                       intent.putExtra("user",usrId);
+                       intent.putExtra("CR_Status","YES");
+                       intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
 
-                        startActivity(intent);
+                       startActivity(intent);
 
 
-                    }*/
+                   }*/
                 }
             });
 
@@ -113,14 +115,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             Intent intent=new Intent(MainActivity.this,SignIn.class);
             startActivity(intent);
 
-           // Toast.makeText(getApplicationContext(),"entered156",Toast.LENGTH_SHORT).show();
+            // Toast.makeText(getApplicationContext(),"entered156",Toast.LENGTH_SHORT).show();
 
 
         }
         else if(v.getId()==R.id.button2){
 //
             Intent intent=new Intent(MainActivity.this,SignIn_Student.class);
-           startActivity(intent);
+            startActivity(intent);
 
         }
         else if(v.getId()==R.id.button3){
@@ -128,25 +130,26 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             // Toast.makeText(getApplicationContext(),"hp = 1",Toast.LENGTH_LONG).show();
             // getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,new AdminHome()).commit();
 
-       Intent intent=new Intent(MainActivity.this,Admin_Menu.class);
+            Intent intent=new Intent(MainActivity.this,Admin_Menu.class);
             //   Toast.makeText(getApplicationContext(),"hp = 2",Toast.LENGTH_LONG).show();
             startActivity(intent);
-         Toast.makeText(getApplicationContext(),"Admin Panel clicked",Toast.LENGTH_LONG).show();
+            //Toast.makeText(getApplicationContext(),"Admin Panel clicked",Toast.LENGTH_LONG).show();
 
         }
-        else if(v.getId()==R.id.button4){
+/*        else if(v.getId()==R.id.button4){
 //
-            // Toast.makeText(getApplicationContext(),"hp = 1",Toast.LENGTH_LONG).show();
-            // getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,new AdminHome()).commit();
+           // Toast.makeText(getApplicationContext(),"hp = 1",Toast.LENGTH_LONG).show();
+           // getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,new AdminHome()).commit();
 
-          Intent intent=new Intent(MainActivity.this,CR_PROFILE.class);
+         Intent intent=new Intent(MainActivity.this,CR_PROFILE.class);
 
-            startActivity(intent);
-         Toast.makeText(getApplicationContext(),"CR",Toast.LENGTH_LONG).show();
+           startActivity(intent);
+        Toast.makeText(getApplicationContext(),"CR",Toast.LENGTH_LONG).show();
 
-        }
+       }*/
 
     }
 
 
 }
+

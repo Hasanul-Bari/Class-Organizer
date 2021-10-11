@@ -11,7 +11,7 @@ import android.widget.Toast;
 public class Admin_Menu extends AppCompatActivity implements View.OnClickListener {
 
 
-     Button faculties,classrooms,add_teacher,del_teacher,add_cr,del_cr;
+    Button faculties,classrooms,add_teacher,del_teacher,add_cr,del_cr;
 
 
     @Override
@@ -20,7 +20,7 @@ public class Admin_Menu extends AppCompatActivity implements View.OnClickListene
         setContentView(R.layout.activity_admin_menu);
 
 
-         //buttons
+        //buttons
         faculties= findViewById(R.id.FacultyList);
         classrooms= findViewById(R.id.ClassRooms);
         add_teacher= findViewById(R.id.Add_teacher);

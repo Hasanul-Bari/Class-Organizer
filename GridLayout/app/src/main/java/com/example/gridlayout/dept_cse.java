@@ -31,7 +31,7 @@ public class dept_cse extends AppCompatActivity implements View.OnClickListener 
     //schedule button
     private Button _cse32_scheduleButton;
     //reschedule button
-    private Button _cse32_rescheduleButton;
+
 
     //session text view
 
@@ -44,13 +44,13 @@ public class dept_cse extends AppCompatActivity implements View.OnClickListener 
         setContentView(R.layout.activity_dept_cse);
 
         _cse32_scheduleButton=findViewById(R.id.cse32_scheduleButton);
-        /*        _cse32_rescheduleButton=findViewById(R.id.cse32_rescheduleButton);*/
+
         _cse32Level=findViewById(R.id.cse32Level);
         _cse32Session=findViewById(R.id.cse32Session);
         _AdminPanel=findViewById(R.id.AdminPanel);
 
         _cse32_scheduleButton.setOnClickListener(this);
-//        _cse32_rescheduleButton.setOnClickListener(this);
+
 
         Intent intent=getIntent();
         dept=intent.getStringExtra("Dept");
@@ -67,7 +67,7 @@ public class dept_cse extends AppCompatActivity implements View.OnClickListener 
             String SESSION=_cse32Session.getText().toString();
             //Toast.makeText(getApplicationContext(),"ScheduleButton 2",Toast.LENGTH_LONG).show();
 
-         Intent intent=new Intent(dept_cse.this,cse_32.class);
+            Intent intent=new Intent(dept_cse.this,cse_32.class);
             intent.putExtra("LevelSemester","\nLevel: 3 Semester: II\n");
             intent.putExtra("Session",SESSION);
             intent.putExtra("Dept",dept);
@@ -75,10 +75,6 @@ public class dept_cse extends AppCompatActivity implements View.OnClickListener 
             startActivity(intent);
             Toast.makeText(getApplicationContext(),"ScheduleButton 2",Toast.LENGTH_LONG).show();
         }
-//        else if(v.getId()==R.id.cse32_rescheduleButton){
-//            Toast.makeText(getApplicationContext(),"RE ScheduleButton",Toast.LENGTH_LONG).show();
-//
-//        }
 
 
 

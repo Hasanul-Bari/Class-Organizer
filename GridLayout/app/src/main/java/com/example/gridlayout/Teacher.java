@@ -7,6 +7,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.viewpager.widget.ViewPager;
 
 import android.content.DialogInterface;
@@ -16,6 +18,7 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.navigation.NavigationView;
@@ -30,12 +33,13 @@ public class Teacher extends AppCompatActivity {
     private DrawerLayout drawerLayout;
     private NavigationView navigationView;
 
-    private TextView tnav_headertvName,tnav_headertvEmail;
+    private TextView tnav_headertvName,tnav_headertvEmail,_courses;
 
     private FirebaseAuth mAuth;
     private FirebaseFirestore mFirestore;
     private String userId;
     private AlertDialog.Builder alertdialogbuilder;
+    String dept;
 
 
     @Override
@@ -58,27 +62,33 @@ public class Teacher extends AppCompatActivity {
 
 
 
+
         mAuth=FirebaseAuth.getInstance();
         mFirestore=FirebaseFirestore.getInstance();
 
         userId=mAuth.getCurrentUser().getUid();
 
+        Intent intent=getIntent();
+        dept=intent.getStringExtra("dept");
+
+        Toast.makeText(getApplicationContext(),"Teacher - "+ dept, Toast.LENGTH_SHORT).show();
 
 
-
-
-        mFirestore.collection("TEACHER").document(userId).get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+        mFirestore.collection(dept).document(userId).get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
             @Override
             public void onSuccess(DocumentSnapshot documentSnapshot) {
 
 
                 String name=documentSnapshot.getString("NAME");
                 String email=documentSnapshot.getString("EMAIL");
+                //  String courses=documentSnapshot.getString("COURSES");
 
-                email=email.replaceFirst("teacher.","");
+
+                //    email=email.replaceFirst("teacher.","");
 
                 tnav_headertvName.setText(name);
                 tnav_headertvEmail.setText(email);
+                // tnav_headertvEmail.setText(email);
 
             }
         });
@@ -91,8 +101,19 @@ public class Teacher extends AppCompatActivity {
         drawerLayout.addDrawerListener(toggle);
         toggle.syncState();
 
+        Fragment teacher=new TProfileFragment();
+        FragmentTransaction ft0=getSupportFragmentManager().beginTransaction();
+
+        Bundle bundle0= new Bundle();
+        bundle0.putString("DEPT",dept);
+
+        teacher.setArguments(bundle0);
+
+
+        ft0.replace(R.id.fragment_container,teacher).commit();
+
         ///first e eta select hbe
-        getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,new TProfileFragment()).commit();
+        // getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,new TProfileFragment()).commit();
         navigationView.setCheckedItem(R.id.nav_profile);
 
 
@@ -104,7 +125,18 @@ public class Teacher extends AppCompatActivity {
 
                     case R.id.nav_profile:
 
-                        getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,new TProfileFragment()).commit();
+                        Fragment teacher=new TProfileFragment();
+                        FragmentTransaction ft0=getSupportFragmentManager().beginTransaction();
+
+                        Bundle bundle0= new Bundle();
+                        bundle0.putString("DEPT",dept);
+
+                        teacher.setArguments(bundle0);
+
+
+                        ft0.replace(R.id.fragment_container,teacher).commit();
+
+                        // getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,new TProfileFragment()).commit();
 
                         break;
 
@@ -173,3 +205,5 @@ public class Teacher extends AppCompatActivity {
 
     }
 }
+
+
