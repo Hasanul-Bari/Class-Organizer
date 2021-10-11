@@ -8,6 +8,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -45,16 +46,19 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.MessageV
 
         MessageItem messageItem=messageList.get(position);
         String msg=messageItem.getSender()+" : "+messageItem.getMessage();
+        String time=messageItem.getTime();
+
         holder.messageView.setText(msg);
+        holder.messageTime.setText(time);
 
         String msgUid=messageItem.getUid();
 
         if(msgUid.equals(uid)){
-            holder.messageView.setBackgroundResource(R.drawable.round_bg);
+            holder.messageContainer.setBackgroundResource(R.drawable.round_bg);
 
         }else{
-            holder.messageView.setBackgroundResource(R.drawable.round_bg2);
-            Log.d(TAG, "onBindViewHolder: "+uid+" "+msgUid);
+            holder.messageContainer.setBackgroundResource(R.drawable.round_bg2);
+            //Log.d(TAG, "onBindViewHolder: "+uid+" "+msgUid);
         }
 
 
@@ -67,12 +71,16 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.MessageV
 
     public class MessageViewHolder extends RecyclerView.ViewHolder {
 
-        TextView messageView;
+        TextView messageView,messageTime;
+        LinearLayout messageContainer;
 
         public MessageViewHolder(@NonNull View itemView) {
             super(itemView);
 
             messageView=itemView.findViewById(R.id.messagesId);
+            messageTime=itemView.findViewById(R.id.msgTimeId);
+            messageContainer=itemView.findViewById(R.id.msgContainerId);
+
 
         }
     }

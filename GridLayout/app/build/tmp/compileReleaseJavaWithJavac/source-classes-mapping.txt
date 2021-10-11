@@ -62,28 +62,16 @@ com/example/gridlayout/SignIn.java
  com.example.gridlayout.SignIn$1
  com.example.gridlayout.SignIn$1$1
  com.example.gridlayout.SignIn$2
-com/example/gridlayout/Admin_Schedule.java
- com.example.gridlayout.Admin_Schedule
- com.example.gridlayout.Admin_Schedule$1
- com.example.gridlayout.Admin_Schedule$10
- com.example.gridlayout.Admin_Schedule$11
- com.example.gridlayout.Admin_Schedule$12
- com.example.gridlayout.Admin_Schedule$13
- com.example.gridlayout.Admin_Schedule$13$1
- com.example.gridlayout.Admin_Schedule$13$2
- com.example.gridlayout.Admin_Schedule$2
- com.example.gridlayout.Admin_Schedule$3
- com.example.gridlayout.Admin_Schedule$4
- com.example.gridlayout.Admin_Schedule$5
- com.example.gridlayout.Admin_Schedule$6
- com.example.gridlayout.Admin_Schedule$7
- com.example.gridlayout.Admin_Schedule$8
- com.example.gridlayout.Admin_Schedule$9
+com/example/gridlayout/SGroupFragment.java
+ com.example.gridlayout.SGroupFragment
+ com.example.gridlayout.SGroupFragment$1
+ com.example.gridlayout.SGroupFragment$2
 com/example/gridlayout/MainActivity.java
  com.example.gridlayout.MainActivity
  com.example.gridlayout.MainActivity$1
-com/example/gridlayout/BuildConfig.java
- com.example.gridlayout.BuildConfig
+com/example/gridlayout/MessageAdapter.java
+ com.example.gridlayout.MessageAdapter
+ com.example.gridlayout.MessageAdapter$MessageViewHolder
 com/example/gridlayout/CR_PROFILE.java
  com.example.gridlayout.CR_PROFILE
  com.example.gridlayout.CR_PROFILE$1
@@ -196,8 +184,13 @@ com/example/gridlayout/SignUP_Student.java
  com.example.gridlayout.SignUP_Student$4$2
  com.example.gridlayout.SignUP_Student$4$3
  com.example.gridlayout.SignUP_Student$4$4
-com/example/gridlayout/Test_fragment.java
- com.example.gridlayout.Test_fragment
+com/example/gridlayout/Student.java
+ com.example.gridlayout.Student
+ com.example.gridlayout.Student$1
+ com.example.gridlayout.Student$2
+ com.example.gridlayout.Student$2$1
+ com.example.gridlayout.Student$2$2
+ com.example.gridlayout.Student$3
 com/example/gridlayout/Profile.java
  com.example.gridlayout.Profile
  com.example.gridlayout.Profile$1
@@ -218,17 +211,24 @@ com/example/gridlayout/SProfileFragment.java
  com.example.gridlayout.SProfileFragment
  com.example.gridlayout.SProfileFragment$1
  com.example.gridlayout.SProfileFragment$1$1
-com/example/gridlayout/MessageAdapter.java
- com.example.gridlayout.MessageAdapter
- com.example.gridlayout.MessageAdapter$MessageViewHolder
-com/example/gridlayout/SGroupFragment.java
- com.example.gridlayout.SGroupFragment
- com.example.gridlayout.SGroupFragment$1
- com.example.gridlayout.SGroupFragment$2
-com/example/gridlayout/Student.java
- com.example.gridlayout.Student
- com.example.gridlayout.Student$1
- com.example.gridlayout.Student$2
- com.example.gridlayout.Student$2$1
- com.example.gridlayout.Student$2$2
- com.example.gridlayout.Student$3
+com/example/gridlayout/Test_fragment.java
+ com.example.gridlayout.Test_fragment
+com/example/gridlayout/Admin_Schedule.java
+ com.example.gridlayout.Admin_Schedule
+ com.example.gridlayout.Admin_Schedule$1
+ com.example.gridlayout.Admin_Schedule$10
+ com.example.gridlayout.Admin_Schedule$11
+ com.example.gridlayout.Admin_Schedule$12
+ com.example.gridlayout.Admin_Schedule$13
+ com.example.gridlayout.Admin_Schedule$13$1
+ com.example.gridlayout.Admin_Schedule$13$2
+ com.example.gridlayout.Admin_Schedule$2
+ com.example.gridlayout.Admin_Schedule$3
+ com.example.gridlayout.Admin_Schedule$4
+ com.example.gridlayout.Admin_Schedule$5
+ com.example.gridlayout.Admin_Schedule$6
+ com.example.gridlayout.Admin_Schedule$7
+ com.example.gridlayout.Admin_Schedule$8
+ com.example.gridlayout.Admin_Schedule$9
+com/example/gridlayout/BuildConfig.java
+ com.example.gridlayout.BuildConfig

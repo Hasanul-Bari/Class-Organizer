@@ -24,12 +24,12 @@
         "source": "/home/hasanul-bari/Documents/project 302/Software-Project/GridLayout/app/src/main/res/mipmap-mdpi/ic_launcher_round.png"
     },
     {
-        "merged": "/home/hasanul-bari/Documents/project 302/Software-Project/GridLayout/app/build/intermediates/merged_res/release/drawable_wave.xml.flat",
-        "source": "/home/hasanul-bari/Documents/project 302/Software-Project/GridLayout/app/src/main/res/drawable/wave.xml"
-    },
-    {
         "merged": "/home/hasanul-bari/Documents/project 302/Software-Project/GridLayout/app/build/intermediates/merged_res/release/drawable_ic_group.xml.flat",
         "source": "/home/hasanul-bari/Documents/project 302/Software-Project/GridLayout/app/src/main/res/drawable/ic_group.xml"
+    },
+    {
+        "merged": "/home/hasanul-bari/Documents/project 302/Software-Project/GridLayout/app/build/intermediates/merged_res/release/drawable_wave.xml.flat",
+        "source": "/home/hasanul-bari/Documents/project 302/Software-Project/GridLayout/app/src/main/res/drawable/wave.xml"
     },
     {
         "merged": "/home/hasanul-bari/Documents/project 302/Software-Project/GridLayout/app/build/intermediates/merged_res/release/drawable_computer.png.flat",

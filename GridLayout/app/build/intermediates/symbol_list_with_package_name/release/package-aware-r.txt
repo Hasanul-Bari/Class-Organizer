@@ -1469,6 +1469,8 @@ id messageId
 id messagesId
 id middle
 id mini
+id msgContainerId
+id msgTimeId
 id mtrl_child_content_container
 id mtrl_internal_children_alpha_tag
 id multiply

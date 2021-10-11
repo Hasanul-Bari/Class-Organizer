@@ -4,13 +4,7 @@ public class MessageItem {
 
     private String message,sender,time,uid;
 
-    public String getUid() {
-        return uid;
-    }
 
-    public void setUid(String uid) {
-        this.uid = uid;
-    }
 
     public MessageItem(String message, String sender, String time, String uid) {
         this.message = message;
@@ -45,5 +39,13 @@ public class MessageItem {
 
     public void setTime(String time) {
         this.time = time;
+    }
+
+    public String getUid() {
+        return uid;
+    }
+
+    public void setUid(String uid) {
+        this.uid = uid;
     }
 }

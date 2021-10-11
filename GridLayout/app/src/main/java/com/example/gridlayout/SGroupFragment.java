@@ -147,13 +147,16 @@ public class SGroupFragment extends Fragment implements View.OnClickListener {
         String msg=messageWrite.getText().toString().trim();
 
         //get sending date
-        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
-        String date = sdf.format(new Date());
+        SimpleDateFormat sdf;
+        sdf = new SimpleDateFormat("MMM dd, yyyy, hh:mm aaa");
+        String time = sdf.format(new Date());
+
+        Log.d(TAG, "sendMessage: "+time);
 
 
 
 
-        MessageItem messageItem=new MessageItem(msg,name, date,uid);
+        MessageItem messageItem=new MessageItem(msg,name, time,uid);
 
         String fileId= databaseReference1.push().getKey();
 

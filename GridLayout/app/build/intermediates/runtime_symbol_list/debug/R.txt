@@ -1468,6 +1468,8 @@ int id messageId 0x7f0901d3
 int id messagesId 0x7f0901d5
 int id middle 0x7f090141
 int id mini 0x7f090142
+int id msgContainerId 0x7f0901d9
+int id msgTimeId 0x7f0901d8
 int id mtrl_child_content_container 0x7f090143
 int id mtrl_internal_children_alpha_tag 0x7f090144
 int id multiply 0x7f090145
