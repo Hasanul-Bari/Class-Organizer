@@ -43,7 +43,6 @@ public class SGroupFragment extends Fragment implements View.OnClickListener {
     private EditText messageWrite;
     private ImageButton sendButton;
     private RecyclerView recyclerView;
-    private ScrollView mScrollView;
 
     private List<MessageItem> messageList;
     private MessageAdapter messageAdapter;

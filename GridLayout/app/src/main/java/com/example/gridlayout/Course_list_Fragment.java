@@ -29,7 +29,7 @@ import java.util.List;
 
 public class Course_list_Fragment extends Fragment {
 
-    String dept,userID,courses;
+    String dept,userID,courses,from,tname;
 
     //String dpt,title,lvl,sem,class_;
 
@@ -59,6 +59,8 @@ public class Course_list_Fragment extends Fragment {
 
             dept = bd.getString("DEPT");
             userID=bd.getString("userID");
+            from=bd.getString("from");
+            tname=bd.getString("tname");
         }
 
         recyclerView=view.findViewById(R.id.recylerViewId);
@@ -106,6 +108,7 @@ public class Course_list_Fragment extends Fragment {
                             public void onSuccess(DocumentSnapshot documentSnapshot) {
 
                                 String title=documentSnapshot.getString("Title");
+
 
                                 courseItem.setCourseCode(code);
                                 courseItem.setCourseTitle(title);
@@ -287,11 +290,13 @@ public class Course_list_Fragment extends Fragment {
                 linearLayout.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        Log.d(TAG, "onClick: "+pos);
+                        Log.d(TAG, "onClick: "+pos+from);
 
                         CourseItem courseItem=courseItems.get(pos);
 
+
                         FragmentTransaction fragmentTransaction= getFragmentManager().beginTransaction();
+                        fragmentTransaction.addToBackStack(null); // back pressed krle prev fragment e jabe
 
                         Bundle bundle = new Bundle();
                         bundle.putString("Code", courseItem.getCourseCode());
@@ -300,11 +305,24 @@ public class Course_list_Fragment extends Fragment {
                         bundle.putString("dept",courseItem.getDept());
                         bundle.putString("lev",courseItem.getLevel());
                         bundle.putString("sem",courseItem.getSemester());
+                        bundle.putString("tname",tname);
 
-                        Fragment post = new PostFragment();
-                        post.setArguments(bundle);
+                        if(from.equals("post")){
 
-                        fragmentTransaction.replace(R.id.fragment_container,post).commit();
+                            Fragment post = new PostFragment();
+                            post.setArguments(bundle);
+
+                            fragmentTransaction.replace(R.id.fragment_container,post).commit();
+                        }
+                        else if(from.equals("schedule")){
+
+                            Fragment schedule = new TScheduleFragment();
+                            schedule.setArguments(bundle);
+
+                            fragmentTransaction.replace(R.id.fragment_container,schedule).commit();
+                        }
+
+
 
                     }
                 });

@@ -7,12 +7,15 @@
         <entry key="app/src/main/res/drawable/round_bg2.xml" value="0.209375" />
         <entry key="app/src/main/res/drawable/round_bg3.xml" value="0.209375" />
         <entry key="app/src/main/res/layout/activity_sign_up.xml" value="0.1802536231884058" />
+        <entry key="app/src/main/res/layout/activity_teacher.xml" value="0.1480978260869565" />
         <entry key="app/src/main/res/layout/courseitem_layout.xml" value="0.25" />
         <entry key="app/src/main/res/layout/fileitem_layout.xml" value="0.1802536231884058" />
         <entry key="app/src/main/res/layout/fragment_course_list_.xml" value="0.1802536231884058" />
         <entry key="app/src/main/res/layout/fragment_files.xml" value="0.1802536231884058" />
         <entry key="app/src/main/res/layout/fragment_post.xml" value="0.1802536231884058" />
+        <entry key="app/src/main/res/layout/fragment_sgroup.xml" value="0.14945652173913043" />
         <entry key="app/src/main/res/layout/message_layout.xml" value="0.1802536231884058" />
+        <entry key="app/src/main/res/layout/post_layout.xml" value="0.18342391304347827" />
         <entry key="app/src/main/res/menu/drawer_menu.xml" value="0.33" />
       </map>
     </option>

@@ -1425,6 +1425,7 @@ int id direct 0x7f090111
 int id disableHome 0x7f090112
 int id downloadFileButtonId 0x7f090113
 int id drawer_layout 0x7f090114
+int id editPostId 0x7f0901df
 int id edit_query 0x7f090115
 int id end 0x7f090116
 int id end_padder 0x7f090117
@@ -1509,6 +1510,10 @@ int id parentPanel 0x7f090163
 int id parent_matrix 0x7f090164
 int id percent 0x7f090165
 int id pin 0x7f090166
+int id postButtonId 0x7f0901e0
+int id postContainerId 0x7f0901e1
+int id postContentId 0x7f0901e2
+int id postTimeId 0x7f0901e3
 int id progressBar 0x7f090167
 int id progress_circular 0x7f090168
 int id progress_horizontal 0x7f090169
@@ -1741,6 +1746,7 @@ int layout notification_template_media 0x7f0c0054
 int layout notification_template_media_custom 0x7f0c0055
 int layout notification_template_part_chronometer 0x7f0c0056
 int layout notification_template_part_time 0x7f0c0057
+int layout post_layout 0x7f0c005f
 int layout select_dialog_item_material 0x7f0c0058
 int layout select_dialog_multichoice_material 0x7f0c0059
 int layout select_dialog_singlechoice_material 0x7f0c005a

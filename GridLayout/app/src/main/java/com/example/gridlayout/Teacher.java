@@ -37,7 +37,7 @@ public class Teacher extends AppCompatActivity {
 
     private FirebaseAuth mAuth;
     private FirebaseFirestore mFirestore;
-    private String userId;
+    private String userId,name,email;
     private AlertDialog.Builder alertdialogbuilder;
     String dept;
 
@@ -79,8 +79,8 @@ public class Teacher extends AppCompatActivity {
             public void onSuccess(DocumentSnapshot documentSnapshot) {
 
 
-                String name=documentSnapshot.getString("NAME");
-                String email=documentSnapshot.getString("EMAIL");
+                name=documentSnapshot.getString("NAME");
+                email=documentSnapshot.getString("EMAIL");
                 //  String courses=documentSnapshot.getString("COURSES");
 
 
@@ -142,7 +142,20 @@ public class Teacher extends AppCompatActivity {
 
                     case R.id.nav_schedule:
 
-                        getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,new TScheduleFragment()).commit();
+                        Fragment sch=new Course_list_Fragment();
+                        FragmentTransaction ft2=getSupportFragmentManager().beginTransaction();
+
+                        Bundle bundle2= new Bundle();
+                        bundle2.putString("DEPT",dept);
+                        bundle2.putString("userID",userId);
+                        bundle2.putString("from","schedule");
+                        bundle2.putString("tname",name);
+
+                        sch.setArguments(bundle2);
+
+
+                        ft2.replace(R.id.fragment_container,sch).commit();
+
 
                         break;
 
@@ -155,6 +168,8 @@ public class Teacher extends AppCompatActivity {
                         Bundle bundle1= new Bundle();
                         bundle1.putString("DEPT",dept);
                         bundle1.putString("userID",userId);
+                        bundle1.putString("tname",name);
+                        bundle1.putString("from","post");
 
                         post.setArguments(bundle1);
 

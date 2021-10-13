@@ -1426,6 +1426,7 @@ id direct
 id disableHome
 id downloadFileButtonId
 id drawer_layout
+id editPostId
 id edit_query
 id end
 id end_padder
@@ -1510,6 +1511,10 @@ id parentPanel
 id parent_matrix
 id percent
 id pin
+id postButtonId
+id postContainerId
+id postContentId
+id postTimeId
 id progressBar
 id progress_circular
 id progress_horizontal
@@ -1742,6 +1747,7 @@ layout notification_template_media
 layout notification_template_media_custom
 layout notification_template_part_chronometer
 layout notification_template_part_time
+layout post_layout
 layout select_dialog_item_material
 layout select_dialog_multichoice_material
 layout select_dialog_singlechoice_material
