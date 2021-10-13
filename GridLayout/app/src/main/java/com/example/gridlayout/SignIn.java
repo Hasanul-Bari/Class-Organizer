@@ -155,11 +155,12 @@ public class SignIn extends AppCompatActivity implements View.OnClickListener {
 
                             if(type.equals("Teacher")){
 
-
+                                String dept=documentSnapshot.getString("DEPARTMENT");
 
                                 finish();
                                 Intent intent =new Intent(SignIn.this,Teacher.class);
                                 intent.putExtra("user",usrId);
+                                intent.putExtra("dept",dept);
                                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
 
                                 startActivity(intent);

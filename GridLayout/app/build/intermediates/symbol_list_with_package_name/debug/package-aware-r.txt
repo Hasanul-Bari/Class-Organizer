@@ -1111,6 +1111,7 @@ drawable ic_launcher_foreground
 drawable ic_mtrl_chip_checked_black
 drawable ic_mtrl_chip_checked_circle
 drawable ic_mtrl_chip_close_circle
+drawable ic_post
 drawable ic_profile
 drawable ic_room
 drawable ic_schedule
@@ -1134,6 +1135,7 @@ drawable notify_panel_notification_icon_bg
 drawable request_bg
 drawable round_bg
 drawable round_bg2
+drawable round_bg3
 drawable round_border
 drawable student
 drawable teacher
@@ -1191,6 +1193,7 @@ id FloorNo
 id FullName
 id GotosignUPId
 id LevelHeading
+id LinearLayoutId
 id META
 id OK10
 id OK11
@@ -1384,6 +1387,7 @@ id button2
 id button3
 id buttonPanel
 id cancel_action
+id ccodeId
 id center
 id center_horizontal
 id center_vertical
@@ -1391,6 +1395,7 @@ id chains
 id checkbox
 id checked
 id chronometer
+id classID
 id clip_horizontal
 id clip_vertical
 id collapseActionView
@@ -1403,6 +1408,7 @@ id course_name
 id cse32Level
 id cse32Session
 id cse32_scheduleButton
+id ctitleId
 id custom
 id customPanel
 id dark
@@ -1450,6 +1456,7 @@ id ifRoom
 id image
 id imageViewSir
 id info
+id introId
 id invisible
 id italic
 id item_touch_helper_previous_elevation
@@ -1475,6 +1482,7 @@ id mtrl_internal_children_alpha_tag
 id multiply
 id nav_headertvEmailID
 id nav_headertvNameID
+id nav_post
 id nav_profile
 id nav_room
 id nav_s_files
@@ -1688,6 +1696,7 @@ layout activity_sign_up
 layout activity_sign_up__student
 layout activity_student
 layout activity_teacher
+layout courseitem_layout
 layout custom_dialog
 layout design_bottom_navigation_item
 layout design_bottom_sheet_dialog
@@ -1704,8 +1713,10 @@ layout design_navigation_menu
 layout design_navigation_menu_item
 layout design_text_input_password_icon
 layout fileitem_layout
+layout fragment_course_list_
 layout fragment_files
 layout fragment_floor_
+layout fragment_post
 layout fragment_room
 layout fragment_sgroup
 layout fragment_sprofile

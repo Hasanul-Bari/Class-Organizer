@@ -1,9 +1,10 @@
 <component name="libraryTable">
   <library name="Gradle: io.reactivex.rxjava2:rxandroid:2.0.2@aar">
     <CLASSES>
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/6adbd990d2564c7ae82c5753fc7ea7e8/transformed/jetified-rxandroid-2.0.2/jars/classes.jar!/" />
       <root url="file://$USER_HOME$/.gradle/caches/transforms-3/6adbd990d2564c7ae82c5753fc7ea7e8/transformed/jetified-rxandroid-2.0.2/res" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/6adbd990d2564c7ae82c5753fc7ea7e8/transformed/jetified-rxandroid-2.0.2/AndroidManifest.xml" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/b7386f43ed2ae279061ea2b56db40319/transformed/jetified-rxandroid-2.0.2/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/b7386f43ed2ae279061ea2b56db40319/transformed/jetified-rxandroid-2.0.2/AndroidManifest.xml" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/b7386f43ed2ae279061ea2b56db40319/transformed/jetified-rxandroid-2.0.2/jars/classes.jar!/" />
     </CLASSES>
     <JAVADOC>
       <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.reactivex.rxjava2/rxandroid/2.0.2/fcdc5a3422c57b141000facfa2c332d3a26d2ad4/rxandroid-2.0.2-javadoc.jar!/" />

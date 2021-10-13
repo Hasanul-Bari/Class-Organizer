@@ -4,17 +4,7 @@
             "outputFile": "/home/hasanul-bari/Documents/project 302/Software-Project/GridLayout/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-v16/values-v16.xml",
             "map": [
                 {
-                    "source": "/home/hasanul-bari/.gradle/caches/transforms-3/d537457d71e67cb2bdd95fc6a84616d3/transformed/core-1.2.0/res/values-v16/values-v16.xml",
-                    "from": {
-                        "startLines": "2",
-                        "startColumns": "4",
-                        "startOffsets": "55",
-                        "endColumns": "65",
-                        "endOffsets": "116"
-                    }
-                },
-                {
-                    "source": "/home/hasanul-bari/.gradle/caches/transforms-3/f62186e3246efd297dc8f850fc6e4432/transformed/appcompat-1.1.0/res/values-v16/values-v16.xml",
+                    "source": "/home/hasanul-bari/.gradle/caches/transforms-3/39736487ac687384dc9e57e7782c7047/transformed/appcompat-1.1.0/res/values-v16/values-v16.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
@@ -30,6 +20,16 @@
                         "endLines": "6",
                         "endColumns": "12",
                         "endOffsets": "289"
+                    }
+                },
+                {
+                    "source": "/home/hasanul-bari/.gradle/caches/transforms-3/174bbb4a61dbf7a2968058dd2cc8c5b0/transformed/core-1.2.0/res/values-v16/values-v16.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "65",
+                        "endOffsets": "116"
                     }
                 }
             ]

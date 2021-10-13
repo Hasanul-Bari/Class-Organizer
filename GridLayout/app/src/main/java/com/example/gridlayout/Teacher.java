@@ -146,6 +146,24 @@ public class Teacher extends AppCompatActivity {
 
                         break;
 
+
+                    case R.id.nav_post:
+
+                        Fragment post=new Course_list_Fragment();
+                        FragmentTransaction ft1=getSupportFragmentManager().beginTransaction();
+
+                        Bundle bundle1= new Bundle();
+                        bundle1.putString("DEPT",dept);
+                        bundle1.putString("userID",userId);
+
+                        post.setArguments(bundle1);
+
+
+                        ft1.replace(R.id.fragment_container,post).commit();
+
+
+                        break;
+
                     case R.id.nav_signout:
 
 

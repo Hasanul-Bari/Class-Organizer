@@ -40,7 +40,7 @@ public class SignUp extends AppCompatActivity implements View.OnClickListener {
     private FirebaseAuth mAuth;
     private ProgressBar pb;
     private Spinner spinner;
-    private String course="SELECT_COURSE";
+    private String dept="SELECT_DEPARTMENT";
     private DatabaseReference databaseReference;
 
     private FirebaseFirestore db = FirebaseFirestore.getInstance();
@@ -71,10 +71,10 @@ public class SignUp extends AppCompatActivity implements View.OnClickListener {
         tv1.setOnClickListener(this);
 
 
-          spinner = (Spinner) findViewById(R.id.spinner);
+        spinner = (Spinner) findViewById(R.id.spinner);
 // Create an ArrayAdapter using the string array and a default spinner layout
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
-                R.array.Courses, android.R.layout.simple_spinner_item);
+                R.array.Department, android.R.layout.simple_spinner_item);
 // Specify the layout to use when the list of choices appears
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 // Apply the adapter to the spinner
@@ -84,8 +84,8 @@ public class SignUp extends AppCompatActivity implements View.OnClickListener {
         spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                course=spinner.getSelectedItem().toString();
-                Toast.makeText(getApplicationContext(),course,Toast.LENGTH_SHORT).show();
+                dept=spinner.getSelectedItem().toString();
+                Toast.makeText(getApplicationContext(),dept,Toast.LENGTH_SHORT).show();
             }
 
             @Override
@@ -180,8 +180,8 @@ public class SignUp extends AppCompatActivity implements View.OnClickListener {
             contact.requestFocus();
             return;
         }
-        if(course.equals("SELECT_COURSE")){
-            Toast.makeText(getApplicationContext(),"Select a Course",Toast.LENGTH_SHORT).show();
+        if(dept.equals("SELECT_DEPARTMENT")){
+            Toast.makeText(getApplicationContext(),"Select a department",Toast.LENGTH_SHORT).show();
             spinner.requestFocus();
             return;
 
@@ -198,25 +198,26 @@ public class SignUp extends AppCompatActivity implements View.OnClickListener {
                 pb.setVisibility(View.GONE);
                 if (task.isSuccessful()) {
 
-               User_SIR user_sir= new User_SIR(name1,username,course,contact1);
+                    User_SIR user_sir= new User_SIR(name1,username,dept,contact1);
 
 
-               /////cloud firestore part
+                    /////cloud firestore part
 
 
                     //Toast.makeText(getApplicationContext(),usrId,Toast.LENGTH_SHORT).show();
                     String usrId=mAuth.getCurrentUser().getUid();
                     String sir_name=name1;
-                    String course_=course;
+                    String dept_=dept;
 
 
                     Map<String, Object> profile = new HashMap<>();
                     profile.put("NAME",sir_name);
-                    profile.put("COURSE",course_);
+                    profile.put("DEPARTMENT",dept_);
                     profile.put("CONTACT",contact1);
                     profile.put("EMAIL",username);
+                    profile.put("COURSES","");
 
-                    db.collection("TEACHER").document(usrId).set(profile)
+                    db.collection(dept_).document(usrId).set(profile)
                             .addOnSuccessListener(new OnSuccessListener<Void>() {
                                 @Override
                                 public void onSuccess(Void aVoid) {
@@ -237,6 +238,7 @@ public class SignUp extends AppCompatActivity implements View.OnClickListener {
 
                     Map<String, Object> type = new HashMap<>();
                     type.put("Type","Teacher");
+                    type.put("DEPARTMENT",dept_);
 
                     db.collection("UserType").document(usrId).set(type)
                             .addOnSuccessListener(new OnSuccessListener<Void>() {
@@ -294,8 +296,9 @@ public class SignUp extends AppCompatActivity implements View.OnClickListener {
 
                     Intent intent =new Intent(SignUp.this,Teacher.class);
 
-                   // intent.putExtra("course_code",usrId);
+                    // intent.putExtra("course_code",usrId);
                     intent.putExtra("user",usrId);
+                    intent.putExtra("dept",dept);
 
                     intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
 
