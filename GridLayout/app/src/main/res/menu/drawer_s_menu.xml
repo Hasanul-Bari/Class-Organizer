@@ -30,6 +30,11 @@
             android:title="Group" />
 
         <item
+            android:id="@+id/nav_s_course_updates"
+            android:icon="@drawable/ic_course_updates"
+            android:title="Course updates" />
+
+        <item
             android:id="@+id/nav_signout"
             android:icon="@drawable/ic_signout"
             android:title="Sign out" />

@@ -25,7 +25,41 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Sender: Hello"
+                android:text="Course Code: CSE 101"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                android:textStyle="bold"
+                android:textColor="#000000"
+                android:paddingLeft="5dp"
+                android:gravity="center"
+                android:id="@+id/postCodeId"
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Course Title: Computer Fundamentals"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                android:textColor="#000000"
+                android:paddingLeft="5dp"
+                android:gravity="center"
+                android:id="@+id/postTitleId"
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Course Teacher : MR. X"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                android:textColor="#000000"
+                android:paddingLeft="5dp"
+                android:gravity="center"
+                android:id="@+id/postTeacherId"
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Update:\n Hello"
                 android:textAppearance="@style/TextAppearance.AppCompat.Medium"
                 android:textStyle="bold"
                 android:textColor="#000000"

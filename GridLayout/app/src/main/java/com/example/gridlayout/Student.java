@@ -198,6 +198,25 @@ public class Student extends AppCompatActivity {
                         break;
 
 
+                    case R.id.nav_s_course_updates:
+
+
+                        Fragment course_updates=new SCourseUpdateFragment();
+                        FragmentTransaction ft4=getSupportFragmentManager().beginTransaction();
+
+                        Bundle bundle4= new Bundle();
+                        bundle4.putString("DEPT",dept);
+                        bundle4.putString("LEVEL",level);
+                        bundle4.putString("SEM",semester);
+                        bundle4.putString("NAME",name);
+                        course_updates.setArguments(bundle4);
+
+
+                        ft4.replace(R.id.fragment_container,course_updates).commit();
+
+
+                        break;
+
 
 
                     case R.id.nav_signout:

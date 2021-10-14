@@ -1104,6 +1104,7 @@ drawable design_snackbar_background
 drawable faculty
 drawable googleg_disabled_color_18
 drawable googleg_standard_color_18
+drawable ic_course_updates
 drawable ic_files
 drawable ic_group
 drawable ic_launcher_background
@@ -1486,6 +1487,7 @@ id nav_headertvNameID
 id nav_post
 id nav_profile
 id nav_room
+id nav_s_course_updates
 id nav_s_files
 id nav_s_group
 id nav_s_profile
@@ -1512,9 +1514,12 @@ id parent_matrix
 id percent
 id pin
 id postButtonId
+id postCodeId
 id postContainerId
 id postContentId
+id postTeacherId
 id postTimeId
+id postTitleId
 id progressBar
 id progress_circular
 id progress_horizontal
@@ -1723,6 +1728,7 @@ layout fragment_files
 layout fragment_floor_
 layout fragment_post
 layout fragment_room
+layout fragment_s_course_update
 layout fragment_sgroup
 layout fragment_sprofile
 layout fragment_sschedule

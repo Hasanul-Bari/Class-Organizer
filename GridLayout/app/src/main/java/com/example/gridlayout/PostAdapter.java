@@ -38,11 +38,14 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.PostViewHolder
 
         PostItem postItem=postList.get(position);
 
-        String content=postItem.getTname()+" : "+postItem.getContent();
+        String content="Update:\n"+postItem.getContent();
         String time=postItem.getDate();
 
         holder.postView.setText(content);
         holder.postTimeView.setText(time);
+        holder.codeView.setText("Course Code: "+postItem.getCourseCode());
+        holder.titleView.setText("Course Title: "+postItem.getCourseTitle());
+        holder.tnameView.setText("Course Teacher: "+postItem.getTname());
 
     }
 
@@ -53,13 +56,16 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.PostViewHolder
 
     public class PostViewHolder extends RecyclerView.ViewHolder {
 
-        TextView postView,postTimeView,codeView,titleView;
+        TextView postView,postTimeView,codeView,titleView,tnameView;
 
         public PostViewHolder(@NonNull View itemView) {
             super(itemView);
 
             postView=itemView.findViewById(R.id.postContentId);
             postTimeView=itemView.findViewById(R.id.postTimeId);
+            codeView=itemView.findViewById(R.id.postCodeId);
+            titleView=itemView.findViewById(R.id.postTitleId);
+            tnameView=itemView.findViewById(R.id.postTeacherId);
         }
     }
 }

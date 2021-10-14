@@ -4,7 +4,7 @@
     name=":app"
     type="APP"
     maven="GridLayout:app:"
-    gradle="7.0.2"
+    gradle="7.0.3"
     buildFolder="build"
     bootClassPath="/home/hasanul-bari/Android/Sdk/platforms/android-29/android.jar:/home/hasanul-bari/Android/Sdk/build-tools/30.0.2/core-lambda-stubs.jar"
     javaSourceLevel="1.8"

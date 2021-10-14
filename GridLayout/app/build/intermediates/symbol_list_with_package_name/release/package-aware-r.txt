@@ -1104,6 +1104,7 @@ drawable design_snackbar_background
 drawable faculty
 drawable googleg_disabled_color_18
 drawable googleg_standard_color_18
+drawable ic_course_updates
 drawable ic_files
 drawable ic_group
 drawable ic_launcher_background
@@ -1111,6 +1112,7 @@ drawable ic_launcher_foreground
 drawable ic_mtrl_chip_checked_black
 drawable ic_mtrl_chip_checked_circle
 drawable ic_mtrl_chip_close_circle
+drawable ic_post
 drawable ic_profile
 drawable ic_room
 drawable ic_schedule
@@ -1134,6 +1136,7 @@ drawable notify_panel_notification_icon_bg
 drawable request_bg
 drawable round_bg
 drawable round_bg2
+drawable round_bg3
 drawable round_border
 drawable student
 drawable teacher
@@ -1191,6 +1194,7 @@ id FloorNo
 id FullName
 id GotosignUPId
 id LevelHeading
+id LinearLayoutId
 id META
 id OK10
 id OK11
@@ -1382,9 +1386,9 @@ id bottomId
 id button
 id button2
 id button3
-id button4
 id buttonPanel
 id cancel_action
+id ccodeId
 id center
 id center_horizontal
 id center_vertical
@@ -1392,6 +1396,7 @@ id chains
 id checkbox
 id checked
 id chronometer
+id classID
 id clip_horizontal
 id clip_vertical
 id collapseActionView
@@ -1404,6 +1409,7 @@ id course_name
 id cse32Level
 id cse32Session
 id cse32_scheduleButton
+id ctitleId
 id custom
 id customPanel
 id dark
@@ -1421,6 +1427,7 @@ id direct
 id disableHome
 id downloadFileButtonId
 id drawer_layout
+id editPostId
 id edit_query
 id end
 id end_padder
@@ -1451,6 +1458,7 @@ id ifRoom
 id image
 id imageViewSir
 id info
+id introId
 id invisible
 id italic
 id item_touch_helper_previous_elevation
@@ -1476,8 +1484,10 @@ id mtrl_internal_children_alpha_tag
 id multiply
 id nav_headertvEmailID
 id nav_headertvNameID
+id nav_post
 id nav_profile
 id nav_room
+id nav_s_course_updates
 id nav_s_files
 id nav_s_group
 id nav_s_profile
@@ -1503,6 +1513,13 @@ id parentPanel
 id parent_matrix
 id percent
 id pin
+id postButtonId
+id postCodeId
+id postContainerId
+id postContentId
+id postTeacherId
+id postTimeId
+id postTitleId
 id progressBar
 id progress_circular
 id progress_horizontal
@@ -1581,6 +1598,7 @@ id tag_screen_reader_focusable
 id tag_transition_group
 id tag_unhandled_key_event_manager
 id tag_unhandled_key_listeners
+id teacherDrop
 id text
 id text2
 id textSpacerNoButtons
@@ -1688,6 +1706,7 @@ layout activity_sign_up
 layout activity_sign_up__student
 layout activity_student
 layout activity_teacher
+layout courseitem_layout
 layout custom_dialog
 layout design_bottom_navigation_item
 layout design_bottom_sheet_dialog
@@ -1704,13 +1723,15 @@ layout design_navigation_menu
 layout design_navigation_menu_item
 layout design_text_input_password_icon
 layout fileitem_layout
+layout fragment_course_list_
 layout fragment_files
 layout fragment_floor_
+layout fragment_post
 layout fragment_room
+layout fragment_s_course_update
 layout fragment_sgroup
 layout fragment_sprofile
 layout fragment_sschedule
-layout fragment_test_fragment
 layout fragment_tprofile
 layout fragment_tschedule
 layout message_layout
@@ -1732,6 +1753,7 @@ layout notification_template_media
 layout notification_template_media_custom
 layout notification_template_part_chronometer
 layout notification_template_part_time
+layout post_layout
 layout select_dialog_item_material
 layout select_dialog_multichoice_material
 layout select_dialog_singlechoice_material
