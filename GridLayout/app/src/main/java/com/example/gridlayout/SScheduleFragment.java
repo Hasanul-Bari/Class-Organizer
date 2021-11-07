@@ -14,12 +14,16 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.QueryDocumentSnapshot;
+import com.google.firebase.firestore.QuerySnapshot;
 
 import java.text.DateFormat;
 import java.text.DateFormatSymbols;
@@ -44,10 +48,12 @@ public class SScheduleFragment extends Fragment {
     private FirebaseAuth mAuth;
     private FirebaseFirestore mFirestore;
     private FirebaseFirestore db = FirebaseFirestore.getInstance();
+    private FirebaseFirestore db2 = FirebaseFirestore.getInstance();
+    private FirebaseFirestore mFirestore1 = FirebaseFirestore.getInstance();
 
     private String currentdate,dayOfTheWeek,courses;
 
-    String  dept, level, semester;
+    String  dept, level, semester,slot;
 
     private String t1,t2,t3,t4,t5,t6,code1,code2,code3,code4,code5,code6;
 
@@ -134,7 +140,7 @@ public class SScheduleFragment extends Fragment {
             @Override
             public void onSuccess(DocumentSnapshot documentSnapshot) {
 
-                String lastread=documentSnapshot.getString("date");
+                String lastread=documentSnapshot.getString("LastRead");
 
                 //Toast.makeText(getActivity(), lastread+ " lastread", Toast.LENGTH_SHORT).show();
                 //Toast.makeText(getActivity(), currentdate+ " currentdate", Toast.LENGTH_SHORT).show();
@@ -149,7 +155,7 @@ public class SScheduleFragment extends Fragment {
 
                     DocumentReference washingtonRef = db.collection(dayOfTheWeek).document("LastRead");
                     washingtonRef
-                            .update("date", currentdate)
+                            .update("LastRead", currentdate)
                             .addOnSuccessListener(new OnSuccessListener<Void>() {
                                 @Override
                                 public void onSuccess(Void aVoid) {
@@ -503,77 +509,94 @@ public class SScheduleFragment extends Fragment {
 
     public void SETDATA(final String day) {
 
+        //functionality changed 21 10 21, clear function got omitted by tanver likhon
 
-        //Toast.makeText(getContext(), "set data started", Toast.LENGTH_SHORT).show();
+        db.collection(dayOfTheWeek)
+                .get()
+                .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
 
+                    //slot;
+                    @Override
+                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                        if (task.isSuccessful()) {
+                            for (QueryDocumentSnapshot document : task.getResult()) {
 
-        switch (day) {
+                                slot=document.getId();
 
-            case "Sunday":
-                clear1(day, "10-11", "NO CLASS", "0");
-                clear1(day, "11-12", "NO CLASS", "0");
-                clear1(day, "12-13", "NO CLASS", "0");
-                clear1(day, "14-15", "CSE 303", "-1");
-                clear1(day, "15-16", "CSE 305", "-1");
-                clear1(day, "16-17", "CSE 307", "-1");
-                break;
-            case "Monday":
-                clear1(day, "10-11", "NO CLASS", "0");
-                clear1(day, "11-12", "NO CLASS", "0");
-                clear1(day, "12-13", "NO CLASS", "0");
-                clear1(day, "14-15", "CSE 305", "-1");
-                clear1(day, "15-16", "ECE 311", "-1");
-                clear1(day, "16-17", "ECN 305", "-1");
-                break;
-            case "Thursday":
-                clear1(day, "10-11", "NO CLASS", "0");
-                clear1(day, "11-12", "NO CLASS", "0");
-                clear1(day, "12-13", "NO CLASS", "0");
-                clear1(day, "14-15", "CSE 307", "-1");
-                clear1(day, "15-16", "ECE 311", "-1");
-                clear1(day, "16-17", "CSE 303", "-1");
-                break;
-            case "Tuesday":
-                clear1(day, "10-11", "NO CLASS", "0");
-                clear1(day, "11-12", "NO CLASS", "0");
-                clear1(day, "12-13", "NO CLASS", "0");
-                clear1(day, "14-15", "ECE 311", "-1");
-                clear1(day, "15-16", "CSE 307", "-1");
-                clear1(day, "16-17", "ECN 305", "-1");
-                break;
-            case "Wednesday":
-                clear1(day, "10-11", "NO CLASS", "0");
-                clear1(day, "11-12", "NO CLASS", "0");
-                clear1(day, "12-13", "NO CLASS", "0");
-                clear1(day, "14-15", "CSE 305", "-1");
-                clear1(day, "15-16", "CSE 307", "-1");
-                clear1(day, "16-17", "NO CLASS", "0");
-                break;
+                                //Toast.makeText(getContext(), "Slot "+slot, Toast.LENGTH_SHORT).show();
 
 
-        }
+                                // Toast.makeText(getContext(), "Slot "+slot.equals("LastRead"), Toast.LENGTH_SHORT).show();
+
+                                //slot.trim();
+
+                                if(slot.equals("LastRead")==true){
+                                    Toast.makeText(getContext(), " Entered true", Toast.LENGTH_SHORT).show();
+
+                                }else{
+
+                                    //Toast.makeText(getContext(), "entered false ", Toast.LENGTH_SHORT).show();
+
+
+                                    // Toast.makeText(getContext(), "Entered for "+slot, Toast.LENGTH_SHORT).show();
+
+                                    Log.d(TAG, "onComplete: 1"+slot);
+
+                                    clear1(slot);
+
+                                }
+
+                            }
+                        } else {
+
+                        }
+                    }
+                });
+
+
 
 
     }
 
-    public void clear1(String dd, String tt, String course, String stat) {
+    public void clear1(String Slot) {
+
+        //updated clear 22 10 21 by tanver likhon
+
+        mFirestore1.collection(dayOfTheWeek).document(Slot).get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+            @Override
+            public void onSuccess(DocumentSnapshot documentSnapshot) {
+
+                String CODE_ = documentSnapshot.getString("CODE");
+                String STAT_="-1";
+                if(CODE_.equals("NO CLASS")==true)STAT_="0";
+
+                //reseting schedule
 
 
-        DocumentReference washingtonRef = db.collection(dd).document(tt);
-        washingtonRef
-                .update("CURRENT", course, "REQ", "", "STATUS", stat)
-                .addOnSuccessListener(new OnSuccessListener<Void>() {
-                    @Override
-                    public void onSuccess(Void aVoid) {
-                        Log.d(TAG, "DocumentSnapshot successfully updated!");
-                    }
-                })
-                .addOnFailureListener(new OnFailureListener() {
-                    @Override
-                    public void onFailure(@NonNull Exception e) {
-                        Log.w(TAG, "Error updating document", e);
-                    }
-                });
+                //  Log.d(TAG, "onComplete: 2"+slot);
+
+                DocumentReference washingtonRef = db2.collection(dayOfTheWeek).document(Slot);
+                String finalSTAT_ = STAT_;
+                washingtonRef
+                        .update("CURRENT", CODE_, "REQ", "", "STATUS", STAT_,"CODE",CODE_)
+                        .addOnSuccessListener(new OnSuccessListener<Void>() {
+                            @Override
+                            public void onSuccess(Void aVoid) {
+                                Log.d(TAG, "DocumentSnapshot successfully updated!---3 "+Slot);
+
+                                // Toast.makeText(getContext(), "UPdated at "+Slot+" _"+CODE_+ finalSTAT_, Toast.LENGTH_SHORT).show();
+
+                            }
+                        })
+                        .addOnFailureListener(new OnFailureListener() {
+                            @Override
+                            public void onFailure(@NonNull Exception e) {
+                                Log.d(TAG, "Error updating document", e);
+
+                            }
+                        });
+            }
+        });
 
     }
 
