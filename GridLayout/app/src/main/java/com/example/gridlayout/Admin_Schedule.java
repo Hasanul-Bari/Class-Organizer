@@ -42,6 +42,7 @@ public class Admin_Schedule extends AppCompatActivity implements View.OnClickLis
     private String DeptInfo, CourseCode1, CourseCode2, CourseCode3, CourseCode4, CourseCode5, CourseCode6,temp_title,COURSES;
     private FirebaseFirestore db = FirebaseFirestore.getInstance();
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -210,7 +211,7 @@ public class Admin_Schedule extends AppCompatActivity implements View.OnClickLis
         _OK16.setOnClickListener(this);
 
 
-        //fetching course list from firestore 05 10 2021
+        //fetching course list from firestore 05 10 2021 by tanver likhon
 
 
         ArrayList<String>CL=new ArrayList<String>();
@@ -247,7 +248,7 @@ public class Admin_Schedule extends AppCompatActivity implements View.OnClickLis
         spinner1.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-                CourseCode2 = spinner1.getSelectedItem().toString();
+                CourseCode1 = spinner1.getSelectedItem().toString();
             }
 
             @Override
@@ -352,7 +353,7 @@ public class Admin_Schedule extends AppCompatActivity implements View.OnClickLis
 
     public void SET_COURSE(String dd, String tt, final String COURSE, TextView tv) {
 
-        //  Toast.makeText(getApplicationContext(), "SETCOURSE " + dd + tt + " cc " + COURSE, Toast.LENGTH_SHORT).show();
+         Toast.makeText(getApplicationContext(), "SETCOURSE " + dd + tt + " cc " + COURSE, Toast.LENGTH_SHORT).show();
 
 
 
