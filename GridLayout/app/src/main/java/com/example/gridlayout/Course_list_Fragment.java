@@ -44,10 +44,6 @@ public class Course_list_Fragment extends Fragment {
     }
 
 
-
-
-
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -56,7 +52,6 @@ public class Course_list_Fragment extends Fragment {
         //Getting data send by intend
         Bundle bd = getArguments();
         if (bd != null) {
-
             dept = bd.getString("DEPT");
             userID=bd.getString("userID");
             from=bd.getString("from");
@@ -299,12 +294,12 @@ public class Course_list_Fragment extends Fragment {
                         fragmentTransaction.addToBackStack(null); // back pressed krle prev fragment e jabe
 
                         Bundle bundle = new Bundle();
-                        bundle.putString("Code", courseItem.getCourseCode());
+                        bundle.putString("Code", courseItem.getCourseCode());//class code like cse 302
                         bundle.putString("Title",courseItem.getCourseTitle());
-                        bundle.putString("Class_",courseItem.getClass__());
-                        bundle.putString("dept",courseItem.getDept());
-                        bundle.putString("lev",courseItem.getLevel());
-                        bundle.putString("sem",courseItem.getSemester());
+                        bundle.putString("Class_",courseItem.getClass__());//cse32
+                        bundle.putString("dept",courseItem.getDept());//cse
+                        bundle.putString("lev",courseItem.getLevel());//3
+                        bundle.putString("sem",courseItem.getSemester());//not in roman
                         bundle.putString("tname",tname);
 
                         if(from.equals("post")){
