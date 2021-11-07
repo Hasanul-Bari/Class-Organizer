@@ -19,12 +19,16 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.QueryDocumentSnapshot;
+import com.google.firebase.firestore.QuerySnapshot;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -50,18 +54,20 @@ public class TScheduleFragment extends Fragment implements View.OnClickListener 
     private Button r10, r11, r12, r14, r15, r16;//req buttons
 
     private FirebaseFirestore db = FirebaseFirestore.getInstance();
+    private FirebaseFirestore db2 = FirebaseFirestore.getInstance();
     private AlertDialog.Builder alertdialogbuilder;
 
     private String st10, st11, st12, st14, st15, st16, codetemp = ";";
-    private String req10, req11, req12, req14, req15, req16, tm = "";
+    private String req10, req11, req12, req14, req15, req16, tm = "",course_title="",dept="",level="",sem="";
     private String previous = "55";
     private String str[] = {"10-11", "11-12", "12-13", "14-15", "15-16", "16-17"};
+    String DEPT_RESET,DAY_RESET;
 
 
     private FirebaseAuth mAuth;
     private FirebaseFirestore mFirestore, mFirestore1;
     private String userId = ";";
-    private String codeT = ";";
+    private String codeT = ";",slot;
     private String dayOfTheWeek,currentdate;
 
     private String t1,t2,t3,t4,t5,t6,Ccode1,Ccode2,Ccode3,Ccode4,Ccode5,Ccode6;
@@ -78,6 +84,20 @@ public class TScheduleFragment extends Fragment implements View.OnClickListener 
 
 
         View view = inflater.inflate(R.layout.fragment_tschedule, container, false);
+
+
+        Bundle bundle = getArguments();
+        if (bundle != null) {
+            codeT = bundle.getString("Code");
+            course_title=bundle.getString("Title");
+            dept=bundle.getString("dept");
+            level=bundle.getString("lev");
+            sem=bundle.getString("sem");
+
+        }
+
+
+
 
 
         SimpleDateFormat sdf = new SimpleDateFormat("EEEE");
@@ -156,11 +176,16 @@ public class TScheduleFragment extends Fragment implements View.OnClickListener 
 
         mAuth = FirebaseAuth.getInstance();
         mFirestore = FirebaseFirestore.getInstance();
+        mFirestore1 = FirebaseFirestore.getInstance();
 
         userId = mAuth.getCurrentUser().getUid();
 
 
-        mFirestore.collection("TEACHER").document(userId).get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+        //fetching teachers course code
+        //which means codeT is teacher's own course code
+
+
+/*        mFirestore.collection("TEACHER").document(userId).get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
             @Override
             public void onSuccess(DocumentSnapshot documentSnapshot) {
 
@@ -177,25 +202,42 @@ public class TScheduleFragment extends Fragment implements View.OnClickListener 
 
                 //Toast.makeText(getActivity(), "CODE T___" + codeT, Toast.LENGTH_SHORT).show();
             }
-        });
+        });*/
 
 
         currentdate=dateManipulate(currentdate,currentTime,dayOfTheWeek);
         dayOfTheWeek = dayManipulate(dayOfTheWeek, currentTime);
 
+        dept=dept.trim();
+        dept+=level;
+        level.trim();
+        sem.trim();
+        dept+=sem;
+
+
+
+
+
 
 
         day.setText("Class schedule for\n"+currentdate+"\n"+dayOfTheWeek);
 
+        DEPT_RESET=dept;
+        DAY_RESET=dayOfTheWeek;
+
+       dayOfTheWeek=dept+"_"+dayOfTheWeek;
+
+
+       // Toast.makeText(getActivity(), "DAY "+dayOfTheWeek, Toast.LENGTH_SHORT).show();
 
 
 
 
-        mFirestore.collection(dayOfTheWeek).document("LastRead").get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+       mFirestore.collection(dayOfTheWeek).document("LastRead").get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
             @Override
             public void onSuccess(DocumentSnapshot documentSnapshot) {
 
-                String lastread=documentSnapshot.getString("date");
+                String lastread=documentSnapshot.getString("LastRead");
 
                 //Toast.makeText(getActivity(), lastread+ " lastread", Toast.LENGTH_SHORT).show();
                 //Toast.makeText(getActivity(), currentdate+ " currentdate", Toast.LENGTH_SHORT).show();
@@ -210,7 +252,7 @@ public class TScheduleFragment extends Fragment implements View.OnClickListener 
 
                     DocumentReference washingtonRef = db.collection(dayOfTheWeek).document("LastRead");
                     washingtonRef
-                            .update("date", currentdate)
+                            .update("LastRead", currentdate)
                             .addOnSuccessListener(new OnSuccessListener<Void>() {
                                 @Override
                                 public void onSuccess(Void aVoid) {
@@ -227,7 +269,7 @@ public class TScheduleFragment extends Fragment implements View.OnClickListener 
 
                     ///reset data for timeslots
 
-                    SETDATA(dayOfTheWeek);
+                    SETDATA();
 
                 }
 
@@ -238,59 +280,37 @@ public class TScheduleFragment extends Fragment implements View.OnClickListener 
         });
 
 
-
-
-
-
-
-
-
-
-
+       //newly updated teacher schedule by tanver likhon 16 10 21
+        // codeT teacher's own course code
         mFirestore.collection(dayOfTheWeek).document("10-11").get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
             @Override
             public void onSuccess(DocumentSnapshot documentSnapshot) {
 
-                String code = documentSnapshot.getString("CURRENT");
-                String code1 = documentSnapshot.getString("CODE");
-                // String title = documentSnapshot.getString("Title");
-                String status = documentSnapshot.getString("STATUS");
+                String default_code=documentSnapshot.getString("CODE");
+                String current_code=documentSnapshot.getString("CURRENT");
+                String status=documentSnapshot.getString("STATUS");
+                req10=documentSnapshot.getString("STATUS");
 
-                req10 = documentSnapshot.getString("REQ");
-
-
-                code1="NO CLASS";
-
-                int tmp;
                 if (req10.length()>0) {
-                    tmp = req10.indexOf(codeT);
+                    int tmp = req10.indexOf(codeT);
                     if (tmp >= 0) {
 
                         r10.setText("Requested");
 
                     }
                 }
+                st10=status;
 
 
-                st10 = status;
-                if(code.length()==0) {
-                    code="NO CLASS";
-                }
-
-
-                if (code1.equals(codeT)) {
-                    /*r10.setVisibility(View.INVISIBLE);
-                    c10.setVisibility(View.VISIBLE);
-                    d10.setVisibility(View.VISIBLE);*/
-
-                    if (status.equals("1") && codeT.equals(code)) {
+                if (default_code.equals(codeT)) {
+                    if (status.equals("1") && codeT.equals(current_code)) {
                         d10.setVisibility(View.VISIBLE);
                         offButton(c10, r10);
-                    } else if (status.equals("1") && codeT.equals(code) == false) {
+                    } else if (status.equals("1") && codeT.equals(current_code) == false) {
                         r10.setVisibility(View.VISIBLE);
                         offButton(c10, d10);
 
-                    } else if (status.equals("0") && codeT.equals(code) == false) {
+                    } else if (status.equals("0") && codeT.equals(current_code) == false) {
                         r10.setVisibility(View.VISIBLE);
                         offButton(c10, d10);
                     } else {
@@ -299,29 +319,22 @@ public class TScheduleFragment extends Fragment implements View.OnClickListener 
                         r10.setVisibility(View.INVISIBLE);
                     }
 
-
-                } else if (codeT.equals(code)) {
+                } else if (codeT.equals(current_code)) {
                     d10.setVisibility(View.VISIBLE);
                     offButton(c10, r10);
 
                 } else offButton(c10, d10);
 
-
-
-
                 setTextView(status, __10s, __10t);
 
 
-                Ccode1=code;
-
-
-                if(Ccode1.equals("NO CLASS")==false)
+                if(current_code.equals("NO CLASS")==false)
                 {
-                    mFirestore.collection("COURSES").document(Ccode1).get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+                    mFirestore.collection(dept+"_COURSES").document(current_code).get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
                         @Override
                         public void onSuccess(DocumentSnapshot documentSnapshot) {
-                            t1=documentSnapshot.getString("Title");
-                            String str=Ccode1+"\n"+t1;
+                            t2=documentSnapshot.getString("Title");
+                            String str=current_code+"\n"+t2;
                             __10t.setText(str);
 
                         }
@@ -329,7 +342,7 @@ public class TScheduleFragment extends Fragment implements View.OnClickListener 
                 }
                 else
                 {
-                    String str=Ccode1;
+                    String str=current_code;
                     __10t.setText(str);
                 }
 
@@ -339,15 +352,17 @@ public class TScheduleFragment extends Fragment implements View.OnClickListener 
         });
 
 
+
+
+
         mFirestore.collection(dayOfTheWeek).document("11-12").get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
             @Override
             public void onSuccess(DocumentSnapshot documentSnapshot) {
 
-                String code = documentSnapshot.getString("CURRENT");
-                String code1 = documentSnapshot.getString("CODE");
-                //  String title = documentSnapshot.getString("Title");
-                String status = documentSnapshot.getString("STATUS");
-                req11 = documentSnapshot.getString("REQ");
+                String default_code=documentSnapshot.getString("CODE");
+                String current_code=documentSnapshot.getString("CURRENT");
+                String status=documentSnapshot.getString("STATUS");
+                req11=documentSnapshot.getString("STATUS");
 
                 if (req11.length()>0) {
                     int tmp = req11.indexOf(codeT);
@@ -357,29 +372,21 @@ public class TScheduleFragment extends Fragment implements View.OnClickListener 
 
                     }
                 }
+                st11=status;
 
 
-                st11 = status;
-
-                code1="NO CLASS";
-
-
-                if(code.length()==0) {
-                    code="NO CLASS";
-                }
-
-                if (code1.equals(codeT)) {
+                if (default_code.equals(codeT)) {
                   /*  r11.setVisibility(View.INVISIBLE);
                     c11.setVisibility(View.VISIBLE);
                     d11.setVisibility(View.VISIBLE);*/
-                    if (status.equals("1") && codeT.equals(code)) {
+                    if (status.equals("1") && codeT.equals(current_code)) {
                         d11.setVisibility(View.VISIBLE);
                         offButton(c11, r11);
-                    } else if (status.equals("1") && codeT.equals(code) == false) {
+                    } else if (status.equals("1") && codeT.equals(current_code) == false) {
                         r11.setVisibility(View.VISIBLE);
                         offButton(c11, d11);
 
-                    } else if (status.equals("0") && codeT.equals(code) == false) {
+                    } else if (status.equals("0") && codeT.equals(current_code) == false) {
                         r11.setVisibility(View.VISIBLE);
                         offButton(c11, d11);
                     } else {
@@ -388,7 +395,7 @@ public class TScheduleFragment extends Fragment implements View.OnClickListener 
                         r11.setVisibility(View.INVISIBLE);
                     }
 
-                } else if (codeT.equals(code)) {
+                } else if (codeT.equals(current_code)) {
                     d11.setVisibility(View.VISIBLE);
                     offButton(c11, r11);
 
@@ -397,15 +404,13 @@ public class TScheduleFragment extends Fragment implements View.OnClickListener 
                 setTextView(status, __11s, __11t);
 
 
-                Ccode2=code;
-
-                if(Ccode2.equals("NO CLASS")==false)
+                if(current_code.equals("NO CLASS")==false)
                 {
-                    mFirestore.collection("COURSES").document(Ccode2).get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+                    mFirestore.collection(dept+"_COURSES").document(current_code).get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
                         @Override
                         public void onSuccess(DocumentSnapshot documentSnapshot) {
                             t2=documentSnapshot.getString("Title");
-                            String str=Ccode2+"\n"+t2;
+                            String str=current_code+"\n"+t2;
                             __11t.setText(str);
 
                         }
@@ -413,7 +418,7 @@ public class TScheduleFragment extends Fragment implements View.OnClickListener 
                 }
                 else
                 {
-                    String str=Ccode2;
+                    String str=current_code;
                     __11t.setText(str);
                 }
 
@@ -423,15 +428,15 @@ public class TScheduleFragment extends Fragment implements View.OnClickListener 
         });
 
 
+
         mFirestore.collection(dayOfTheWeek).document("12-13").get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
             @Override
             public void onSuccess(DocumentSnapshot documentSnapshot) {
 
-                String code = documentSnapshot.getString("CURRENT");
-                String code1 = documentSnapshot.getString("CODE");
-                // String title = documentSnapshot.getString("Title");
-                String status = documentSnapshot.getString("STATUS");
-                req12 = documentSnapshot.getString("REQ");
+                String default_code=documentSnapshot.getString("CODE");
+                String current_code=documentSnapshot.getString("CURRENT");
+                String status=documentSnapshot.getString("STATUS");
+                req12=documentSnapshot.getString("STATUS");
 
                 if (req12.length()>0) {
                     int tmp = req12.indexOf(codeT);
@@ -441,28 +446,21 @@ public class TScheduleFragment extends Fragment implements View.OnClickListener 
 
                     }
                 }
+                st12=status;
 
-                code1="NO CLASS";
 
-
-                st12 = status;
-                if(code.length()==0) {
-                    code="NO CLASS";
-                }
-
-                if (code1.equals(codeT)) {
-                   /* r12.setVisibility(View.INVISIBLE);
-                    c12.setVisibility(View.VISIBLE);
-                    d12.setVisibility(View.VISIBLE);*/
-
-                    if (status.equals("1") && codeT.equals(code)) {
+                if (default_code.equals(codeT)) {
+                  /*  r11.setVisibility(View.INVISIBLE);
+                    c11.setVisibility(View.VISIBLE);
+                    d11.setVisibility(View.VISIBLE);*/
+                    if (status.equals("1") && codeT.equals(current_code)) {
                         d12.setVisibility(View.VISIBLE);
                         offButton(c12, r12);
-                    } else if (status.equals("1") && codeT.equals(code) == false) {
+                    } else if (status.equals("1") && codeT.equals(current_code) == false) {
                         r12.setVisibility(View.VISIBLE);
                         offButton(c12, d12);
 
-                    } else if (status.equals("0") && codeT.equals(code) == false) {
+                    } else if (status.equals("0") && codeT.equals(current_code) == false) {
                         r12.setVisibility(View.VISIBLE);
                         offButton(c12, d12);
                     } else {
@@ -471,9 +469,8 @@ public class TScheduleFragment extends Fragment implements View.OnClickListener 
                         r12.setVisibility(View.INVISIBLE);
                     }
 
-
-                } else if (codeT.equals(code)) {
-                    d10.setVisibility(View.VISIBLE);
+                } else if (codeT.equals(current_code)) {
+                    d12.setVisibility(View.VISIBLE);
                     offButton(c12, r12);
 
                 } else offButton(c12, d12);
@@ -481,16 +478,13 @@ public class TScheduleFragment extends Fragment implements View.OnClickListener 
                 setTextView(status, __12s, __12t);
 
 
-
-                Ccode3=code;
-
-                if(Ccode3.equals("NO CLASS")==false)
+                if(current_code.equals("NO CLASS")==false)
                 {
-                    mFirestore.collection("COURSES").document(Ccode3).get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+                    mFirestore.collection(dept+"_COURSES").document(current_code).get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
                         @Override
                         public void onSuccess(DocumentSnapshot documentSnapshot) {
-                            t3=documentSnapshot.getString("Title");
-                            String str=Ccode3+"\n"+t3;
+                            t2=documentSnapshot.getString("Title");
+                            String str=current_code+"\n"+t2;
                             __12t.setText(str);
 
                         }
@@ -498,7 +492,7 @@ public class TScheduleFragment extends Fragment implements View.OnClickListener 
                 }
                 else
                 {
-                    String str=Ccode3;
+                    String str=current_code;
                     __12t.setText(str);
                 }
 
@@ -511,44 +505,35 @@ public class TScheduleFragment extends Fragment implements View.OnClickListener 
         mFirestore.collection(dayOfTheWeek).document("14-15").get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
             @Override
             public void onSuccess(DocumentSnapshot documentSnapshot) {
-                String code = documentSnapshot.getString("CURRENT");
-                String code1 = documentSnapshot.getString("CODE");
 
-                //final String title = documentSnapshot.getString("Title");
-                String status = documentSnapshot.getString("STATUS");
-                req14 = documentSnapshot.getString("REQ");
+                String default_code=documentSnapshot.getString("CODE");
+                String current_code=documentSnapshot.getString("CURRENT");
+                String status=documentSnapshot.getString("STATUS");
+                req14=documentSnapshot.getString("STATUS");
 
                 if (req14.length()>0) {
-
                     int tmp = req14.indexOf(codeT);
                     if (tmp >= 0) {
 
                         r14.setText("Requested");
-                        // offButton(c14,d14);
 
                     }
                 }
+                st14=status;
 
 
-                st14 = status;
-
-                //  Toast.makeText(getActivity(), code1+" code T "+codeT, Toast.LENGTH_SHORT).show();
-
-                if(code.length()==0) {
-                    code="NO CLASS";
-                }
-
-                if (code1.equals(codeT)) {
-
-
-                    if (status.equals("1") && codeT.equals(code)) {
+                if (default_code.equals(codeT)) {
+                  /*  r11.setVisibility(View.INVISIBLE);
+                    c11.setVisibility(View.VISIBLE);
+                    d11.setVisibility(View.VISIBLE);*/
+                    if (status.equals("1") && codeT.equals(current_code)) {
                         d14.setVisibility(View.VISIBLE);
                         offButton(c14, r14);
-                    } else if (status.equals("1") && codeT.equals(code) == false) {
+                    } else if (status.equals("1") && codeT.equals(current_code) == false) {
                         r14.setVisibility(View.VISIBLE);
                         offButton(c14, d14);
 
-                    } else if (status.equals("0") && codeT.equals(code) == false) {
+                    } else if (status.equals("0") && codeT.equals(current_code) == false) {
                         r14.setVisibility(View.VISIBLE);
                         offButton(c14, d14);
                     } else {
@@ -557,26 +542,22 @@ public class TScheduleFragment extends Fragment implements View.OnClickListener 
                         r14.setVisibility(View.INVISIBLE);
                     }
 
-                } else if (codeT.equals(code)) {
+                } else if (codeT.equals(current_code)) {
                     d14.setVisibility(View.VISIBLE);
                     offButton(c14, r14);
 
                 } else offButton(c14, d14);
 
-
                 setTextView(status, __14s, __14t);
 
 
-
-                Ccode4=code;
-
-                if(Ccode4.equals("NO CLASS")==false)
+                if(current_code.equals("NO CLASS")==false)
                 {
-                    mFirestore.collection("COURSES").document(Ccode4).get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+                    mFirestore.collection(dept+"_COURSES").document(current_code).get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
                         @Override
                         public void onSuccess(DocumentSnapshot documentSnapshot) {
-                            t4=documentSnapshot.getString("Title");
-                            String str=Ccode4+"\n"+t4;
+                            t2=documentSnapshot.getString("Title");
+                            String str=current_code+"\n"+t2;
                             __14t.setText(str);
 
                         }
@@ -584,10 +565,9 @@ public class TScheduleFragment extends Fragment implements View.OnClickListener 
                 }
                 else
                 {
-                    String str=Ccode4;
+                    String str=current_code;
                     __14t.setText(str);
                 }
-
 
 
 
@@ -599,14 +579,10 @@ public class TScheduleFragment extends Fragment implements View.OnClickListener 
             @Override
             public void onSuccess(DocumentSnapshot documentSnapshot) {
 
-                String code = documentSnapshot.getString("CURRENT");
-                String code1 = documentSnapshot.getString("CODE");
-                //String title = documentSnapshot.getString("Title");
-                req15 = documentSnapshot.getString("REQ");
-
-
-                String status = documentSnapshot.getString("STATUS");
-
+                String default_code=documentSnapshot.getString("CODE");
+                String current_code=documentSnapshot.getString("CURRENT");
+                String status=documentSnapshot.getString("STATUS");
+                req15=documentSnapshot.getString("STATUS");
 
                 if (req15.length()>0) {
                     int tmp = req15.indexOf(codeT);
@@ -616,27 +592,21 @@ public class TScheduleFragment extends Fragment implements View.OnClickListener 
 
                     }
                 }
+                st15=status;
 
 
-                st15 = status;
-
-                if(code.length()==0) {
-                    code="NO CLASS";
-                }
-
-                if (code1.equals(codeT)) {
-                  /*  r15.setVisibility(View.INVISIBLE);
-                    c15.setVisibility(View.VISIBLE);
-                    d15.setVisibility(View.VISIBLE);*/
-
-                    if (status.equals("1") && codeT.equals(code)) {
+                if (default_code.equals(codeT)) {
+                  /*  r11.setVisibility(View.INVISIBLE);
+                    c11.setVisibility(View.VISIBLE);
+                    d11.setVisibility(View.VISIBLE);*/
+                    if (status.equals("1") && codeT.equals(current_code)) {
                         d15.setVisibility(View.VISIBLE);
                         offButton(c15, r15);
-                    } else if (status.equals("1") && codeT.equals(code) == false) {
+                    } else if (status.equals("1") && codeT.equals(current_code) == false) {
                         r15.setVisibility(View.VISIBLE);
                         offButton(c15, d15);
 
-                    } else if (status.equals("0") && codeT.equals(code) == false) {
+                    } else if (status.equals("0") && codeT.equals(current_code) == false) {
                         r15.setVisibility(View.VISIBLE);
                         offButton(c15, d15);
                     } else {
@@ -645,7 +615,7 @@ public class TScheduleFragment extends Fragment implements View.OnClickListener 
                         r15.setVisibility(View.INVISIBLE);
                     }
 
-                } else if (codeT.equals(code)) {
+                } else if (codeT.equals(current_code)) {
                     d15.setVisibility(View.VISIBLE);
                     offButton(c15, r15);
 
@@ -653,15 +623,14 @@ public class TScheduleFragment extends Fragment implements View.OnClickListener 
 
                 setTextView(status, __15s, __15t);
 
-                Ccode5=code;
 
-                if(Ccode5.equals("NO CLASS")==false)
+                if(current_code.equals("NO CLASS")==false)
                 {
-                    mFirestore.collection("COURSES").document(Ccode5).get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+                    mFirestore.collection(dept+"_COURSES").document(current_code).get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
                         @Override
                         public void onSuccess(DocumentSnapshot documentSnapshot) {
-                            t5=documentSnapshot.getString("Title");
-                            String str=Ccode5+"\n"+t5;
+                            t2=documentSnapshot.getString("Title");
+                            String str=current_code+"\n"+t2;
                             __15t.setText(str);
 
                         }
@@ -669,30 +638,24 @@ public class TScheduleFragment extends Fragment implements View.OnClickListener 
                 }
                 else
                 {
-                    String str=Ccode5;
+                    String str=current_code;
                     __15t.setText(str);
                 }
+
 
 
             }
         });
 
 
-
         mFirestore.collection(dayOfTheWeek).document("16-17").get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
             @Override
             public void onSuccess(DocumentSnapshot documentSnapshot) {
 
-
-
-
-
-                String code = documentSnapshot.getString("CURRENT");
-                String code1 = documentSnapshot.getString("CODE");
-                //  String title = documentSnapshot.getString("Title");
-                req16 = documentSnapshot.getString("REQ");
-
-                String status = documentSnapshot.getString("STATUS");
+                String default_code=documentSnapshot.getString("CODE");
+                String current_code=documentSnapshot.getString("CURRENT");
+                String status=documentSnapshot.getString("STATUS");
+                req16=documentSnapshot.getString("STATUS");
 
                 if (req16.length()>0) {
                     int tmp = req16.indexOf(codeT);
@@ -702,27 +665,21 @@ public class TScheduleFragment extends Fragment implements View.OnClickListener 
 
                     }
                 }
+                st16=status;
 
 
-                st16 = status;
-
-
-                if(code.length()==0) {
-                    code="NO CLASS";
-                }
-
-                if (code1.equals(codeT)) {
-                   /* r16.setVisibility(View.INVISIBLE);
-                    c16.setVisibility(View.VISIBLE);
-                    d16.setVisibility(View.VISIBLE);*/
-
-                    if (status.equals("1") && codeT.equals(code)) {
+                if (default_code.equals(codeT)) {
+                  /*  r11.setVisibility(View.INVISIBLE);
+                    c11.setVisibility(View.VISIBLE);
+                    d11.setVisibility(View.VISIBLE);*/
+                    if (status.equals("1") && codeT.equals(current_code)) {
                         d16.setVisibility(View.VISIBLE);
                         offButton(c16, r16);
-                    } else if (status.equals("1") && codeT.equals(code) == false) {
+                    } else if (status.equals("1") && codeT.equals(current_code) == false) {
                         r16.setVisibility(View.VISIBLE);
                         offButton(c16, d16);
-                    } else if (status.equals("0") && codeT.equals(code) == false) {
+
+                    } else if (status.equals("0") && codeT.equals(current_code) == false) {
                         r16.setVisibility(View.VISIBLE);
                         offButton(c16, d16);
                     } else {
@@ -731,8 +688,7 @@ public class TScheduleFragment extends Fragment implements View.OnClickListener 
                         r16.setVisibility(View.INVISIBLE);
                     }
 
-
-                } else if (codeT.equals(code)) {
+                } else if (codeT.equals(current_code)) {
                     d16.setVisibility(View.VISIBLE);
                     offButton(c16, r16);
 
@@ -740,15 +696,14 @@ public class TScheduleFragment extends Fragment implements View.OnClickListener 
 
                 setTextView(status, __16s, __16t);
 
-                Ccode6=code;
 
-                if(Ccode6.equals("NO CLASS")==false)
+                if(current_code.equals("NO CLASS")==false)
                 {
-                    mFirestore.collection("COURSES").document(Ccode6).get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+                    mFirestore.collection(dept+"_COURSES").document(current_code).get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
                         @Override
                         public void onSuccess(DocumentSnapshot documentSnapshot) {
-                            t6=documentSnapshot.getString("Title");
-                            String str=Ccode6+"\n"+t6;
+                            t2=documentSnapshot.getString("Title");
+                            String str=current_code+"\n"+t2;
                             __16t.setText(str);
 
                         }
@@ -756,9 +711,10 @@ public class TScheduleFragment extends Fragment implements View.OnClickListener 
                 }
                 else
                 {
-                    String str=Ccode6;
+                    String str=current_code;
                     __16t.setText(str);
                 }
+
 
 
             }
@@ -925,60 +881,52 @@ public class TScheduleFragment extends Fragment implements View.OnClickListener 
 
     ////functionality for requesting for a slot
 
-
     ///  resetting data
-    public void SETDATA(final String day) {
+    public void SETDATA() {
+
+        //functionality changed 21 10 21, clear function got omitted by tanver likhon
+
+        db.collection(dayOfTheWeek)
+                .get()
+                .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+
+                     //slot;
+                    @Override
+                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                        if (task.isSuccessful()) {
+                            for (QueryDocumentSnapshot document : task.getResult()) {
+
+                                slot=document.getId();
+
+                                //Toast.makeText(getContext(), "Slot "+slot, Toast.LENGTH_SHORT).show();
 
 
-        //Toast.makeText(getContext(), "set data started", Toast.LENGTH_SHORT).show();
+                               // Toast.makeText(getContext(), "Slot "+slot.equals("LastRead"), Toast.LENGTH_SHORT).show();
+
+                                //slot.trim();
+
+                                if(slot.equals("LastRead")==true){
+                                    Toast.makeText(getContext(), " Entered true", Toast.LENGTH_SHORT).show();
+
+                                }else{
+
+                                    //Toast.makeText(getContext(), "entered false ", Toast.LENGTH_SHORT).show();
 
 
-        switch (day) {
+                                   // Toast.makeText(getContext(), "Entered for "+slot, Toast.LENGTH_SHORT).show();
 
-            case "Sunday":
-                clear1(day, "10-11", "NO CLASS", "0");
-                clear1(day, "11-12", "NO CLASS", "0");
-                clear1(day, "12-13", "NO CLASS", "0");
-                clear1(day, "14-15", "CSE 303", "-1");
-                clear1(day, "15-16", "CSE 305", "-1");
-                clear1(day, "16-17", "CSE 307", "-1");
-                break;
-            case "Monday":
-                clear1(day, "10-11", "NO CLASS", "0");
-                clear1(day, "11-12", "NO CLASS", "0");
-                clear1(day, "12-13", "NO CLASS", "0");
-                clear1(day, "14-15", "CSE 305", "-1");
-                clear1(day, "15-16", "ECE 311", "-1");
-                clear1(day, "16-17", "ECN 305", "-1");
-                break;
-            case "Thursday":
-                clear1(day, "10-11", "NO CLASS", "0");
-                clear1(day, "11-12", "NO CLASS", "0");
-                clear1(day, "12-13", "NO CLASS", "0");
-                clear1(day, "14-15", "CSE 307", "-1");
-                clear1(day, "15-16", "ECE 311", "-1");
-                clear1(day, "16-17", "CSE 303", "-1");
-                break;
-            case "Tuesday":
-                clear1(day, "10-11", "NO CLASS", "0");
-                clear1(day, "11-12", "NO CLASS", "0");
-                clear1(day, "12-13", "NO CLASS", "0");
-                clear1(day, "14-15", "ECE 311", "-1");
-                clear1(day, "15-16", "CSE 307", "-1");
-                clear1(day, "16-17", "ECN 305", "-1");
-                break;
-            case "Wednesday":
-                clear1(day, "10-11", "NO CLASS", "0");
-                clear1(day, "11-12", "NO CLASS", "0");
-                clear1(day, "12-13", "NO CLASS", "0");
-                clear1(day, "14-15", "CSE 305", "-1");
-                clear1(day, "15-16", "CSE 307", "-1");
-                clear1(day, "16-17", "NO CLASS", "0");
-                break;
+                                    Log.d(TAG, "onComplete: 1"+slot);
 
+                                    clear1(slot);
 
-        }
+                                }
 
+                            }
+                        } else {
+
+                        }
+                    }
+                });
 
     }
 
@@ -1004,6 +952,57 @@ public class TScheduleFragment extends Fragment implements View.OnClickListener 
     }*/
 
     //done by tanver
+// done by tanver likhon 21 10 2021 for flexible schedule
+    public void clear1(String Slot) {
+/*        Log.d(TAG, "clear1: "+Slot);
+        Log.d(TAG, "clear1---: "+Slot+" "+dayOfTheWeek);*/
+
+        mFirestore1.collection(dayOfTheWeek).document(Slot).get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+            @Override
+            public void onSuccess(DocumentSnapshot documentSnapshot) {
+
+                String CODE_ = documentSnapshot.getString("CODE");
+                String STAT_="-1";
+                if(CODE_.equals("NO CLASS")==true)STAT_="0";
+
+                //reseting schedule
+
+
+              //  Log.d(TAG, "onComplete: 2"+slot);
+
+                DocumentReference washingtonRef = db2.collection(dayOfTheWeek).document(Slot);
+                String finalSTAT_ = STAT_;
+                washingtonRef
+                        .update("CURRENT", CODE_, "REQ", "", "STATUS", STAT_,"CODE",CODE_)
+                        .addOnSuccessListener(new OnSuccessListener<Void>() {
+                            @Override
+                            public void onSuccess(Void aVoid) {
+                                Log.d(TAG, "DocumentSnapshot successfully updated!---3 "+Slot);
+
+                               // Toast.makeText(getContext(), "UPdated at "+Slot+" _"+CODE_+ finalSTAT_, Toast.LENGTH_SHORT).show();
+
+                            }
+                        })
+                        .addOnFailureListener(new OnFailureListener() {
+                            @Override
+                            public void onFailure(@NonNull Exception e) {
+                                Log.d(TAG, "Error updating document", e);
+
+                            }
+                        });
+            }
+        });
+
+
+
+
+
+    }
+
+
+/*
+
+// function got omitted after 21 10 2021 update
 
     public void clear1(String dd, String tt, String course, String stat) {
 
@@ -1025,13 +1024,16 @@ public class TScheduleFragment extends Fragment implements View.OnClickListener 
                     }
                 });
 
-    }
+    }*/
+
+
+
 
 
 
     public void request(final String timee, final TextView sch, String status, final Button bt, final Button decl, final TextView stat) {
 
-
+//updated  collection path by tanver likhon 15 10 21
 
         mFirestore.collection(dayOfTheWeek).document(timee).get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
             @Override
@@ -1044,7 +1046,6 @@ public class TScheduleFragment extends Fragment implements View.OnClickListener 
 
                 if (status.equals("0")) {
 
-
                     DocumentReference washingtonRef = db.collection(dayOfTheWeek).document(timee);
                     washingtonRef
                             .update("STATUS", "1", "CURRENT", codeT)
@@ -1052,6 +1053,11 @@ public class TScheduleFragment extends Fragment implements View.OnClickListener 
                                 @Override
                                 public void onSuccess(Void aVoid) {
                                     Log.d(TAG, "DocumentSnapshot successfully updated!");
+
+
+
+
+
                                 }
                             })
                             .addOnFailureListener(new OnFailureListener() {
@@ -1070,7 +1076,7 @@ public class TScheduleFragment extends Fragment implements View.OnClickListener 
 
                     if(codeT.equals("NO CLASS")==false)
                     {
-                        mFirestore.collection("COURSES").document(codeT).get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+                        mFirestore.collection(dept+"_COURSES").document(codeT).get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
                             @Override
                             public void onSuccess(DocumentSnapshot documentSnapshot) {
                                 String tt=documentSnapshot.getString("Title");
@@ -1167,7 +1173,7 @@ public class TScheduleFragment extends Fragment implements View.OnClickListener 
 
                                     if(codeT.equals("NO CLASS")==false)
                                     {
-                                        mFirestore.collection("COURSES").document(tmp).get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+                                        mFirestore.collection(dept+"_COURSES").document(tmp).get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
                                             @Override
                                             public void onSuccess(DocumentSnapshot documentSnapshot) {
                                                 String tt=documentSnapshot.getString("Title");
