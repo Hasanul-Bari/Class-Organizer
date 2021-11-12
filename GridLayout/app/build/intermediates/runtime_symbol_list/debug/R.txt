@@ -1149,6 +1149,7 @@ int id ALT 0x7f090000
 int id Add_CR 0x7f090001
 int id Add_teacher 0x7f090002
 int id AdminPanel 0x7f090003
+int id AdminSignInButton 0x7f0901e8
 int id CRC 0x7f090004
 int id CREID 0x7f090005
 int id CRFN 0x7f090006
@@ -1372,6 +1373,8 @@ int id activity_chooser_view_content 0x7f0900de
 int id add 0x7f0900df
 int id adjust_height 0x7f0900e0
 int id adjust_width 0x7f0900e1
+int id adminNameId 0x7f0901e9
+int id adminPwId 0x7f0901ea
 int id alertTitle 0x7f0900e2
 int id all 0x7f0900e3
 int id always 0x7f0900e4
@@ -1701,6 +1704,7 @@ int layout activity_main 0x7f0c0025
 int layout activity_profile 0x7f0c0026
 int layout activity_sign_in 0x7f0c0027
 int layout activity_sign_in__student 0x7f0c0028
+int layout activity_sign_in_admin 0x7f0c0061
 int layout activity_sign_up 0x7f0c0029
 int layout activity_sign_up__student 0x7f0c002a
 int layout activity_student 0x7f0c002b
