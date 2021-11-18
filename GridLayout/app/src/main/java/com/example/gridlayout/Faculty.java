@@ -36,15 +36,15 @@ public class Faculty extends AppCompatActivity implements View.OnClickListener {
             intent.putExtra("Dept","CSE");
             startActivity(intent);
         }
-      /*  else if(v.getId()==R.id.EEE){
-            Intent intent=new Intent(DeptList.this,Admin_pane.class);
+       else if(v.getId()==R.id.EEE){
+          Intent intent=new Intent(Faculty.this,dept_cse.class);
             intent.putExtra("Dept","EEE");
             startActivity(intent);
         }
         else if(v.getId()==R.id.ECE){
-            Intent intent=new Intent(DeptList.this,Admin_pane.class);
+          Intent intent=new Intent(Faculty.this,dept_cse.class);
             intent.putExtra("Dept","ECE");
             startActivity(intent);
-        }*/
+        }
     }
 }

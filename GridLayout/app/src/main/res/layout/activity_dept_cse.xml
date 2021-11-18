@@ -7,6 +7,8 @@
 
     tools:context=".dept_cse">
 
+    <!--updated by tanverlikhon 18/11/21-->
+
     <TextView
 
         android:layout_width="match_parent"
@@ -58,35 +60,306 @@
 
                         android:layout_margin="12dp"
 
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginRight="10dp"
-                        android:text="Level: 3 Semester: II "
+                        android:text="Level: 1 Semester: I"
+                        android:textAlignment="center"
+                        android:id="@+id/cse11Level"
+                        android:textSize="20sp"
+
+                        />
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:weightSum="4"
+                    android:layout_margin="15dp"
+                    android:gravity="center"
+                    >
+
+                    <Button
+
+                        android:id="@+id/cse11_scheduleButton"
+                        android:background="@drawable/confirm_bg"
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="DETAILS"
+                        android:padding="5dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_weight="4"
+
+                        />
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/round_bg2"
+                android:layout_margin="5dp"
+                android:orientation="vertical"
+                >
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+
+                    <TextView
+
+                        android:layout_margin="12dp"
+
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="10dp"
+                        android:text="Level: 1 Semester: II"
+                        android:textAlignment="center"
+                        android:id="@+id/cse12Level"
+                        android:textSize="20sp"
+
+                        />
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:weightSum="4"
+                    android:layout_margin="15dp"
+                    android:gravity="center"
+                    >
+
+                    <Button
+
+                        android:id="@+id/cse12_scheduleButton"
+                        android:background="@drawable/confirm_bg"
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="DETAILS"
+                        android:padding="5dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_weight="4"
+
+                        />
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/round_bg2"
+                android:layout_margin="5dp"
+                android:orientation="vertical"
+                >
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+
+                    <TextView
+
+                        android:layout_margin="12dp"
+
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="10dp"
+                        android:text="Level: 2 Semester: I"
+                        android:textAlignment="center"
+                        android:id="@+id/cse21Level"
+                        android:textSize="20sp"
+
+                        />
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:weightSum="4"
+                    android:layout_margin="15dp"
+                    android:gravity="center"
+                    >
+
+                    <Button
+
+                        android:id="@+id/cse21_scheduleButton"
+                        android:background="@drawable/confirm_bg"
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="DETAILS"
+                        android:padding="5dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_weight="4"
+
+                        />
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/round_bg2"
+                android:layout_margin="5dp"
+                android:orientation="vertical"
+                >
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+
+                    <TextView
+
+                        android:layout_margin="12dp"
+
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="10dp"
+                        android:text="Level: 2 Semester: II"
+                        android:textAlignment="center"
+                        android:id="@+id/cse22Level"
+                        android:textSize="20sp"
+
+                        />
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:weightSum="4"
+                    android:layout_margin="15dp"
+                    android:gravity="center"
+                    >
+
+                    <Button
+
+                        android:id="@+id/cse22_scheduleButton"
+                        android:background="@drawable/confirm_bg"
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="DETAILS"
+                        android:padding="5dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_weight="4"
+
+                        />
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/round_bg2"
+                android:layout_margin="5dp"
+                android:orientation="vertical"
+                >
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+
+                    <TextView
+
+                        android:layout_margin="12dp"
+
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="10dp"
+                        android:text="Level: 3 Semester: I"
+                        android:textAlignment="center"
+                        android:id="@+id/cse31Level"
+                        android:textSize="20sp"
+
+                        />
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:weightSum="4"
+                    android:layout_margin="15dp"
+                    android:gravity="center"
+                    >
+
+                    <Button
+
+                        android:id="@+id/cse31_scheduleButton"
+                        android:background="@drawable/confirm_bg"
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="DETAILS"
+                        android:padding="5dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_weight="4"
+
+                        />
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/round_bg2"
+                android:layout_margin="5dp"
+                android:orientation="vertical"
+                >
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+
+                    <TextView
+
+                        android:layout_margin="12dp"
+
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="10dp"
+                        android:text="Level: 3 Semester: II"
+                        android:textAlignment="center"
                         android:id="@+id/cse32Level"
                         android:textSize="20sp"
 
                         />
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-
-                        android:layout_marginLeft="10dp"
-                        android:layout_marginTop="10dp"
-                        android:paddingLeft="10dp"
-                        android:text="Session:"
-                        android:textSize="20sp" />
-                    <TextView
-
-                        android:id="@+id/cse32Session"
-
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-
-                        android:layout_margin="10dp"
-                        android:paddingLeft="10dp"
-                        android:text="2017"
-                        android:textSize="20sp" />
 
                 </LinearLayout>
 
@@ -112,25 +385,125 @@
 
                         />
 
-                    <!--
-                                        <Button
+                </LinearLayout>
 
-                                            android:id="@+id/cse32_rescheduleButton"
-                                            android:background="@drawable/decline_bg"
 
-                                            android:layout_width="wrap_content"
-                                            android:layout_height="wrap_content"
-                                            android:text="Reschedule"
-                                            android:padding="5dp"
-                                            android:layout_weight="1"
-                                            />
-                    -->
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/round_bg2"
+                android:layout_margin="5dp"
+                android:orientation="vertical"
+                >
 
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+
+                    <TextView
+
+                        android:layout_margin="12dp"
+
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="10dp"
+                        android:text="Level: 4 Semester: I"
+                        android:textAlignment="center"
+                        android:id="@+id/cse41Level"
+                        android:textSize="20sp"
+
+                        />
 
 
                 </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:weightSum="4"
+                    android:layout_margin="15dp"
+                    android:gravity="center"
+                    >
+
+                    <Button
+
+                        android:id="@+id/cse41_scheduleButton"
+                        android:background="@drawable/confirm_bg"
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="DETAILS"
+                        android:padding="5dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_weight="4"
+
+                        />
+
+                </LinearLayout>
+
+
             </LinearLayout>
 
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/round_bg2"
+                android:layout_margin="5dp"
+                android:orientation="vertical"
+                >
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+
+                    <TextView
+
+                        android:layout_margin="12dp"
+
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="10dp"
+                        android:text="Level: 4 Semester: II"
+                        android:textAlignment="center"
+                        android:id="@+id/cse42Level"
+                        android:textSize="20sp"
+
+                        />
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:weightSum="4"
+                    android:layout_margin="15dp"
+                    android:gravity="center"
+                    >
+
+                    <Button
+
+                        android:id="@+id/cse42_scheduleButton"
+                        android:background="@drawable/confirm_bg"
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="DETAILS"
+                        android:padding="5dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_weight="4"
+
+                        />
+
+                </LinearLayout>
+
+
+            </LinearLayout>
 
 
 
@@ -139,16 +512,12 @@
             <!-- TODO: Update blank fragment layout -->
 
 
-
-
-
-
-
-
-
-
-
         </LinearLayout>
+
+
+
+
+
 
 
 

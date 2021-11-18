@@ -113,7 +113,7 @@ public class cse_32 extends AppCompatActivity implements View.OnClickListener {
 
         Intent intent = getIntent();
         level = intent.getStringExtra("LevelSemester");
-        session = intent.getStringExtra("Session");
+       // session = intent.getStringExtra("Session");
         dept = intent.getStringExtra("Dept");
         track = intent.getStringExtra("Track");
 
@@ -125,7 +125,8 @@ public class cse_32 extends AppCompatActivity implements View.OnClickListener {
         else L += "II\n";
         Toast.makeText(getApplicationContext(), "CS--" + dept, Toast.LENGTH_SHORT).show();
         // Toast.makeText(getApplicationContext(),_LevelSemester.getText().toString(),Toast.LENGTH_SHORT).show();
-        _LevelSemester.setText(L + " " + dept + " " + session + "\n");
+       // _LevelSemester.setText(L + " " + dept + " " + session + "\n");
+        _LevelSemester.setText(L + " " + dept + " " + "\n");
 
         ArrayList<String>TeacherList=new ArrayList<String>();
         TeacherList.add("SELECT_TEACHER");
