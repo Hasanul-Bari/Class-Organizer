@@ -32,6 +32,9 @@
         android:testOnly="true"
         android:theme="@style/AppTheme" >
         <activity
+            android:name="com.example.gridlayout.SignIn_Admin"
+            android:exported="false" />
+        <activity
             android:name="com.example.gridlayout.CR_PROFILE"
             android:exported="true" />
         <activity

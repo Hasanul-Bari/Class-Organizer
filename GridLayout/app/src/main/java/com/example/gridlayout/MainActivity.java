@@ -126,12 +126,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         }
         else if(v.getId()==R.id.button3){
-//
-            // Toast.makeText(getApplicationContext(),"hp = 1",Toast.LENGTH_LONG).show();
-            // getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,new AdminHome()).commit();
 
-            Intent intent=new Intent(MainActivity.this,Admin_Menu.class);
-            //   Toast.makeText(getApplicationContext(),"hp = 2",Toast.LENGTH_LONG).show();
+
+            //Intent intent=new Intent(MainActivity.this,Admin_Menu.class);
+            Intent intent=new Intent(MainActivity.this,SignIn_Admin.class);
             startActivity(intent);
             //Toast.makeText(getApplicationContext(),"Admin Panel clicked",Toast.LENGTH_LONG).show();
 
