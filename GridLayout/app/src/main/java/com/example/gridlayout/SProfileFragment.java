@@ -95,12 +95,12 @@ public class SProfileFragment extends Fragment {
 
 
                 String DEPT=dept+" L: "+level+" S: "+semester;
-                Toast.makeText(getActivity(), "Room  0"+dept, Toast.LENGTH_SHORT).show();
+                //Toast.makeText(getActivity(), "Room  0"+dept, Toast.LENGTH_SHORT).show();
                 mFirestore.collection("AR").document(dept).get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
                     @Override
                     public void onSuccess(DocumentSnapshot documentSnapshot) {
                         String ROOMNO=documentSnapshot.getString("room");
-                        Toast.makeText(getActivity(), "Room "+ROOMNO, Toast.LENGTH_SHORT).show();
+                        //Toast.makeText(getActivity(), "Room "+ROOMNO, Toast.LENGTH_SHORT).show();
                         _room.setText(ROOMNO);
 
                     }

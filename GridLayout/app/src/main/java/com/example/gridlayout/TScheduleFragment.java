@@ -45,7 +45,7 @@ public class TScheduleFragment extends Fragment implements View.OnClickListener 
 
     private TextView day, __10t, __11t, __12t, __14t, __15t, __16t;
 
-    private TextView __10s, __11s, __12s, __14s, __15s, __16s;//for status
+    private TextView __10s, __11s, __12s, __14s, __15s, __16s,roomStatus;//for status
 
     private Button c10, c11, c12, c14, c15, c16;//confirm buttons
 
@@ -95,6 +95,8 @@ public class TScheduleFragment extends Fragment implements View.OnClickListener 
             sem=bundle.getString("sem");
 
         }
+
+
 
 
 
@@ -179,6 +181,32 @@ public class TScheduleFragment extends Fragment implements View.OnClickListener 
         mFirestore1 = FirebaseFirestore.getInstance();
 
         userId = mAuth.getCurrentUser().getUid();
+
+        // Fetching room status---------------------------------------
+        String semesterr="";
+        if(sem.equals("1")){
+            semesterr="I";
+        }
+        else if(sem.equals("2")){
+            semesterr="II";
+        }
+
+
+        String AR=dept+" L: "+level+" S: "+semesterr;
+        Log.d(TAG, "onCreateView: "+AR);
+
+        roomStatus=view.findViewById(R.id.roomID);
+
+
+        mFirestore.collection("AR").document(AR).get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+            @Override
+            public void onSuccess(DocumentSnapshot documentSnapshot) {
+                String ROOMNO=documentSnapshot.getString("room");
+                //Toast.makeText(getActivity(), "Room "+ROOMNO, Toast.LENGTH_SHORT).show();
+                roomStatus.setText("Current Room NO: "+ROOMNO);
+
+            }
+        });
 
 
         //fetching teachers course code

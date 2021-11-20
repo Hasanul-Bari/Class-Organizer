@@ -75,7 +75,7 @@ public class Course_list_Fragment extends Fragment {
 
                 courses=documentSnapshot.getString("COURSES");
 
-                Toast.makeText(getActivity(), courses ,Toast.LENGTH_SHORT).show();
+                //Toast.makeText(getActivity(), courses ,Toast.LENGTH_SHORT).show();
 
 
 
@@ -315,6 +315,24 @@ public class Course_list_Fragment extends Fragment {
                             schedule.setArguments(bundle);
 
                             fragmentTransaction.replace(R.id.fragment_container,schedule).commit();
+                        }
+                        else if(from.equals("room")){
+
+                            Fragment FloorF=new Floor_Fragment();
+                            FragmentTransaction ft2=getFragmentManager().beginTransaction();
+                            ft2.addToBackStack(null);
+
+                            Log.d(TAG, "onClick: Entered");
+
+                            Bundle bundle1= new Bundle();
+                            bundle1.putString("CR","No");
+                            bundle1.putString("DEPT",dept);
+                            bundle1.putString("LEVEL",courseItem.getLevel());
+                            bundle1.putString("SEM",courseItem.getSemester());
+                            FloorF.setArguments(bundle1);
+
+                            fragmentTransaction.replace(R.id.fragment_container,FloorF).commit();
+
                         }
 
 

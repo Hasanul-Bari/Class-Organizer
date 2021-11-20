@@ -71,7 +71,7 @@ public class Teacher extends AppCompatActivity {
         Intent intent=getIntent();
         dept=intent.getStringExtra("dept");
 
-        Toast.makeText(getApplicationContext(),"Teacher - "+ dept, Toast.LENGTH_SHORT).show();
+        //Toast.makeText(getApplicationContext(),"Teacher - "+ dept, Toast.LENGTH_SHORT).show();
 
 
         mFirestore.collection(dept).document(userId).get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
@@ -158,6 +158,8 @@ public class Teacher extends AppCompatActivity {
 
 
                         break;
+
+
 
 
                     case R.id.nav_post:

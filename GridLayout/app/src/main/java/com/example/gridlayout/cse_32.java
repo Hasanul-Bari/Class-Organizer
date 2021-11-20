@@ -282,8 +282,8 @@ public class cse_32 extends AppCompatActivity implements View.OnClickListener {
                                 public void onSuccess(Void aVoid) {
 
 
-                                    Toast.makeText(getApplicationContext(), dept + track + "_" + "COURSES", Toast.LENGTH_SHORT).show();
-                                    Toast.makeText(getApplicationContext(), dept+" IDX "+idx_id + code, Toast.LENGTH_SHORT).show();
+                                    //Toast.makeText(getApplicationContext(), dept + track + "_" + "COURSES", Toast.LENGTH_SHORT).show();
+                                    //Toast.makeText(getApplicationContext(), dept+" IDX "+idx_id + code, Toast.LENGTH_SHORT).show();
 
                                     mFirestore.collection(dept).document(idx_id).get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
                                         @Override

@@ -14,10 +14,7 @@
             android:title="Schedule" />
 
 
-        <item
-            android:id="@+id/nav_room"
-            android:icon="@drawable/ic_room"
-            android:title="Rooms" />
+
 
         <item
             android:id="@+id/nav_post"

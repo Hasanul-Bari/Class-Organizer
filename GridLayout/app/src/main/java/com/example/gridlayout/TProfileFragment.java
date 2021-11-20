@@ -70,7 +70,7 @@ public class TProfileFragment extends Fragment {
         }
 
 
-        Toast.makeText(getContext(), "TP- "+dept, Toast.LENGTH_SHORT).show();
+        //Toast.makeText(getContext(), "TP- "+dept, Toast.LENGTH_SHORT).show();
 
         mFirestore.collection(dept).document(userId).get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
             @Override

@@ -56,6 +56,8 @@ public class Floor_Fragment extends Fragment implements View.OnClickListener {
         f4.setOnClickListener(this);
         //f_reset.setOnClickListener(this);
 
+        Log.d(TAG, "onCreateView: inFloor");
+
 
         Bundle FLOOR= getArguments();
         if(FLOOR!=null){
