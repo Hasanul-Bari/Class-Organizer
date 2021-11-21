@@ -27,7 +27,7 @@ import com.google.firebase.firestore.FirebaseFirestore;
 public class TProfileFragment extends Fragment {
 
 
-    private TextView Tname,Tcourse,Temail,Tcontact;
+    private TextView Tname,Temail,Tcontact;
 
     private FirebaseAuth mAuth;
     private FirebaseFirestore mFirestore;
@@ -54,7 +54,6 @@ public class TProfileFragment extends Fragment {
 
         Tname=view.findViewById(R.id.TnameID);
         Tcontact=view.findViewById(R.id.TcontactID);
-        Tcourse=view.findViewById(R.id.TcourseId);
         Temail=view.findViewById(R.id.TemailID);
 
 
@@ -89,7 +88,6 @@ public class TProfileFragment extends Fragment {
 
 
                 Tname.setText(name);
-                Tcourse.setText(course);
                 Tcontact.setText(Contact);
                 Temail.setText(Email);
 

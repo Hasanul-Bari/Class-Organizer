@@ -1148,8 +1148,8 @@ drawable wave3
 drawable wazed
 id ALT
 id Add_CR
-id Add_teacher
 id AdminPanel
+id AdminSignInButton
 id CRC
 id CREID
 id CRFN
@@ -1179,8 +1179,6 @@ id DAY3
 id DAY4
 id DAY5
 id Day
-id Del_CR
-id Del_teacher
 id ECE
 id EEE
 id F0
@@ -1261,7 +1259,6 @@ id SgotosignIn
 id SnameID
 id SsignInButton
 id TcontactID
-id TcourseId
 id TemailID
 id TnameID
 id View_Schedule1
@@ -1373,6 +1370,8 @@ id activity_chooser_view_content
 id add
 id adjust_height
 id adjust_width
+id adminNameId
+id adminPwId
 id alertTitle
 id all
 id always
@@ -1406,9 +1405,22 @@ id content
 id contentPanel
 id coordinator
 id course_name
+id cse11Level
+id cse11_scheduleButton
+id cse12Level
+id cse12_scheduleButton
+id cse21Level
+id cse21_scheduleButton
+id cse22Level
+id cse22_scheduleButton
+id cse31Level
+id cse31_scheduleButton
 id cse32Level
-id cse32Session
 id cse32_scheduleButton
+id cse41Level
+id cse41_scheduleButton
+id cse42Level
+id cse42_scheduleButton
 id ctitleId
 id custom
 id customPanel
@@ -1486,7 +1498,6 @@ id nav_headertvEmailID
 id nav_headertvNameID
 id nav_post
 id nav_profile
-id nav_room
 id nav_s_course_updates
 id nav_s_files
 id nav_s_group
@@ -1528,6 +1539,7 @@ id recylerViewId
 id right
 id right_icon
 id right_side
+id roomID
 id save_image_matrix
 id save_non_transition_alpha
 id save_scale_type
@@ -1702,6 +1714,7 @@ layout activity_main
 layout activity_profile
 layout activity_sign_in
 layout activity_sign_in__student
+layout activity_sign_in_admin
 layout activity_sign_up
 layout activity_sign_up__student
 layout activity_student
