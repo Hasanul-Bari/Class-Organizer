@@ -1,0 +1,20 @@
+{
+    "logs": [
+        {
+            "outputFile": "/home/hasanul-bari/Documents/project 302/Software-Project/Class_Organizer/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-hdpi-v4/values-hdpi-v4.xml",
+            "map": [
+                {
+                    "source": "/home/hasanul-bari/.gradle/caches/transforms-3/39736487ac687384dc9e57e7782c7047/transformed/appcompat-1.1.0/res/values-hdpi-v4/values-hdpi-v4.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endLines": "6",
+                        "endColumns": "13",
+                        "endOffsets": "327"
+                    }
+                }
+            ]
+        }
+    ]
+}

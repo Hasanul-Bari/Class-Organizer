@@ -1,0 +1,20 @@
+{
+    "logs": [
+        {
+            "outputFile": "/home/hasanul-bari/Documents/project 302/Software-Project/Class_Organizer/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-watch-v20/values-watch-v20.xml",
+            "map": [
+                {
+                    "source": "/home/hasanul-bari/.gradle/caches/transforms-3/39736487ac687384dc9e57e7782c7047/transformed/appcompat-1.1.0/res/values-watch-v20/values-watch-v20.xml",
+                    "from": {
+                        "startLines": "2,5,8",
+                        "startColumns": "4,4,4",
+                        "startOffsets": "55,214,385",
+                        "endLines": "4,7,10",
+                        "endColumns": "12,12,12",
+                        "endOffsets": "209,380,553"
+                    }
+                }
+            ]
+        }
+    ]
+}
