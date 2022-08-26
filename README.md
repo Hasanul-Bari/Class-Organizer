@@ -1,2 +1,1 @@
-## This mobile application aims to build an online class scheduling and room allocation system through the interaction among students, teachers and the administration of a university.
- 
+## A mobile application for online class scheduling and room allocation.
